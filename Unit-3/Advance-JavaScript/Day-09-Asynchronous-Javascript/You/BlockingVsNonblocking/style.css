@@ -1,0 +1,77 @@
+body {
+  font-family: sans-serif;
+}
+
+.tenor-gif-embed {
+  width: 200px;
+  max-width: 200px;
+  overflow: hidden;
+}
+
+.gif-wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+button {
+  margin: 0.5rem;
+}
+
+.content {
+  margin-top: 8px;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid darkgoldenrod;
+  background: gold;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  -webkit-animation: moveit 2.5s infinite;
+  animation: moveit 2.5s infinite;
+}
+
+.circle-wrapper {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed lightgray;
+}
+
+@-webkit-keyframes moveit {
+  from {
+    top: 0px;
+  }
+  25% {
+    top: 80px;
+  }
+  50% {
+    top: 40px;
+  }
+  75% {
+    top: 80px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes moveit {
+  from {
+    top: 0px;
+    opacity: 1;
+  }
+  25% {
+    top: 80px;
+  }
+  50% {
+    top: 40px;
+  }
+  75% {
+    top: 80px;
+  }
+  to {
+    top: 0px;
+  }
+}

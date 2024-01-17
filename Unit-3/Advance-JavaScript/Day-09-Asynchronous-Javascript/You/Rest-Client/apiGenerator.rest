@@ -1,0 +1,13 @@
+# First Request
+https://reqres.in/api/users?page=2
+
+
+###
+
+# Second Request
+https://reqres.in/api/users?page=2
+
+
+###
+# Similarly I can send many requests using ###
+GET https://reqres.in/api/users?_limit=5_page=1
