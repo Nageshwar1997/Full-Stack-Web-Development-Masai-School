@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Specificity - SICTU</title>
+    <style>
+        /* Specificity Score of Selectors */
+        /* Universal Score - 0 */
+        * {
+            color: green;
+            font-size: 100px;
+        }
+
+        /* Tag Score - 1 */
+        p {
+            color: yellow;
+            font-size: 80px;
+        }
+
+        /* Class Score - 10 */
+        .name {
+            color: purple;
+            font-size: 60px;
+        }
+
+        /* ID Score - 100 */
+        #ng {
+            color: red;
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Inline Style Score - 1000 -->
+    <p style="color: blue; font-size: 20px;" class="name" id="ng">I am a Nageshwar Pawar</p>
+</body>
+
+</html>
