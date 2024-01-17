@@ -1,25 +1,34 @@
 ## Day 01 --> Essential-JavaScript-Concepts-I
+
     1. JS-Intro-To-CP ---> masai-ops-458-642-GovoTf-bb85ffb981c9b6ba1f1b7342e02fef96f55c3ea5
 
 ## Day 02 --> Essential-JavaScript-Concepts-II
+
     1. JS-Essentials ---> masai-ops-476-644-UvLIkt-ecbc0cc3868960f12716c05fb397c30f55df6574
 
 ## Day 03 --> Array-methods-In-Depth-I
+
     1. JS-Intro-To-New-CP-With-DOM ---> masai-ops-852-1370-MKurCQ-c960e213791b9abafb128b41804bdaec62ce61be
+
 ## Day 04 --> Array-methods-In-Depth-II
+
     1. Array-Methods-Reduce-Sort-Filter ---> masai-ops-764-1344-drWneQ-f6ba65dbde6930dbc5a7fca27f563b4d7632ac7b
 
 ## Day 05 --> Functions-And-Objects
-    1. AutoevaluationPSC-s1-Web--Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
+
+    1. AutoevaluationPSC-s1-Web-Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
     2. AutoevaluationPSC-s2-template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
 
 ## Day 06 --> Prototypical-Inheritance-I
+
     1. JS-Model-Artists ---> masai-ops-506-14-inJdLu-a0a76a864f9362750c7f4fdc28f3238d4d7b42c9
 
     2. JS-Car-Prototype-And-Inheritance ---> masai-ops-506-165-DUQJdH-bf7a7873ec8b1b02e636a64592c2faccca31c8c9
 
     3. JS-Object-Creation ---> masai-ops-802-1349-FiWcxv-addccbba7aa339918fdf0df230db8043ff27e804
+
 ## Day 07 --> Prototypical-Inheritance-II
+
     01. JS-Counter-Class ---> masai-ops-796-10-OLtdKO-aa5aa06bc6d44c72b383edb6ed680bef6d03cdca
 
     02. JS-Product-Constructor ---> masai-ops-796-11-cLIEsR-71600de9cdc2780c4c05e63bd9f6f5adf3f9a434
@@ -39,19 +48,23 @@
     09. JS-LLD-Parking-Lot ---> masai-ops-796-384-YnuHKu-c5756a6a536c7ac3e6f78a6be650f886de425635
 
     10. JS-Constructor-E-Commerce-II ---> masai-ops-796-565-cuIxvP-685847ab476d486458f8af9af07a4baf9f9ec07a
+
 ## Day 08 --> Mastering-the_this_Keyword
 
 ## Day 09 --> Asynchronous-Javascript
+
     1. JS-Promises-Odd-Even ---> masai-ops-564-16-EcKyqw-eee4040f276cb02a744419e802bd8e74f9e82a70
 
     2. Js-Promises-Job-App ---> masai-ops-564-232-ByfKXY-100f92fc9dab6129762447cb186494bc5563102c
     3. Fetch APIs ---> masai-ops-575-718-pKhAmZ-6edec1dc4caef8253bcf4f58e7fffe41e918ded1
     4. DOM-Pagination ---> masai-ops-863-1372-IFpIno-7943cc5fba84247a7e03ab26a6dede40e95b4e1b
+
 ## Day 10 --> Must-Know-Javascript-Concepts
 
 ## Day 11 --> Testing-Javascript-And-Road-To-React
 
 ## Day 12 --> ES6
+
     1. JS-ES6-Classes-Oops-Mobile ---> masai-cp-problems-2615-26-TkEdws-0253e8936c36ec0ddeb176f3d3edefc35f4d982c
 
 ## Day 13 --> Closures-in-JavaScript
@@ -63,6 +76,7 @@
 ## Day 16 --> Revision-Class-III
 
 ## Day 17 --> Evaluation
+
     1. Dom-Auth-Filter-Sort ---> masai-ops-892-1393-vHapZo-8fddc9652bb1cf4003356ed35ddb8e1967cada0d
 
     2. Js201-B22-Eval-1 ---> masai-ops-498-645-deGzaE-9216f537a00c7bec21b11bdc637b650bcc05f09f
