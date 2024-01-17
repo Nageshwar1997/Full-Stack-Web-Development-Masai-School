@@ -17,7 +17,7 @@
 ## Day 05 --> Functions-And-Objects
 
     1. AutoEvaluationPSC-S1-Web-Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
-    
+
     2. AutoEvaluationPSC-S2-Template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
 
 ## Day 06 --> Prototypical-Inheritance-I
@@ -80,9 +80,11 @@
 
 ## Day 17 --> Evaluation
 
+    0. Cute-Little-App ---> masai-ops-852-1370-MKurCQ-c960e213791b9abafb128b41804bdaec62ce61be
+
     1. Dom-Auth-Filter-Sort ---> masai-ops-892-1393-vHapZo-8fddc9652bb1cf4003356ed35ddb8e1967cada0d
 
-    2. Js201-B22-Eval-1 ---> masai-ops-498-645-deGzaE-9216f537a00c7bec21b11bdc637b650bcc05f09f
+    2. JS201-B22-Eval-1 ---> masai-ops-498-645-deGzaE-9216f537a00c7bec21b11bdc637b650bcc05f09f
 
     3. Js201-B22-Eval-2 ---> masai-ops-537-668-SAiTjL-2f2d2683c6eff862e09f2239330f0c944d6cc77e
 

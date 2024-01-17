@@ -1,0 +1,35 @@
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+#items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.item{
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 400px;
+}
+.item div{
+    height: 50%;
+}
+
+img{
+    margin: 5px;
+    border-radius: 10px;
+    width: 95%;
+    height: 100%;
+}
+.item div > h4, p{
+    text-align: center;
+    
+}
+
+button{
+    margin: 0% 20% 0% 35%;
+}
