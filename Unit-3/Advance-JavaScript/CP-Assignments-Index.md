@@ -2,7 +2,7 @@
     1. JS-Intro-To-CP ---> masai-ops-458-642-GovoTf-bb85ffb981c9b6ba1f1b7342e02fef96f55c3ea5
 
 ## Day 02 --> Essential-JavaScript-Concepts-II
-    1. JS-Javascript-Essentials ---> masai-ops-476-644-UvLIkt-ecbc0cc3868960f12716c05fb397c30f55df6574
+    1. JS-Essentials ---> masai-ops-476-644-UvLIkt-ecbc0cc3868960f12716c05fb397c30f55df6574
 
 ## Day 03 --> Array-methods-In-Depth-I
     1. JS-Intro-To-New-CP-With-DOM ---> masai-ops-852-1370-MKurCQ-c960e213791b9abafb128b41804bdaec62ce61be
@@ -10,9 +10,9 @@
     1. Array-Methods-Reduce-Sort-Filter ---> masai-ops-764-1344-drWneQ-f6ba65dbde6930dbc5a7fca27f563b4d7632ac7b
 
 ## Day 05 --> Functions-And-Objects
-    1. Autoevaluationpsc-s1-Web--Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
+    1. AutoevaluationPSC-s1-Web--Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
+    2. AutoevaluationPSC-s2-template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
 
-    2. Autoevaluationpsc-s2-template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
 ## Day 06 --> Prototypical-Inheritance-I
     1. JS-Model-Artists ---> masai-ops-506-14-inJdLu-a0a76a864f9362750c7f4fdc28f3238d4d7b42c9
 
