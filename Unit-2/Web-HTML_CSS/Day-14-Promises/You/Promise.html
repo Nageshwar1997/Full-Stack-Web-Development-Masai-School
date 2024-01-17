@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let isFulfilled = true;
+    let promise = new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            // resolve();
+            // reject();
+            // OR
+            if(isFulfilled){
+                resolve("Promise Resolved");
+            }
+            else{
+                reject("Promise Rejected");
+            }
+        },2000)
+    })
+    // Promise Status:- 1.pending(Default) 2.fulfilled 3.rejected
+    console.log(promise);
+     
+    promise.then(function(result){
+        console.log("Ok");
+        console.log(result);
+        console.log(promise);
+    }).catch(function(error){
+        console.log("Not Ok");
+        console.log(error);
+        console.log(promise);
+    })
+
+
+</script>
+</html>

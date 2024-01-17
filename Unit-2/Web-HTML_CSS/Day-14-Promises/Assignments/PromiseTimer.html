@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Timer</title>
+</head>
+<body>
+    
+</body>
+<script>
+// Write a function named waitPromise that accepts time in ms and returns a promise.
+// The promise should get resolved after given time.
+
+function waitPromise(timeInMS){
+    let promise = new Promise((resolve, reject)=>{
+        setTimeout(() => {
+            resolve("Promise Resolved");
+        }, timeInMS);
+    })
+    return promise;
+}
+
+let abcd = waitPromise(2000);
+
+abcd.then((resp)=>{
+    console.log(abcd);
+    console.log(resp);
+}).catch((err)=>{
+    console.log(abcd);
+    console.log("Promise has been rejected");
+})
+</script>
+</html>

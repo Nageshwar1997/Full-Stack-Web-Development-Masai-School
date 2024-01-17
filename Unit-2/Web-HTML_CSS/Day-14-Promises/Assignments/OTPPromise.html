@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP Promise</title>
+  </head>
+  <body>
+    <input type="number" name="OTP" id="otp" />
+    <button id="btn">Submit</button>
+  </body>
+  <script>
+    let input = document.getElementById("otp");
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", (ev) => {
+      ev.preventDefault();
+
+      setTimeout(() => {
+        let promise = new Promise((resolve, reject) => {
+          if (input.value == 1234) {
+            resolve("OTP Successfully Validated");
+          } else {
+            reject("Incorrect OTP : Please check the OTP again!");
+          }
+        });
+        promise
+          .then((resp) => {
+            alert(resp);
+            console.log(resp);
+        })
+        .catch((err) => {
+            alert(err);
+            console.log(err);
+          });
+      }, 10000);
+    });
+  </script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PromiseOnCount</title>
+  </head>
+  <body></body>
+  <script>
+    let count = -5;
+    let promise = new Promise(function (resolve, reject) {
+      if (count > 0) {
+        resolve("Positive Count");
+      } else {
+        reject("Negative Count");
+      }
+    });
+
+    promise
+      .then((resp) => {
+        console.log(resp);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  </script>
+</html>
