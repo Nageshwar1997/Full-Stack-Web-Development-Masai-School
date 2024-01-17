@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Leaderboard</h1>
+    
+    <div id="score-box">
+        <h2>SCORE: <span id="current-score"></span></h2>
+        <button onclick="resetScore()">Reset</button>
+    </div>
+
+    <div id="min-max-box">
+        <h2>MIN: <span id="min-score">N/A</span></h2>
+        <h2>MAX: <span id="max-score">N/A</span></h2>
+    </div>
+
+    <div id="number-buttons">
+        <button onclick="appendToScore(1)">1</button>
+        <button onclick="appendToScore(2)">2</button>
+        <button onclick="appendToScore(3)">3</button>
+        <button onclick="appendToScore(4)">4</button>
+        <button onclick="appendToScore(5)">5</button>
+        <button onclick="appendToScore(6)">6</button>
+        <button onclick="appendToScore(7)">7</button>
+        <button onclick="appendToScore(8)">8</button>
+        <button onclick="appendToScore(9)">9</button>
+        <button onclick="appendToScore(0)">0</button>
+        <button onclick="enterScore()">ENTER</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

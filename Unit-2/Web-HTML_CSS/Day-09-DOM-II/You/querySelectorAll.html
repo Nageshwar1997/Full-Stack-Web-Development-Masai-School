@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-2</title>
+    <style>
+        #keypad > .btn{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div id="keypad">
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+        <button class="btn">5</button>
+        <button class="btn">6</button>
+        <button class="btn">7</button>
+        <button class="btn">8</button>
+        <button class="btn">9</button>
+        <button class="btn">0</button>
+      </div>
+</body>
+<script>
+    // let keyPadBtn = document.querySelectorAll("#keypad > .btn");
+    // or
+    let keyPadBtn = document.querySelectorAll("#keypad > button");
+
+    // console.log(keyPadBtn.length);
+    // console.log(keyPadBtn);
+    for(let i=0; i<keyPadBtn.length; i++){
+        keyPadBtn[i].addEventListener("click", (ev)=>{
+            console.log(ev.target.innerText);
+        });
+    }
+
+</script>
+</html>

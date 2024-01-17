@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoM - 2</title>
+  </head>
+  <body>
+    <h1 id="myHeading">I'm Heading</h1>
+    <h1 class="heading">I'm Class Heading</h1>
+    <h1 class="heading">I'm Class Heading</h1>
+    <h1 class="heading">I'm Class Heading</h1>
+    <button id="btn">Button</button>
+  </body>
+  <script>
+    let myHeading = document.getElementById("myHeading");
+
+    let btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      myHeading.style.color = "red";
+      myHeading.style.backgroundColor = "yellow";
+    });
+
+    let heading = document.getElementsByClassName("heading");
+
+    for (let i = 0; i < heading.length; i++) {
+      btn.addEventListener("click", () => {
+        heading[i].style.color = "blue";
+        heading[i].style.fontSize = "50px";
+        heading[i].style.backgroundColor = "pink";
+      });
+    }
+  </script>
+</html>
