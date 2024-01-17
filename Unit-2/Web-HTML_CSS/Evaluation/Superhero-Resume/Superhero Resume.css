@@ -1,0 +1,142 @@
+*{
+    font-family: "Popin", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(94, 204, 180);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#container {
+    border: 15px solid rgb(255, 4, 109);
+    width: 100%;
+    margin: 50px;
+    max-width: 1000px;
+    min-height: 1000px;
+    background-color: blanchedalmond;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+/* Left Side */
+
+#container .left-side {
+    background-color: rgb(14, 12, 12);
+    color: white;
+    padding: 20px;
+}
+
+.left-side>img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: 15%;
+    margin-bottom: 10px;
+}
+.left-side > .name > img{
+    width: 100%;
+    padding-right: 10px;
+    
+}
+.left-side > h1, .left-side > hr{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.Skills{
+    display: flex;
+    justify-content: space-between;
+}
+.square{
+    height: 10px;
+    width: 10px;
+    background-color: aquamarine;
+    border-radius: 10%;
+    display: inline-block;
+}
+
+/* Right Side */
+
+#container > .right-side{
+    background-color: rgb(255, 255, 255);
+    padding: 40px;
+    color: black;
+}
+.right-side{
+    position: relative;
+    color: black;
+}
+.right-side > img{
+    z-index: 0;
+    /* margin-top: 100px; */
+    opacity: 0.1;
+    width: 86%;
+    height: 96%;
+    position: absolute;
+    margin: auto;
+}
+.right-side-child {
+    z-index: 1;
+}
+.right-side-child > ul{
+    list-style: square;
+}
+.right-side-child > ul > li::marker {
+    font-size: 1.5em;
+    color: #ff0000;
+  }
+  .exp{
+    display: flex;
+    justify-content: space-between;
+    color: purple;
+  }
+  .exp-1{
+    color: purple;
+  }
+  .dotted{
+    border-bottom: dotted;
+    color: grey;
+  }
+  .flex{
+    display: flex;
+    justify-content: space-between;
+    color: purple;
+  }
+  .edc-1{
+    display: flex;
+    justify-content: space-between;
+    color: purple;
+  }
+  .right-side-child > .education > ul{
+    list-style: square;
+    font-size: 1.5em;
+  }
+  .right-side-child > .education > ul > li::marker{
+    font-size: 1em;
+    color: #ff0000;
+  }
+  .right-side-child > .accomplish > .accomplish-1 > ul{
+    list-style: square;
+}
+.right-side-child > .accomplish > .accomplish-1 > ul > li::marker{
+    font-size: 1.5em;
+    color: #ff0000;
+}
+.right-side-child > .certificate > .certificate-1 > ul{
+    list-style: square;
+}
+.right-side-child > .certificate > .certificate-1 > ul > li::marker{
+    font-size: 1.5em;
+    color: #ff0000;
+}
+
+@media screen {
+    .container {
+        display: block;
+    }
+}
