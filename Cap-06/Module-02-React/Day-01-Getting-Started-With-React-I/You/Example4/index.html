@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create UI with React API</title>
+</head>
+<body>
+    <div id="root"></div>
+    <!-- React Library -->
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <!-- ReactDOM Library -->
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script>
+        // console.log(ReactDOM);
+        // Syntax -1
+        // let element = React.createElement("h1", {
+        //     className: "name",
+        //     children: "Nageshwar",
+        //     id: "myName",
+        // });
+
+
+        // Syntax -2
+        let element = React.createElement("h1", {
+            className: "name",
+            id: "myName",
+        },"Nageshwar");
+
+        // console.log(element.props);
+        // console.log(element);
+        let reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+        reactRoot.render(element);
+    </script>
+</body>
+</html>
