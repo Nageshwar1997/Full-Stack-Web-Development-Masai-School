@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Use Object.setPrototypeOf() to reuse the same printFunction for all the objects created using the factory function
+
+    let sharedAccountFunction = {
+      print: function () {
+        console.log(this); // it will print whole object
+        console.log(
+          `Name: ${this.name} Type: ${this.type} Active: ${this.active} Balance: ${this.balance}`
+        );
+      },
+    };
+
+    // Factory Function
+    function createAccount(accountName, accountType, accountBalance, isActive) {
+      let account = {};
+      Object.setPrototypeOf(account, sharedAccountFunction);
+
+      account.name = accountName;
+      account.type = accountType;
+      account.balance = accountBalance;
+      account.active = isActive;
+
+      return account;
+    }
+    const acc1 = createAccount("Nageshwar", "Saving", 100000, true);
+    // console.log(acc1);
+    acc1.print();
+    
+    const acc2 = createAccount("Manjusha", "Premium", 120000, false);
+    // console.log(acc2);
+    acc2.print();
+
+  </script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function</title>
+</head>
+<body>
+    <h1>Constructor Function</h1>
+</body>
+<script>
+    function createAccount(accountName, accountType, accountBalance, isActive) {
+    this.name = accountName;
+    this.type = accountType;
+    this.balance = accountBalance;
+    this.active = isActive;
+    this.print = function () {
+        console.log(`Name: ${this.name} Type: ${this.type} Active: ${this.active} Balance: ${this.balance}`);
+    };
+}
+const acc1 = new createAccount("Nageshwar", "Saving", 100000, true);
+console.log(acc1);
+
+const acc2 = new createAccount("Manjusha", "Premium", 500000, false);
+console.log(acc2);
+
+</script>
+</html>

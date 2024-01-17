@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Prototypical Chain</h1>
+  </body>
+  <script>
+    let obj1 = {
+      name: "Nageshwar",
+      sayHello: function () {
+        console.log(`Hello ${this.name}....!`);
+      },
+    };
+
+    let obj2 = {
+      salary: 10000,
+      work: function () {
+        console.log("I'm Working");
+      },
+    };
+
+    // Object.setPrototypeOf(obj1, obj2);
+    // console.log(obj1.__proto__ == obj2); // true
+    // console.log(obj2.__proto__ == obj1); // false
+    // console.log(obj1);
+    // obj1.work()
+
+    Object.setPrototypeOf(obj2, obj1);
+    // console.log(obj2.__proto__ == obj1); // true
+    // console.log(obj1.__proto__ == obj2); // false
+    console.log(obj2);
+    obj2.sayHello(); // Hello Nageshwar....!
+  </script>
+</html>

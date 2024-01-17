@@ -16,8 +16,8 @@
 
 ## Day 05 --> Functions-And-Objects
 
-    1. AutoevaluationPSC-s1-Web-Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
-    2. AutoevaluationPSC-s2-template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
+    1. AutoEvaluationPSC-S1-Web-Template ---> masai-ops-489-541-HEJVXa-aa0054a6b1f8d62663eb7147d27e70a1fa74fd66
+    2. AutoEvaluationPSC-S2-Template ---> masai-ops-489-542-lntzUV-b34635fd3334766f559c44f1dcb87bd501d0066f
 
 ## Day 06 --> Prototypical-Inheritance-I
 
