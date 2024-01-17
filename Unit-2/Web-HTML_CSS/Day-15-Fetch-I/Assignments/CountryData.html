@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Data</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: none;
+      }
+      #container {
+        border: 1px solid black;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .country {
+        align-items: center;
+        margin: 5px;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .countryFlag {
+        width: 80%;
+        height: 40%;
+        display: block;
+        margin: auto;
+      }
+      .countryRegion {
+        font-size: 20px;
+      }
+      .countryName {
+        font-size: 20px;
+      }
+      .countryFlag,
+      .countryRegion,
+      .countryRegion,
+      .countryPopulation,
+      .countryName {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="filter">
+      <option value="">Select a Region</option>
+      <option value="Africa">Africa</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Americas">Americas</option>
+    </select>
+    <div id="container"></div>
+  </body>
+  <script>
+    let container = document.getElementById("container");
+    let filterSelect = document.getElementById("filter");
+    let fetchedData = [];
+    fetchData();
+
+    // 4. filter part --> select tag's value
+    filterSelect.addEventListener("change", function () {
+      // console.log(filterSelect.value);
+      // 5. I will run the filter on which data
+      let filteredData = fetchedData.filter((element) => {
+        if (element.region === filterSelect.value) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      displayCountries(filteredData);
+    });
+
+    // 2. Getting the data from API
+    function fetchData() {
+      let promise = fetch("https://restcountries.com/v3.1/all");
+      promise
+        .then((responseObject) => {
+          return responseObject.json();
+        })
+        .then((actualData) => {
+          // console.log(actualData);
+          // 3. Formating the data --> using map
+          let myNeededData = actualData.map((element) => {
+            let obj = {
+              name: element.name.official,
+              region: element.region,
+              population: element.population,
+              flag: element.flags.png,
+            };
+            return obj;
+          });
+          //   console.log(myNeededData);
+          // 6. In a fetchData() I am also storing the data in a new variable
+          fetchedData = myNeededData;
+          // 7. After filter I will call the displayCountry () again
+          displayCountries(myNeededData);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+
+    // 1. DOM related Things
+    function displayCountries(data) {
+      container.innerHTML = null;
+      data.forEach((element) => {
+        let card = document.createElement("div");
+        // card.setAttribute("class", "country")
+        card.className = "country";
+
+        let flag = document.createElement("img");
+        flag.setAttribute("src", element.flag);
+        // flag.setAttribute("class", "countryFlag")
+        flag.className = "countryFlag";
+
+        let name = document.createElement("h2");
+        name.innerText = element.name;
+        // name.setAttribute("class", "countryName")
+        name.className = "countryName";
+
+        let region = document.createElement("p");
+        region.innerText = element.region;
+        // region.setAttribute("class", "countryRegion")
+        region.className = "countryRegion";
+
+        let population = document.createElement("p");
+        population.innerText = `Population: ${element.population}`;
+        // population.setAttribute("class", "countryPopulation")
+        population.className = "countryPopulation";
+
+        card.append(flag, name, region, population);
+        container.append(card);
+      });
+    }
+
+    // convert Synchronous function to Asynchronous function
+    async function fetchData2() {
+      try {
+        let responseObject = await fetch("https://restcountries.com/v3.1/all");
+        let actualData = await responseObject.json();
+        let myNeededData = actualData.map((element) => {
+          let obj = {
+            name: element.name.official,
+            region: element.region,
+            population: element.population,
+            flag: element.flags.png,
+          };
+          return obj;
+        });
+        //   console.log(myNeededData);
+        fetchedData = myNeededData;
+        // console.log(fetchedData);
+        displayCountries(myNeededData);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchData2();
+  </script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai E Commerce Website</title>
+    <style>
+      #root {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      .product-card {
+        border: 1px solid black;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+      }
+      .product-card > img {
+        height: 150px;
+        width: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+<script>
+   let rootElement = document.getElementById("root");
+
+    function displayData(productsList) {
+      productsList.forEach(function (product) {
+        //  title,price,description,category,image,rating-rate, rating-count
+
+        // create product card which will contain all the product details
+        let productCard = document.createElement("div");
+        productCard.className = "product-card";
+
+        // create product image element
+        let productImageElement = document.createElement("img");
+        productImageElement.src = product.image;
+
+        // create product title element
+        let productTitleElement = document.createElement("p");
+        productTitleElement.textContent = product.title;
+
+        // create product price element
+        let productPriceElement = document.createElement("p");
+        productPriceElement.textContent = `Price : USD ${product.price}`;
+
+        // create product category element
+        let productCategoryElement = document.createElement("p");
+        productCategoryElement.textContent = `Category : ${product.category}`;
+
+        // create product ratings element
+        let productRatingElement = document.createElement("p");
+        productRatingElement.textContent = `Ratings : ${product.rating.rate}`;
+
+        // create product number of reviews element
+        let productNumberOfReviewsElement = document.createElement("p");
+        productNumberOfReviewsElement.textContent = `Number of reviews : ${product.rating.count}`;
+
+        productCard.append(
+          productImageElement,
+          productTitleElement,
+          productPriceElement,
+          productCategoryElement,
+          productRatingElement,
+          productNumberOfReviewsElement
+        );
+
+        rootElement.append(productCard);
+      });
+    }
+
+    fetch("https://fakestoreapi.com/products") // fetch(URL)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (finalResponse) {
+        displayData(finalResponse);
+      })
+      .catch(function (errorResponse) {
+        console.log(errorResponse);
+        rootElement.textContent = "Something went wrong";
+      });
+</script>
+</html>

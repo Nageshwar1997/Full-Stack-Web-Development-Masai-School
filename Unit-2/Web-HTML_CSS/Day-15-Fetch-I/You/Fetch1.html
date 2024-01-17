@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch-1</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let promise1 = fetch("https://jsonplaceholder.typicode.com");
+    // console.log(promise1); // it will return Promise
+    promise1.then((resp)=>{ // creating a request for getting the promise2
+        // console.log(resp); // it will return response
+        let promise2 = resp.json();
+        // console.log(promise2); // it will return promise2
+        return promise2;
+    }).then((promise2)=>{ // getting the promise2 after successful request
+        console.log(promise2);
+    }).catch((error)=>{
+        // console.log(error); 
+        console.warn(error); // it will shown warning if the link is not valid or broken
+    })
+</script>
+</html>

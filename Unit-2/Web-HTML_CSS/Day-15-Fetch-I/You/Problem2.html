@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let Promise1 = fetch("https://reqres.in/api/users?page=2")
+    Promise1.then((response)=>{
+        let Promise2 = response.json();
+        return Promise2;
+    }).then((finalResponse)=>{
+        let neededData = finalResponse.data;
+        console.log(neededData);
+    })
+</script>
+</html>
