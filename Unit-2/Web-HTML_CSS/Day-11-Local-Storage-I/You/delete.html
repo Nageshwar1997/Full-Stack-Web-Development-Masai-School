@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delete</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let arr = ["Heading-1", "Heading-2", "Heading-2", "Heading-3", "Heading-4"];
+    let container = document.getElementById("container");
+
+    function createDOM(arr) {
+      container.innerHTML = null;
+      arr.forEach((element, index) => {
+        let myDiv = document.createElement("div");
+        let myHeading = document.createElement("h1");
+
+        myHeading.innerText = element;
+        myDiv.style.display = "flex";
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+
+        deleteBtn.addEventListener("click", () => {
+          // console.log(element); // it will give me my element
+          let deletedArr = arr.filter((el, i) => {
+            if (i == index) {
+              return false;
+            } else {
+              return true;
+            }
+          });
+          arr = deletedArr;
+          // console.log(deletedArr); // it will give me after deletedArr array
+          createDOM(arr); 
+        });
+
+        myDiv.append(myHeading, deleteBtn);
+        container.append(myDiv);
+      });
+    }
+    createDOM(arr)
+  </script>
+</html>

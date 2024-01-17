@@ -1,0 +1,7 @@
+LIKE AND DISLIKE
+Create a file puppy.html
+Create an image of some random puppy
+Create 2 buttons Like and Dislike
+On clicking the Like button number of likes should increase by 1
+On clicking the Disike button number of disikes should increase by 1
+Likes and dislikes should be persisted even after we refresh page (use local storage)

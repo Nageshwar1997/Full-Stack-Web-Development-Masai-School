@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="name">
+        <input type="email" id="email">
+        <input type="password" id="password">
+        <input type="submit" id="submit">
+    </form>
+</body>
+<script>
+    let myForm = document.querySelector("form");
+
+    myForm.addEventListener("submit",(event)=>{
+        event.preventDefault(); // it will stop refreshing page
+
+        let formData = {
+            name:myForm.name.value,
+            email:myForm.email.value,
+            password:myForm.password.value
+        }
+
+        let data = localStorage.setItem("abcd",JSON.stringify(formData));
+        console.log(formData);
+    });
+    let LSData = JSON.parse(localStorage.getItem("abcd"));
+    console.log(LSData);
+
+</script>
+</html>
