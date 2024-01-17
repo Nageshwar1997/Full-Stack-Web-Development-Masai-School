@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Step 1: Create the App Component
+    const App = () => {
+      // Step 2: Event handler function for button click
+      const handleClick = () => {
+        console.log("Button clicked...");
+      };
+
+      // Step 3: Return JSX structure
+      return (
+        <div id="container" className="main">
+          <h3>Learning React</h3>
+          <p>Day 2</p>
+          {/* Step 4: Add a button with an onClick event */}
+          <button onClick={handleClick}>Click Me!</button>
+        </div>
+      );
+    };
+
+    // Step 5: Render the Component
+    ReactDOM.render(<App />, document.getElementById("root"));
+  </script>
+</html>
