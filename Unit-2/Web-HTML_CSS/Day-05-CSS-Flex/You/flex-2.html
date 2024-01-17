@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-2</title>
+    <style>
+      .cont {
+        display: flex;
+        border: 5px solid black;
+        /* Sequence?  */
+      }
+      .cont div {
+        width: 150px;
+        height: 100px;
+        font-size: 25px;
+        color: white;
+        /* The higher the order the behind the element  */
+      }
+      .cont div:nth-child(1) {
+        background-color: red;
+        /* order: 0; */
+        /* flex-grow: 2; */
+        /* When there is extra space  */
+        /* Default:- flex-grow: 0;  */
+      }
+      .cont div:nth-child(2) {
+        background-color: green;
+        order: 3;
+        /* flex-grow: 2; */
+        flex-shrink: 3;
+      }
+      .cont div:nth-child(3) {
+        background-color: violet;
+        /* order: 0; */
+        /* flex-grow: 2; */
+      }
+      .cont div:nth-child(4) {
+        background-color: teal;
+        /* order: 0; */
+        /* flex-grow: 2; */
+      }
+      /* 500px -> 4*100px -> 400px -> 100px/4
+      1:1:1:1 == 2:2:2:2 ->  5:1:1:1*/
+
+      /* When flex-grow woorks:- 
+       when parent has more width than all child combined */
+
+      /* When flex-shrink woorks:- 
+       when parent has less width than all child combined */
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </body>
+</html>

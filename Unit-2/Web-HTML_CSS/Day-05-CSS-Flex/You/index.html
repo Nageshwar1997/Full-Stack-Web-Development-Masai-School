@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-1</title>
+    <style>
+      .cont {
+        display: flex;
+        /* height: 150px; */
+        border: 5px solid black;
+        flex-direction: row;
+        /* row is default  */
+        justify-content: space-evenly;
+        /* flex-start is default  */
+        /* width:- 500px / 4*100px-> 400px-> 100px/3 33.33px */
+        /* Distributes space  */
+
+        align-items: stretch;
+        /* align-items: stretch; */
+        /* Default:- stretch  */
+        /* 1. Parent not have height  */
+        /* 2. Child have height  */
+      }
+      .cont div {
+        width: 100px;
+        height: 100px;
+        /* auto  */
+        /* margin: auto; */
+        font-size: 25px;
+        color: white;
+      }
+      .cont div:nth-child(1) {
+        background-color: red;
+      }
+      .cont div:nth-child(2) {
+        background-color: green;
+      }
+      .cont div:nth-child(3) {
+        background-color: violet;
+      }
+      .cont div:nth-child(4) {
+        background-color: teal;
+      }
+      .text {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </body>
+</html>

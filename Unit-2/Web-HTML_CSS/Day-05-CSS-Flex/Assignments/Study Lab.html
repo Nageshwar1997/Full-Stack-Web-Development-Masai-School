@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyLab</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #top-parent{
+            /* border: 2px solid red; */
+            width: 75%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 90px 0px 90px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            
+        }
+        #left{
+            width: 25%;
+            text-align: center;
+            background-color: rgb(175, 4, 243);
+            color: white;
+
+        }
+        #right{
+            display: flex;
+            justify-content: space-between;
+            width: 75%;
+            margin-left: 400px;
+            text-align: center;
+            padding-top: 5px;
+            flex-wrap: wrap;
+        }
+        #right > div {
+            margin-top: 5px;
+        }
+
+        /* Below Contents */
+
+        #main{
+            /* border: 2px solid red; */
+            width: 80%;
+            height: 600px;
+            margin: auto;
+            margin-top: 100px;
+            display: flex;
+            justify-content: space-around;
+        }
+        #main > #left-below {
+            /* border: 1px solid green; */
+            width: 35%;
+            padding: 50px 60px 0px 30px;
+        }
+        #main > #right-below {
+            /* border: 1px solid green; */
+            width: 45%;
+            padding: 0px 30px 0px 30px;
+        }
+
+        /* Right Below */
+        #right-below > div {
+            /* border: 2px solid purple; */
+            width: 100%;
+            height: 45%;
+            margin: 15px 20px 15px 20px;
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .sub > div {
+            /* border: 1px solid yellow; */
+            padding: 0px 20px 0px 20px;
+            text-align: justify;
+            border-radius: 5px;
+            margin: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        }
+        .sub > div > img{
+            width: 55px;
+            height: 55px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        #main p {
+            color: rgb(131, 125, 125);
+            font-weight: 550;
+            font-size: 18px;
+            text-align: left;
+        }#right-below h4 {
+            color: rgb(37, 37, 37);
+            font-size: 20px;
+            text-align: left;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="top-parent">
+        <div id="left">
+            <h1>StudyLab</h1>
+        </div>
+        <div id="right">
+            <div><h3 style="color: blue;">Home</h3></div>
+            <div><h3>About</h3></div>
+            <div><h3>Course</h3></div>
+            <div><h3>Instructor</h3></div>
+            <div><h3>Blog</h3></div>
+            <div><h3>Contact</h3></div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="left-below">
+            <h3 style="color: blue;">WELCOME TO STUDYLAB</h3>
+            <h2>We Are StudyLab An Online Learning Center
+            </h2>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a
+                paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the
+                blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language
+                ocean.</p>
+                <br>
+                <div style="display: flex;">
+                    <div style="width: 40%;"><img
+                            src="https://themewagon.github.io/studylab/images/about.jpg"
+                            alt="" width="100%" height="100%"></div>
+                    <div>
+                        <h4 style="margin-left: 30px; color: black;">Learn anything from StudyLab, Watch video</h4>
+                    </div>
+                </div>
+        </div>
+        <div id="right-below">
+            <div class="sub">
+                <div class="baby">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR5kkp-ie9syNnLVMOkCzKl4v-hsGm56uy5e_P2W9rQ0xJQK8Ei"
+                        alt="blue">
+                    <h4>Top Quality Content</h4>
+                    <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+                <div class="baby">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSnAAkvnI1yPdVrnVcAX7apMfjwTDhs9sGjOU11HipjrumKwzhR"
+                        alt="pink">
+                    <h4>Highly Skilled Instructor</h4>
+                    <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+            </div>
+            <div class="sub">
+                <div class="baby">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQmeQjfZfDBTWNnGwc4SiaWJMfHU4Ar1J7QAm2DcbYKHgzdy864"
+                        alt="yellow">
+                    <h4>World Class & Quiz</h4>
+                    <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+                <div class="baby">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSmZoIqPfRy01TSnaWPQaYgdldiMUDHIhfjbx1vL3RadF_U-aaK"
+                        alt="ocean">
+                    <h4>Get Certified</h4>
+                    <p>A small river named Duden flows by their place and supplies</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
