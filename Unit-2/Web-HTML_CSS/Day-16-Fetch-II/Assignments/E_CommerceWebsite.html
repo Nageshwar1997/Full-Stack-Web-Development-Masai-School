@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch-1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* font-family: Arial, sans-serif; */
+            box-sizing: 0;
+        }
+        #container{
+            border: 1px solid black;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+        }
+        .product{
+            border: 1px solid blue;
+            background-color: lightgrey;
+            width: 100%;
+            height: 450px;
+            word-spacing: 0px;
+            padding: 0px 5px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .prodImg{
+            text-align: center;
+            margin: 5px auto;
+            display: block;
+            width: 70%;
+            height: 40%;
+            border-radius: 8px;
+        }
+        .title{
+            margin: 2px;
+        }
+        .description{
+            font-size: 12px;
+            margin: 2px;
+            text-align: justify;
+        }
+        .price{
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    let container = document.getElementById("container");
+    let response = fetch("https://fakestoreapi.com/products")
+    .then((responseObject)=>{
+        // console.log(responseObject);
+        return responseObject.json();
+    })
+    .then((actualData)=>{
+        // console.log(actualData);
+        displayProducts(actualData);
+    })
+    .catch((error)=>{
+        console.log(error);
+    })
+
+    // Here data is something we will get from API
+    function displayProducts(data){
+        data.forEach(element => {
+            let product = document.createElement("div");
+            product.className="product"
+            let image = document.createElement("img");
+            image.setAttribute("src", element.image);
+            image.className="prodImg";
+
+            let title = document.createElement("h4");
+            title.innerText = element.title;
+            title.className="title";
+
+            let description = document.createElement("p");
+            description.innerText = element.description;
+            description.className="description";
+            
+            let price = document.createElement("h4");
+            price.innerText = `${element.price} $`;
+            price.className="price";
+
+
+            product.append(image, title, description, price);
+            container.append(product);
+        });
+    }
+</script>
+</html>
