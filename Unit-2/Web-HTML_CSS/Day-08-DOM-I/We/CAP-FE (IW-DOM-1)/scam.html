@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ring Bell alert</title>
+  </head>
+  <body>
+    <img id="img"
+      src="https://miro.medium.com/max/1400/1*mdcu3Ku9r44HMtraHUqu5g.jpeg"
+      alt=""
+    />
+  </body>
+</html>
+<script>
+  // Write js here
+  let myImage = document.getElementById("img");
+
+//   myImage.addEventListener("click", ()=>{
+// alert("The website you are going to visit may harm your computer, do you still want to redirect?")
+//   });
+
+//   Another way
+  myImage.addEventListener("click",clickImg);
+
+  function clickImg(){
+    alert("The website you are going to visit may harm your computer, do you still want to redirect?");
+  }
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Events</title>
+  </head>
+  <body>
+    <button id="btn">Ring Bell</button>
+    <img
+      id="image"
+      src="https://miro.medium.com/max/1400/1*mdcu3Ku9r44HMtraHUqu5g.jpeg"
+      alt=""
+    />
+  </body>
+</html>
+<script>
+  // Write js here
+  let btn = document.getElementById("btn");
+  let img = document.getElementById("image");
+
+  btn.addEventListener("click", () => {
+    alert("Please open the door");
+  });
+
+  img.addEventListener("click", showAlert);
+
+  function showAlert() {
+    alert("Please open the door");
+  }
+</script>

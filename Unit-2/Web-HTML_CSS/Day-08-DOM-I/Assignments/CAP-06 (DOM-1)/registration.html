@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Registration</title>
+	<style>
+		input {
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<input type="text" name="name" id="name" placeholder="Enter Name">
+	<select id="gender">
+		<option value="">Gender</option>
+		<option value="Male">M</option>
+		<option value="Female">F</option>
+	</select>
+	<input type="text" name="email" id="email" placeholder="Enter Email">
+	<input type="text" name="mobile" id="mobile" placeholder="Enter Mobile Number">
+	<hr>
+	<h1 id="dName">NAME</h1>
+	<h2 id="dGender">GENDER</h2>
+	<h3 id="dEmail">EMAIL</h3>
+	<h4 id="dMobile">MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+
+		let name = document.getElementById("dName");
+		let gender = document.getElementById("dGender");
+		let email = document.getElementById("dEmail");
+		let mobile = document.getElementById("dMobile");
+
+
+
+		function showName() {
+			// Show filled name inside h1
+			let inpName = document.getElementById("name").value;
+			name.innerText = name.innerText + " :- " + inpName;
+		}
+
+		function showGender() {
+			// Show the selected gender inside h2
+			let optionGender = document.getElementById("gender").value;
+			gender.innerText = gender.innerText + " :- " + optionGender;
+		}
+
+		function showEmail() {
+			// Show the filled email inside h3
+			let inpEmail = document.getElementById("email").value;
+			email.innerText = email.innerText + " :- " + inpEmail;
+		}
+
+		function showMobile() {
+			// Show the filled mobile inside h4
+			let inpMobile = document.getElementById("mobile").value;
+			mobile.innerText = mobile.innerText + " :- " + inpMobile;
+		}
+
+		function resetForm() {
+			// Reset all the form elements to default values (blank "")
+			let inpName = document.getElementById("name");
+			inpName.value = "";
+
+			let optionGender = document.getElementById("gender");
+			optionGender.value = "";
+
+			let inpEmail = document.getElementById("email");
+			inpEmail.value = "";
+
+			let inpMobile = document.getElementById("mobile");
+			inpMobile.value = "";
+
+		}
+
+		function resetDisplay() {
+			// Reset all the headings (h1, h2, h3, h4) to blank values
+			name.innerText ="NAME";
+			gender.innerText ="GENDER";
+			email.innerText = "EMAIL";
+			mobile.innerText ="MOBILE";
+		}
+	</script>
+</body>
+
+</html>

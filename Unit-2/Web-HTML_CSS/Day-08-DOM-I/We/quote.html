@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn" onclick="showText()">Show Quote in console</button>
+    <p id="quote">Talk is cheap Show me the code</p>
+  </body>
+  <script>
+    //write js here
+    let quote = document.getElementById("quote");
+
+    function showText() {
+      console.log(quote.textContent);
+      console.log(quote.innerText);
+    }
+  </script>
+</html>
+
+<!-- On clicking on button, display the quote given in p tag in console -->

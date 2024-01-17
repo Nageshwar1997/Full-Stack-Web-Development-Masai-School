@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        #parent {
+            text-align: center;
+            margin: auto;
+            margin-top: 100px;
+            width: 50%;
+            padding: 20px;
+            display: block;
+            justify-content: space-evenly;
+        }
+
+        button {
+            font-weight: 700;
+            width: 15%;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        input {
+            text-align: center;
+            width: 30%;
+            height: 30px;
+            font-size: 15px;
+            border-radius: 3px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <h3>Mini Calculator</h3>
+        <div class="child">
+            <input id="num1" type=""+ placeholder="Enter 1st "+>
+            <input id="num2" type=""+ placeholder="Enter 2nd "+>
+        </div>
+        <br>
+        <div class="child">
+            <button id="sum">Add</button>
+            <button id="sub">Subtract</button>
+            <button id="prod">Multiply</button>
+            <button id="divide">Divide</button>
+        </div>
+    </div>
+</body>
+<script>
+
+    // Addition Event
+    let Sum = document.getElementById("sum");
+
+    Sum.addEventListener("click", Addition);
+    function Addition() {
+        let Num1 = document.getElementById("num1");
+        let Num2 = document.getElementById("num2");
+
+        let sum = (+Num1.value) + (+Num2.value);
+        alert(Num1.value + " + " + Num2.value + " = " + sum);
+
+    }
+
+    // Subtraction Event
+    let Sub = document.getElementById("sub");
+
+    Sub.addEventListener("click", Subtraction);
+    function Subtraction() {
+        let Num1 = document.getElementById("num1");
+        let Num2 = document.getElementById("num2");
+
+        let sub = (+Num1.value) - (+Num2.value);
+        alert(Num1.value + " - " + Num2.value + " = " + sub);
+
+    }
+
+    // Multiplication Event
+    let Mul = document.getElementById("prod");
+
+    Mul.addEventListener("click", Multiplication);
+    function Multiplication() {
+        let Num1 = document.getElementById("num1");
+        let Num2 = document.getElementById("num2");
+
+        let mult = (+Num1.value) * (+Num2.value);
+        alert(Num1.value + " * " + Num2.value + " = " + mult);
+
+    }
+
+    // Division Event
+    let Div = document.getElementById("divide");
+
+    Div.addEventListener("click", Divide);
+    function Divide() {
+        let Num1 = document.getElementById("num1");
+        let Num2 = document.getElementById("num2");
+
+        let div = (+Num1.value) / (+Num2.value);
+        alert(Num1.value + " / " + Num2.value + " = " + div);
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Masai Application</title>
+</head>
+
+<body>
+    <h1>Masai School Application</h1>
+    <p>Enter Your name and gender to apply for masai school</p>
+    <h2 id="display">Display entered name and gender here</h2>
+    <hr>
+    <input type="text" id="name" placeholder="Enter your name">
+    <select id="gender">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select>
+    <button id="btn">Apply</button>
+</body>
+
+</html>
+<script>
+    let inputEl = document.getElementById("name");
+    let selectEl = document.getElementById("gender");
+    let myButton = document.getElementById("btn");
+    let myHeading = document.getElementById("display");
+
+    myButton.addEventListener("click", getInputValue);
+
+    function getInputValue() {
+        myHeading.innerText = "Input Value :- " + inputEl.value + "\n" + " Select Value :- " + selectEl.value;
+        // console.log(myHeading.innerText);
+    }
+</script>
