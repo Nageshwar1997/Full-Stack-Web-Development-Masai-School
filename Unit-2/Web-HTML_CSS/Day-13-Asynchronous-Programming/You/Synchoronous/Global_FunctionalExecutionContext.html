@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    // Global Execution Context
+
+    var name1 = "Name-1";
+    console.log(name1);
+    func1();
+    var name2 = "Name-2";
+    console.log(name2);
+
+    
+    // Functional Execution Context
+
+        function func1(){
+        var func1_name1 = "Func1_Name1";
+        console.log(func1_name1);
+        func2();
+        var func1_name2 = "Func1_Name2";
+        console.log(func1_name2);
+    }
+
+    function func2(){
+        var func2_name1 = "Func2_Name1";
+        console.log(func2_name1);
+        var func2_name2 = "Func2_Name2";
+        console.log(func2_name2);
+    }
+</script>
+</html>

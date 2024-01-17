@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #display {
+            font-size: 2em;
+        }
+
+        #controls {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="display">00:00:00</div>
+    <div id="controls">
+        <button onclick="startStopwatch()">Start</button>
+        <button onclick="pauseStopwatch()">Pause</button>
+        <button onclick="resetStopwatch()">Reset</button>
+    </div>
+
+    <script>
+        let stopwatch;
+        let isRunning = false;
+        let seconds = 0;
+
+        function startStopwatch() {
+            if (!isRunning) {
+                isRunning = true;
+                stopwatch = setInterval(updateDisplay, 1000);
+            }
+        }
+
+        function pauseStopwatch() {
+            if (isRunning) {
+                isRunning = false;
+                clearInterval(stopwatch);
+            }
+        }
+
+        function resetStopwatch() {
+            isRunning = false;
+            clearInterval(stopwatch);
+            seconds = 0;
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            seconds++;
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const remainingSeconds = seconds % 60;
+
+            const displayString = formatTime(hours, minutes, remainingSeconds);
+            document.getElementById('display').innerText = displayString;
+        }
+
+        function formatTime(hours, minutes, seconds) {
+            const formattedHours = hours > 0 ? padZero(hours) + ':' : '';
+            const formattedMinutes = minutes > 0 ? padZero(minutes) + ':' : '';
+            const formattedSeconds = padZero(seconds);
+            return formattedHours + formattedMinutes + formattedSeconds;
+        }
+
+        function padZero(num) {
+            return num < 10 ? '0' + num : num;
+        }
+    </script>
+</body>
+</html>

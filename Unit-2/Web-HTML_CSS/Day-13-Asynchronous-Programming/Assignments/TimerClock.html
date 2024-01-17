@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TimerClock</title>
+    <style>
+      body {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span id="hours1">0</span><span id="hours2">0</span>:</h1>
+    <h1><span id="minutes1">0</span><span id="minutes2">0</span>:</h1>
+    <h1><span id="seconds1">0</span><span id="seconds2">0</span></h1>
+  </body>
+  <script>
+    let hoursHeadingL = document.getElementById("hours1");
+    let hoursHeadingR = document.getElementById("hours2");
+
+    let minutesHeadingL = document.getElementById("minutes1");
+    let minutesHeadingR = document.getElementById("minutes2");
+
+    let secondsHeadingL = document.getElementById("seconds1");
+    let secondsHeadingR = document.getElementById("seconds2");
+
+    let hoursL = 0;
+    let hoursR = 0;
+    let minutesL = 0;
+    let minutesR = 0;
+    let secondsL = 0;
+    let secondsR = 0;
+
+
+    function updateTimer() {
+      secondsR++;
+      if (secondsR == 10) {
+        secondsL++;
+        if (secondsL == 6 && secondsR == 10) {
+          minutesR++;
+          if (minutesR == 10) {
+            minutesL++;
+            if (minutesL == 6 && minutesR == 10) {
+              hoursR++;
+              if (
+                hoursL == 2 &&
+                hoursR == 3 &&
+                minutesL == 5 &&
+                minutesR == 9 &&
+                secondsL == 5 &&
+                secondsR == 9
+              ) {
+                hoursL = 0;
+                hoursR = 0;
+                minutesL = 0;
+                minutesR = 0;
+                secondsL = 0;
+                secondsR = 0;
+                hoursHeadingL.innerText = hoursL;
+                hoursHeadingR.innerText = hoursR;
+                minutesHeadingL.innerText = minutesL;
+                minutesHeadingR.innerText = minutesR;
+                secondsHeadingL.innerText = secondsL;
+                secondsHeadingR.innerText = secondsR;
+              }
+              if (hoursR == 10) {
+                hoursL++;
+                hoursR = 0;
+                hoursHeadingL.innerText = hoursL;
+              }
+              minutesL = 0;
+              hoursHeadingR.innerText = hoursR;
+            }
+            minutesR = 0;
+            minutesHeadingL.innerText = minutesL;
+          }
+          secondsL = 0;
+          minutesHeadingR.innerText = minutesR;
+        }
+        secondsR = 0;
+        secondsHeadingL.innerText = secondsL;
+      }
+      secondsHeadingR.innerText = secondsR;
+    }
+
+    let timer = setInterval(() => {
+      updateTimer();
+    }, 1000);
+  </script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchoronous</title>
+</head>
+<body>
+    <div>
+        <h1>Synchoronous</h1>
+    </div>
+</body>
+<script>
+    console.log(window);
+
+    console.log("Task - 1");
+    console.log("Task - 2");
+    for(let i=0; i<=100000000; i++){
+        if(i==0){
+            console.log("Started");
+        }
+        if(i==100000000){
+            console.log("Ended");
+        }
+    }
+    console.log("Task - 3");
+    console.log("Task - 4");
+
+
+    // var , let , const
+    // console.log(a); // undefined
+    var a = 10;
+    console.log(a); // 10
+    
+    // console.log(b); // error --> Cannot access 'b' before initializatio
+    let b=10;
+    console.log(b); // 10
+    
+    // console.log(c); // error --> Cannot access 'c' before initialization
+    const c=10;
+    console.log(c); // 10
+
+
+    d(); // Normal Function
+    // console.log(d()); // Normal Function
+    // console.log(d); /* ƒ d(){ console.log("Normal Function"); } */
+    function d(){
+        console.log("Normal Function");
+    }
+
+    // e(); // error --> e is not a function
+    // console.log(e()); // // error --> e is not a function
+    // console.log(e); // undefined
+    var e = function(){
+        console.log("Anonymous Function");
+    }
+    e(); // Anonymous Function
+
+    // f(); // error --> f is not a function
+    // console.log(f()); // error --> Cannot access 'f' before initialization
+    // console.log(f); // error --> Cannot access 'f' before initialization
+    let f = ()=>{
+        console.log("Arrow Function");
+    }
+    f(); // Arrow Function
+
+    // same with const
+
+</script>
+</html>

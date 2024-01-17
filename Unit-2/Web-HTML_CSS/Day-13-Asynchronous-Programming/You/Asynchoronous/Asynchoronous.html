@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+
+</body>
+<script>
+    // setTimeout(function, delay)
+    console.log("Task - 1");
+    setTimeout(()=>{
+        console.log("Task - 2");
+    },1000);
+    console.log("Task - 3");
+
+    // setInterval(function, delay)
+    console.log("Task - 4");
+    let i = 0;
+    let stop = setInterval(function(){
+        console.log("Task - 5");
+        i++;
+        if(i==10){
+            clearInterval(stop);
+        }
+    },1000);
+    console.log("Task - 6");
+
+</script>
+</html>

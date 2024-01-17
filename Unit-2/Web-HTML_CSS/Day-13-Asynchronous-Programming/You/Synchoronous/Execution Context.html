@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(a); // undefined
+    var a=10;
+    console.log(a); // 10
+
+    b(); // Normal Ok
+    function b(){
+        console.log("Normal Ok");
+    }
+
+    console.log(c);
+    var c = ()=>{
+        console.log("Arrow Ok");
+    }
+    console.log(c); // function
+    c(); // Arrow Ok
+</script>
+</html>
