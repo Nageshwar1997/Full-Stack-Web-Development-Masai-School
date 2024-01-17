@@ -1,0 +1,48 @@
+/* Imported Links From Google*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+/* CSS Part */
+*{
+    font-family: 'Poppins', sans-serif;
+}
+#container > div > div > h2:nth-child(2){
+    color: rgb(193, 159, 36);
+}
+p{
+    font-size: 18px;
+    color: rgb(91, 83, 83);
+}
+body{
+    background-color: #FFFEFE;
+}
+#container{
+    width: 85%;
+    height: 100%;
+    margin: auto;
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 30px;
+}
+#container > div{
+    background-color: white;
+    width: 90%;
+    height: 100%;
+    display: block;
+    justify-content: space-evenly;
+    margin: auto;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: rgba(145, 105, 105, 0.16) 0px 10px 36px 0px, rgba(157, 117, 117, 0.06) 0px 0px 0px 1px;
+    padding: 5px 20px;
+
+
+}
+#container > div > div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Specificity</title>
+    <style>
+      #head {
+        color: red;
+        /* 100  */
+      }
+      .heading {
+        color: green;
+        /* 10 */
+      }
+      h1 {
+        color: blue;
+        background-color: yellow;
+        /* 1 */
+      }
+      #cont h1 {
+        color: aqua;
+        /* Id:- 100, space:- 0,  tag:- 1 */
+        /* 100 + 0 + 1 -> 101; */
+      }
+      #cont h1:hover {
+        color: brown;
+        /* Id:- 100 + Tag:- 1 + psudo-class:- 10 = 111  */
+      }
+
+      #head {
+        color: green;
+      }
+      #head {
+        color: pink;
+      }
+      /* Which one comes later will be applied  */
+    </style>
+  </head>
+  <body>
+    <div id="cont">
+      <h1 id="head" class="heading">I am Heading</h1>
+    </div>
+  </body>
+</html>
