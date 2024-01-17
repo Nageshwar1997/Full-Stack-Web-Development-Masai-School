@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML vs innerText</title>
+</head>
+<body>
+    <p id="random-1"></p>
+    <p id="random-2"></p>
+    <p id="random-3"></p>
+    <p id="random-4"></p>
+</body>
+<script>
+    let random1 = document.getElementById("random-1");
+    let random2 = document.getElementById("random-2");
+    let random3 = document.getElementById("random-3");
+    let random4 = document.getElementById("random-4");
+
+    random1.innerText = "Text of innerText";
+    random2.innerHTML = "Text of innerHTML";
+
+    random3.innerText = "<h1>Text of innerText</h1>";
+    random4.innerHTML = "<h1>Text of innerHTML</h1>";
+</script>
+</html>

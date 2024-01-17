@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Table</title>
+    <link rel="stylesheet" href="./Form/Get Data From Form/index.css" />
+  </head>
+  <body>
+    <div id="cont">
+      <table>
+        <!-- Dont change order of columns -->
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Employee ID</th>
+            <th>Department</th>
+            <th>Experience in years</th>
+            <th>Email address</th>
+            <th>Mobile Number</th>
+            <th>Role</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Append your output here -->
+        </tbody>
+      </table>
+    </div>
+  </body>
+  <script>
+    // Get data from form and append to table body
+    let cont = document.getElementById("cont");
+    let tbody = document.querySelector("tbody");
+
+    let data = JSON.parse(localStorage.getItem("employeeRecords"));
+    if (data == null) {
+        alert("Please fill all fields");
+      data = [];
+    //   console.log(data);
+    }
+
+    tbody.innerHTML=null;
+    data.map((element, index) => {
+      // Creating tableRows & tableData
+      let tr = document.createElement("tr");
+      let tdName = document.createElement("td");
+      let tdEmplID = document.createElement("td");
+      let tdDepartment = document.createElement("td");
+      let tdExp = document.createElement("td");
+      let tdEmail = document.createElement("td");
+      let tdMobNo = document.createElement("td");
+      let tdRole = document.createElement("td");
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerText = "Delete";
+      deleteBtn.style.width = "100%";
+      deleteBtn.style.backgroundColor = "red";
+      deleteBtn.style.color = "white";
+      deleteBtn.style.marginTop = "25%";
+
+      //   Taking value to the tableRows & tableData
+      tdName.innerText = element.name;
+      tdEmplID.innerText = element.employeeID;
+      tdDepartment.innerText = element.department;
+      tdExp.innerText = element.experience;
+      tdEmail.innerText = element.email;
+      tdMobNo.innerText = element.mobileNo;
+      if (tdExp.innerText >= 5) {
+        tdRole.innerText = "Senior";
+      } else if (tdExp.innerText >= 2 && tdExp < 5) {
+        tdRole.innerText = "Junior";
+      } else if (tdExp.innerText <= 1) {
+        tdRole.innerText = "Trainee";
+      } else {
+        tdRole.innerText = "Intern";
+      }
+
+      //   Now I want to delete row which is I selected
+      deleteBtn.addEventListener("click", () => {
+        alert("Are you sure to delete this data");
+        let removingIndex = data.findIndex(
+        (el) => el.tdEmplID == element.tdEmplID
+      );
+      if (removingIndex != -1) {
+        data.splice(removingIndex, 1);
+      }
+      tr.remove();
+      });
+
+      
+      // Appending tableData to tableRow
+      tr.append(
+        tdName,
+        tdEmplID,
+        tdDepartment,
+        tdExp,
+        tdEmail,
+        tdMobNo,
+        tdRole,
+        deleteBtn
+      );
+
+      tbody.append(tr);
+      //   Appending rows to tableBody
+    });
+  </script>
+</html>

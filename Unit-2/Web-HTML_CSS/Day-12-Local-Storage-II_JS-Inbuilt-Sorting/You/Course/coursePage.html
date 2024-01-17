@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course</title>
+</head>
+<body>
+    <div class="nav">
+        <a href="./homePage.html">Home</a>
+        <a href="./coursePage.html">Course</a>
+    </div>
+</body>
+<script>
+    let courseData = JSON.parse(localStorage.getItem("course"));
+    if(courseData==null){
+        courseData=[];
+    }
+    console.log(courseData);
+</script>
+</html>

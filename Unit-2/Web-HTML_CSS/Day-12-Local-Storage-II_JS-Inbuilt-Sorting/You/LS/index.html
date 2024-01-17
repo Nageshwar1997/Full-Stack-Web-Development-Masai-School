@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./index.html">Home</a>
+      <a href="./couse.html">Course</a>
+    </div>
+
+    <div id="cont"></div>
+  </body>
+  <script>
+    let courses = [
+      {
+        name: "Course-1",
+        price: 100,
+      },
+      {
+        name: "Course-2",
+        price: 101,
+      },
+      {
+        name: "Course-3",
+        price: 102,
+      },
+      {
+        name: "Course-4",
+        price: 103,
+      },
+    ];
+    let container = document.getElementById("cont");
+
+    courses.forEach(function (element, index) {
+      let course = document.createElement("div");
+      let name = document.createElement("h1");
+      name.innerText = element.name;
+      let price = document.createElement("h3");
+      price.innerText = element.price;
+
+      let cart = document.createElement("button");
+      cart.innerText = "Course";
+      cart.addEventListener("click", () => {
+        let LSData = JSON.parse(localStorage.getItem("course"));
+        if (LSData == null) {
+          LSData = [];
+        }
+        LSData.push(element);
+        localStorage.setItem("course", JSON.stringify(LSData));
+      });
+
+      course.append(name, price, cart);
+      container.append(course);
+    });
+  </script>
+</html>
+
+1. Geting Data from a Form. 2. Store this data in LS(Array of Objects). 3. Get
+the LS Data in Next Page. 4. Loop Over the LSdata and show it in the DOM as
+table rows.

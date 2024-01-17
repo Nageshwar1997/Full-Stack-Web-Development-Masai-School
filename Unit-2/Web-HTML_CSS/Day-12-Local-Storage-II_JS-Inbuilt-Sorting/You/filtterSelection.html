@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LS-2</title>
+  </head>
+  <body>
+    <select id="filter">
+      <option value="Select an Option">Select an Option</option>
+      <option value="Heading-1">Heading - 1</option>
+      <option value="Heading-2">Heading - 2</option>
+      <option value="Heading-3">Heading - 3</option>
+      <option value="Heading-4">Heading - 4</option>
+    </select>
+     
+    <div id="container"></div>
+  </body>
+
+  <script>
+    let container = document.getElementById("container");
+    let filterSelect = document.getElementById("filter");
+
+    // For getting headings
+    let arr = ["Heading-1", "Heading-2", "Heading-2", "Heading-3", "Heading-4"];
+    
+    arr.forEach((element, index) => {
+      let Heading = document.createElement("h1");
+      Heading.innerText = element;
+      container.append(Heading);
+    });
+
+    // for getting those element which I selected
+    filterSelect.addEventListener("change",()=>{
+        let filtered = arr.filter((element, index)=> {
+            if(element==filterSelect.value){
+                return true;
+            }
+            else{
+                return false;
+            }
+        });
+        // console.log(filtered); // Here I get the filtered array
+        
+        
+        // looping over the filtered array for showing the array on DOM
+        container.innerHTML=null; // it will delete everything before I select
+        filtered.map((element, index)=>{
+            let Heading = document.createElement("h1");
+            Heading.innerText= element;
+            container.append(Heading);
+        });
+    });
+
+
+  </script>
+</html>

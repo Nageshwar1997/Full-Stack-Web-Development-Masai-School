@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LS-2</title>
+  </head>
+  <body>
+    <select id="filter">
+      <option value="">Select an Option</option>
+      <option value="Heading-1">Heading-1</option>
+      <option value="Heading-2">Heading-2</option>
+      <option value="Heading-3">Heading-3</option>
+      <option value="Heading-4">Heading-4</option>
+    </select>
+    <div id="cont"></div>
+    <p id="random-1"></p>
+    <p id="random-2"></p>
+  </body>
+
+  <script>
+    let arr = ["Heading-1", "Heading-2", "Heading-2", "Heading-3", "Heading-4"];
+    let cont = document.getElementById("cont");
+    let filterSelect = document.getElementById("filter");
+    let random1 = document.getElementById("random-1");
+    let random2 = document.getElementById("random-2");
+
+    arr.forEach(function (element, index) {
+      let heading = document.createElement("h1");
+      heading.innerText = element;
+      cont.append(heading);
+    });
+
+    // Select:- Heading-2
+    // Heading-1❌ Heading-2+ Heading-3❌ Heading-4❌
+
+    filterSelect.addEventListener("change", () => {
+      let filtered = arr.filter(function (element, index) {
+        if (element === filterSelect.value) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      cont.innerHTML = null;
+      filtered.forEach(function (element, index) {
+        let heading = document.createElement("h1");
+        heading.innerText = element;
+        cont.append(heading);
+      });
+    });
+  </script>
+</html>

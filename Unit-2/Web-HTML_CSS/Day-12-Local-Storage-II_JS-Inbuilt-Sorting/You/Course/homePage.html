@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      div{
+        border: 1px solid;
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav">
+      <a href="./homePage.html">Home</a>
+      <a href="./coursePage.html">Course</a>
+    </div>
+    <div id="container">
+
+    </div>
+  </body>
+  <script>
+    let Courses = [
+      { name: "Course-1", price: 100 },
+      { name: "Course-2", price: 101 },
+      { name: "Course-3", price: 102 },
+      { name: "Course-4", price: 103 },
+    ];
+
+    let container = document.getElementById("container");
+
+    Courses.forEach((element, index)=>{
+        let course = document.createElement("div");
+
+        let name = document.createElement("h1");
+        name.innerText=element.name;
+
+        let price = document.createElement("h3");
+        price.innerText= element.price;
+        
+        
+        let cart = document.createElement("button");
+        
+        cart.addEventListener("click",()=>{
+          // console.log(element);
+            let LSData = JSON.parse(localStorage.getItem("course"));
+            if(LSData==null){
+                LSData=[];
+            }
+            LSData.push(element)
+            // console.log(LSData);
+            localStorage.setItem("course",JSON.stringify(LSData));
+        })
+
+        cart.innerText="Course";
+        course.append(name, price, cart);
+        container.append(course);
+    })
+  </script>
+</html>

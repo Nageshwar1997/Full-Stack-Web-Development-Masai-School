@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="heading">0</h1>
+    <button>Increment</button>
+    <button>Decrement</button>
+  </body>
+  <script>
+    let heading = document.getElementById("heading");
+    let buttons = document.querySelectorAll("button");
+
+    let counter = JSON.parse(localStorage.getItem("counter"));
+
+    if (counter == null) {
+      counter = 0;
+    }
+    heading.innerText = counter;
+
+    buttons.forEach((element, index) => {
+      element.addEventListener("click", () => {
+        if (element.innerText == "Increment") {
+          counter++;
+          // console.log(counter);
+          localStorage.setItem("counter", JSON.stringify(counter));
+          heading.innerText = counter;
+        }
+        if (element.innerText == "Decrement") {
+          if(counter<1){
+            counter=0;
+            alert('Counter is already at minimum value');
+          }
+          else{
+            counter--;
+          // console.log(counter);
+          localStorage.setItem("counter", JSON.stringify(counter));
+          heading.innerText = counter;
+          }
+        }
+      });
+    });
+
+    // 1. getItem
+    // 2. setItem
+  </script>
+</html>

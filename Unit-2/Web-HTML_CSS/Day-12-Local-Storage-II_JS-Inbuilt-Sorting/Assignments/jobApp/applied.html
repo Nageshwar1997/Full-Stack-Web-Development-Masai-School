@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Database</title>
+    <link rel="stylesheet" href="commonStyles.css" />
+  </head>
+
+  <body>
+    <div id="links">
+      <div><a href="index.html">Home</a></div>
+      <div><a href="applied.html">Applied Jobs</a></div>
+      <div><a href="bookmark.html">Bookmarks</a></div>
+    </div>
+
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Job applied</th>
+            <th>Salary expected</th>
+            <th>Add to bookmark</th>
+          </tr>
+        </thead>
+        <tbody id="body">
+          <!-- Append your output to tbody -->
+        </tbody>
+      </table>
+    </main>
+  </body>
+  <script>
+    //you need to code here
+    
+
+    let LSData = JSON.parse(localStorage.getItem("jobList"));
+    let tbody = document.querySelector("tbody");
+    // console.log(LSData);
+    if (LSData == null) LSData = [];
+
+    LSData.map((element, index) => {
+      let tr = document.createElement("tr");
+
+      let tdName = document.createElement("td");
+      let tdEmail = document.createElement("td");
+      let tdJob = document.createElement("td");
+      let tdSalary = document.createElement("td");
+      let tdBookmark = document.createElement("td");
+      tdBookmark.innerHTML = "<button>Bookmark</button>";
+
+      tdName.innerText = element.name;
+      tdEmail.innerText = element.email;
+      tdJob.innerText = element.role;
+      tdSalary.innerText = element.salary;
+
+      tdBookmark.addEventListener("click", ()=>{
+        let bookmarkData = JSON.parse(localStorage.getItem("bookmark"));
+        if(bookmarkData==null){
+          bookmarkData = [];
+        }
+        
+        bookmarkData.push(element);
+        localStorage.setItem("bookmark",JSON.stringify(bookmarkData));
+        // console.log(bookmarkData);
+      })
+
+      tr.append(tdName, tdEmail, tdJob, tdSalary, tdBookmark);
+      tbody.append(tr);
+    });
+  </script>
+</html>
