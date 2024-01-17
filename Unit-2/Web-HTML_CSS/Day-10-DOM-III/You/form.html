@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Working With Forms</title>
+  </head>
+  <body>
+    <h1>Sign up Form</h1>
+    <form id="abcd">
+      <input type="text" id="name" placeholder="Put Your Name Here" />
+      <input type="email" id="email" placeholder="Put Your Email" />
+      <input type="password" id="password" placeholder="Put Your password" />
+      <input id="submit" type="submit" value="Sign up" />
+    </form>
+  </body>
+  <script>
+    let form = document.getElementById("abcd");
+    let nameInp = document.getElementById("name");
+    let submit = document.getElementById("submit");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      console.log(nameInp.value);
+      console.log(form.name.value);
+      console.log(form.email.value);
+      console.log(form.password.value);
+      let formData = {
+        name: form.name.value,
+        email: form.email.value,
+        password: form.password.value,
+      };
+      console.log(formData);
+    });
+  </script>
+</html>

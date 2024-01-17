@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+  </head>
+  <body>
+    <div id="container">
+      <img src="" alt="" />
+      <button id="prev"><</button>
+      <button id="next">></button>
+    </div>
+  </body>
+  <script>
+    let container = document.getElementById("container");
+    let prevBTN = document.getElementById("prev");
+    let nextBTN = document.getElementById("next");
+
+    imageArr = [
+      "../Images/Car1.jpeg",
+      "../Images/Car2.jpeg",
+      "../Images/Car3.jpeg",
+      "../Images/Car4.jpeg",
+    ];
+
+    let image = document.querySelector("img");
+
+    let currentImage = 0;
+    image.setAttribute("src", imageArr[currentImage]);
+    
+    prevBTN.addEventListener("click", () => {
+        currentImage--;
+        if(currentImage<0){
+            currentImage=imageArr.length-1;
+        }
+        image.setAttribute("src", imageArr[currentImage]);
+    });
+    
+    nextBTN.addEventListener("click", () => {
+        currentImage++;
+        if(currentImage>=imageArr.length){
+            currentImage=0;
+        }
+        image.setAttribute("src", imageArr[currentImage]);
+    });
+  </script>
+</html>

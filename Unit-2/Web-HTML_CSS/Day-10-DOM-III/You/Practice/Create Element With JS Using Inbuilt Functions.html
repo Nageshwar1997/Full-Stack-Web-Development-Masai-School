@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+  <script>
+    let container = document.getElementById("container");
+
+    let arr = [
+      "i'm Heading - 1",
+      "i'm Heading - 2",
+      "i'm Heading - 3",
+      "i'm Heading - 4",
+      "i'm Heading - 5",
+    ];
+
+    // Some Main Inbuilt Functions :-
+    // 1. forEach
+    // 2. map
+    // 3. filter
+
+    arr.forEach((element, index) => {
+      let Heading = document.createElement("h1");
+      Heading.innerText = element;
+      Heading.style.color = "red";
+      // console.log(element);
+
+      container.append(Heading);
+    });
+
+    arr.map((element) => {
+      let Heading = document.createElement("h1");
+      Heading.innerText = element;
+      Heading.style.color = "green";
+
+      container.append(Heading);
+    });
+
+    arr.filter((element, index) => {
+      let Heading = document.createElement("h1");
+      if (index % 2 == 1) {
+        Heading.innerText = element;
+        Heading.style.color = "blue";
+
+        container.append(Heading);
+      }
+    });
+  </script>
+</html>

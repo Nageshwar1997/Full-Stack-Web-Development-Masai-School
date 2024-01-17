@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoM-3</title>
+    <style>
+        .text{
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    // 1. Create a Container.
+    // 2. Get that in JS (getElementById).
+    // 3. Create a element with document.createElement with tag
+    // 1. Create a h1 tag
+    // 2. Give it some Text
+    // 3. Put it inside Container
+
+    let container = document.getElementById("container");
+
+    container.style.width="300px";
+    container.style.height="300px";
+    container.style.border="1px solid black";
+
+
+    let heading = document.createElement("h1");
+    let para = document.createElement("p");
+
+    heading.innerText="I'm Heading";
+    heading.style.color="red";
+    heading.style.textAlign="center";
+    heading.setAttribute("id","heading1");
+    heading.setAttribute("class","text");
+    
+    
+    para.innerText="I'm a paragraph";
+    para.style.color="blue";
+    para.style.textAlign="center";
+    para.setAttribute("id","para1")
+    para.setAttribute("class","text");
+
+
+    // container.append(heading,para); // or
+    document.querySelector("#container").append(heading,para)
+</script>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+      #container {
+        width: 95%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        margin: auto;
+      }
+
+      #container > div{
+        border: 1px solid red;
+        height: 600px;
+      }
+      #container > div > img{
+        width: 95%;
+        height: 60%;
+        margin: auto;
+        padding: 10px;
+      }
+      #container > div > h3, p, h4{
+        padding-left: 10px;
+      }
+      button{
+        margin-left: 10px;
+        background-color: aquamarine;
+        border: none;
+        width: 20vh;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+  </body>
+  <script>
+    let cont = document.getElementById("container");
+
+    const Products = [
+      {
+        image: "../Images/Mobile_Images/Iphone_14.webp",
+        name: "Iphone 14",
+        price: "89999",
+        brand: "Iphone",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Iphone_14+.webp",
+        name: "Iphone 14+",
+        price: "99999",
+        brand: "Iphone",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/OnePlus_Nord.webp",
+        name: "OnePlus Nord",
+        price: "79999",
+        brand: "OnePlus",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Poco_C5.webp",
+        name: "Poco C5",
+        price: "69499",
+        brand: "POCO",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Realme_C51.webp",
+        name: "Realme C51",
+        price: "54499",
+        brand: "Realme",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Realme_11Pro+.webp",
+        name: "Realme 11Pro+",
+        price: "29999",
+        brand: "Realme",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Redmi_12.webp",
+        name: "Redmi 12",
+        price: "25499",
+        brand: "Redmi",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Samsung_F04.webp",
+        name: "Samsung F04",
+        price: "15499",
+        brand: "Samsung",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Samsung_F14.webp",
+        name: "Samsung F14",
+        price: "12999",
+        brand: "Samsung",
+        seller: "Mobile Plaza",
+      },
+      {
+        image: "../Images/Mobile_Images/Vivo_T2x.webp",
+        name: "Vivo T2x",
+        price: "21499",
+        brand: "Vivo",
+        seller: "Mobile Plaza",
+      },
+    ];
+
+    Products.map((productEle) => {
+      let card = document.createElement("div");
+      let prodImage = document.createElement("img");
+      let prodName = document.createElement("h3");
+      let prodPrice = document.createElement("p");
+      let prodBrand = document.createElement("h4");
+      let prodSeller = document.createElement("p");
+      let btn = document.createElement("button");
+
+      prodImage.setAttribute("src", productEle.image);
+      
+
+      prodName.innerText = productEle.name;
+      prodPrice.innerText = productEle.price;
+      prodBrand.innerText = productEle.brand;
+      prodSeller.innerText = productEle.seller;
+      btn.innerText="Buy";
+
+    //   card.append(prodImage,prodName, prodPrice, prodBrand, prodSeller, btn);
+    //   cont.append(card);
+    });
+  </script>
+</html>

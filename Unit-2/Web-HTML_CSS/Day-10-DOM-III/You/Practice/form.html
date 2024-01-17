@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <label>Sign Up Form</label>
+    <form id="form" action="">
+    <input type="text" id="name" placeholder="Enter Name">
+    <input type="email" id="email" placeholder="Enter email">
+    <input type="password" id="password" placeholder="Enter password">
+    <input type="submit" name="submit" id="submit" value="Sign Up">
+    </form>
+
+    <!-- <label>Sign In Form</label>
+    <form action="">
+    <input type="email" id="email" placeholder="Enter email">
+    <input type="password" id="password" placeholder="Enter password">
+    <input type="submit" name="submit" id="submit" value="Sign In">
+    </form> -->
+</body>
+<script>
+    let form = document.getElementById("form");
+
+    // 1st way 
+    let nameInp = document.getElementById("name");
+    let emailInp = document.getElementById("email");
+    let PasswordInp = document.getElementById("password");
+    
+    form.addEventListener("submit", (event)=>{
+        event.preventDefault();
+
+        // 1st way :- With the help of variable
+        console.log(nameInp.value);
+        console.log(emailInp.value);
+        console.log(PasswordInp.value);
+        
+        //  2nd way without taking variable  (objectName.IdName.value)
+        console.log(form.name.value);
+        console.log(form.email.value);
+        console.log(form.password.value);
+
+
+        // If I want to store data in object
+        let formData = {
+            name: form.name.value,
+            email: form.email.value,
+            password: form.password.value
+        };
+        console.log(formData);
+    });
+
+    // // Don't Do Like This ❌
+    // let submit = document.getElementById("submit");
+    // submit.addEventListener("click",()=>{
+    //     ❌
+    // });
+
+    
+</script>
+</html>

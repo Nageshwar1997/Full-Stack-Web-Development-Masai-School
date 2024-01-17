@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setting Attributes</title>
+  </head>
+  <body>
+    <div id="abcd"></div>
+  </body>
+
+  <script>
+    let images = [
+      "https://www.shutterstock.com/image-photo/fast-running-young-woman-mixed-600w-1368525119.jpg",
+      "https://www.shutterstock.com/image-photo/man-sportwear-running-mixed-media-600w-2178272497.jpg",
+      "https://www.shutterstock.com/image-photo/young-woman-playing-tennis-action-600w-1364747960.jpg",
+    ];
+    let cont = document.getElementById("abcd");
+
+    images.forEach((element, index) => {
+      let myImg = document.createElement("img");
+      myImg.setAttribute("src", element);
+      cont.append(myImg);
+    });
+
+    for (let i = 0; i < images.length; i++) {
+      let myImg = document.createElement("img");
+      myImg.setAttribute("src", images[i]);
+      myImg.setAttribute("alt", "error");
+      cont.append(myImg);
+    }
+  </script>
+</html>
+
+<!-- 1. Anchor(href,target)
+2. img(src,alt) -->

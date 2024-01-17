@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-3</title>
+  </head>
+  <body>
+    <div id="container"></div>
+  </body>
+
+  <script>
+    // 1. Create a Container
+    // 2. Get that in JS(getElementByID)
+    // 3. Craete the element with createElement with tag.
+    // 4. Give it some text
+    // 5. Append it inside the container
+
+    let arr = [
+      "I am Heading-1",
+      "I am Heading-2",
+      "I am Heading-3",
+      "I am Heading-4",
+      "I am Heading-5",
+    ];
+    let cont = document.getElementById("container");
+
+    let heading = document.createElement("h2");
+    heading.innerText = "Some Randoom Text";
+
+    cont.append(heading);
+    for (let i = 0; i < arr.length; i++) {
+      let heading = document.createElement("h1");
+      heading.innerText = arr[i];
+      heading.style.color = "red";
+
+      cont.append(heading);
+    }
+
+    // map , forEach , filter, sort
+
+    arr.forEach((element, index) => {
+      let heading = document.createElement("h1");
+      heading.innerText = element;
+      heading.style.color = "green";
+
+      cont.append(heading);
+    });
+  </script>
+</html>
+<!-- 1. Id Selector, innerText, 2. Event Listeners, 3. Alerts 4. Class Selectors,
+tag, combinators 5. Event Object(e.target) 
+6. Stying with JS
+Read, Update , create 
+-->

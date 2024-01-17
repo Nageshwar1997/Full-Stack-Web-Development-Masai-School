@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DoM-3</title>
+  </head>
+  <body>
+    <div id="container">
+      <img src="" alt="" />
+    </div>
+  </body>
+  <script>
+    let container = document.getElementById("container");
+
+    let images = [
+        "../Images/Car1.jpeg",
+        "../Images/Car2.jpeg",
+        "../Images/Car3.jpeg",
+        "../Images/Car4.jpeg"
+    ];
+
+
+    // ForEach Loop
+    images.forEach((element, index)=>{
+        let myImg = document.createElement("img");
+        myImg.setAttribute("src",element);
+        myImg.setAttribute("alt","Broken Image Link");
+        container.append(myImg);
+    });
+
+    /* // Normal for Loop
+    for(let i=images.length-1; i>=0; i--){
+        let myImg = document.createElement("img");
+        myImg.setAttribute("src",images[i]);
+        myImg.setAttribute("alt","Broken Image Link");
+        container.append(myImg);
+    } */
+  </script>
+</html>

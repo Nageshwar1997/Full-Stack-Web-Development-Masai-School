@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+<script>
+    let container = document.getElementById("container");
+
+    let arr = [
+        "i'm Heading - 1",
+        "i'm Heading - 2",
+        "i'm Heading - 3",
+        "i'm Heading - 4",
+        "i'm Heading - 5"
+    ];
+
+    for(let i=0; i<arr.length; i++){
+        let Heading= document.createElement("h1");
+        Heading.innerText=arr[i];
+        Heading.style.color="green";
+        // Heading.style.backgroundColor="yellow";
+        container.append(Heading);
+    }
+</script>
+</html>
