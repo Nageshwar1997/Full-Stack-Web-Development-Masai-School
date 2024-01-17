@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Automobile Inheritance Model</title>
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    #root {
+      display: block;
+      margin: auto;
+      text-align: center;
+    }
+    button{
+      padding: 10px;
+      background-color: #c545ba;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    table {
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 60%;
+      margin: auto;
+      margin-top: 5px;
+      text-align: center;
+    }
+    table td,
+    table th {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    table tr:nth-child(even) {
+      background-color: #8caacf;
+    }
+    table tr:hover {
+      background-color: #ddd;
+    }
+    table th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #0468aa;
+      color: white;
+      text-align: center;
+    }
+  </style>
+  <body>
+    <div id="root">
+      <button onclick="getCarData()">Get Car Data</button>
+    </div>
+  </body>
+  <script>
+    function FourWheeler1(model, year, color, fuelType) {
+      this.model = model;
+      this.year = year;
+      this.color = color;
+      this.fuelType = fuelType;
+    }
+
+    FourWheeler1.prototype.start = function () {
+      console.log("Car Started");
+    };
+
+    FourWheeler1.prototype.stop = function () {
+      console.log("Car Stopped");
+    };
+
+    FourWheeler1.prototype.fuelTypeOfCar = function () {
+      console.log("Car Fuel Type: " + this.fuelType);
+    };
+
+    FourWheeler1.prototype.modelYear = function () {
+      console.log("Car Model Year: " + this.year);
+    };
+    let car1 = new FourWheeler1("Audi", 2021, "Red", "Petrol");
+
+    console.log(car1);
+    car1.start();
+    car1.stop();
+    car1.fuelTypeOfCar();
+    car1.modelYear();
+
+    let car2 = new FourWheeler1("Tata", 2022, "Blue", "Diesel");
+
+    console.log(car2);
+    car2.start();
+    car2.stop();
+    car2.fuelTypeOfCar();
+    car2.modelYear();
+
+    function FourWheeler2(model1, year1, color1, fuelType1) {
+      FourWheeler1.call(this, model1, year1, color1, fuelType1);
+    }
+
+    Object.setPrototypeOf(FourWheeler2.prototype, FourWheeler1.prototype);
+    let car3 = new FourWheeler2("BMW", 2023, "Black", "Petrol");
+    console.log(car3);
+    car3.start();
+    car3.stop();
+    car3.fuelTypeOfCar();
+    car3.modelYear();
+
+    let car4 = new FourWheeler2("Ford", 2024, "White", "Diesel");
+    console.log(car4);
+    car4.start();
+    car4.stop();
+    car4.fuelTypeOfCar();
+    car4.modelYear();
+
+    // DOM Part Started
+    let myDiv = document.getElementById("root");
+
+    let table = document.createElement("table");
+
+    let thead = document.createElement("thead");
+
+    let trhead = document.createElement("tr");
+
+    let th1 = document.createElement("th");
+    th1.innerText = "Model";
+    let th2 = document.createElement("th");
+    th2.innerText = "Year";
+    let th3 = document.createElement("th");
+    th3.innerText = "Color";
+    let th4 = document.createElement("th");
+    th4.innerText = "Fuel Type";
+
+    let carListArray = [car1, car2, car3, car4];
+    function getCarData() {
+      let tbody = document.createElement("tbody");
+
+      tbody.innerHTML = "";
+      carListArray.forEach((car) => {
+        let trbody = document.createElement("tr");
+        let tdModel = document.createElement("td");
+        let tdYear = document.createElement("td");
+        let tdColor = document.createElement("td");
+        let tdFuelType = document.createElement("td");
+
+        tdModel.innerText = car.model;
+        tdYear.innerText = car.year;
+        tdColor.innerText = car.color;
+        tdFuelType.innerText = car.fuelType;
+
+        trbody.append(tdModel, tdYear, tdColor, tdFuelType);
+        tbody.append(trbody);
+      });
+
+      myDiv.append(table);
+      table.append(thead, tbody);
+      thead.append(trhead);
+      trhead.append(th1, th2, th3, th4);
+    }
+  </script>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // Manufacturing iphone1's in bulk quantity
+    // We are using factory function to generate iphone1
+
+    // let sharedIphone1Functionalities = {};
+    iPhone1.prototype.dial = function () {
+      console.log("tring... tring...");
+    };
+    iPhone1.prototype.sendMessage = function () {
+      console.log("Sending Message...");
+    };
+    iPhone1.prototype.cameraClick = function () {
+      console.log("Camera Clicked");
+    };
+
+    function iPhone1(generation, color) {
+      let obj = {};
+      Object.setPrototypeOf(obj, iPhone1.prototype);
+
+      obj.generation = generation;
+      obj.color = color;
+
+      return obj;
+    }
+
+    let i1 = iPhone1(1, "Red");
+
+    // console.log(i1);
+    // i1.dial();
+
+    // iPhone2 was released
+    // every thing else were same.
+    // property = bluetooth
+    // Method = connectToABluetooth
+
+    iPhone2.prototype.connectToABluetooth = function () {
+      console.log("Connected To Bluetooth Device");
+    };
+
+    Object.setPrototypeOf(iPhone2.prototype, iPhone1.prototype);
+
+    function iPhone2(generation, color, bluetoothType) {
+      let obj = {};
+
+      Object.setPrototypeOf(obj, iPhone2.prototype);
+
+      obj.generation = generation;
+      obj.color = color;
+      obj.bluetoothType = bluetoothType;
+
+      return obj;
+    }
+
+    let i2 = iPhone2(2, "Black", "Bt-5.0");
+    console.log(i1);
+    i1.dial();
+    i1.sendMessage();
+    i1.cameraClick();
+
+
+    console.log(i2);
+    i2.dial();
+    i2.sendMessage();
+    i2.cameraClick();
+    i2.connectToABluetooth();
+  </script>
+</html>

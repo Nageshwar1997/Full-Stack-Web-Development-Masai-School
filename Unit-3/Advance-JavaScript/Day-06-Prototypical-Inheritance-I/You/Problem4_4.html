@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Inheritance using prototype chain
+
+
+iPhone1.prototype.dial = function () {
+    console.log("tring... tring...");
+}
+
+iPhone1.prototype.sendMessage = function () {
+    console.log("Sending Message...");
+}
+
+iPhone1.prototype.cameraClick = function () {
+    console.log("Camera Clicked");
+}
+
+function iPhone1(o,generation, ASIN, weight, OS, RAM, color, display, camera) {
+    let obj = o;
+    Object.setPrototypeOf(obj, iPhone1.prototype);
+
+    obj.generation = generation;
+    obj.asin = ASIN;
+    obj.weight = weight;
+    obj.os = OS;
+    obj.ram = RAM;
+    obj.color = color;
+    obj.display = display;
+    obj.camera = camera;
+
+    return obj;
+}
+
+let i1 = iPhone1({},1, "B09X67JBQV", 7.8, "IOS", "128 MB", "Gray", "90mm", "2.0 MP");
+console.log(i1);
+i1.dial();
+i1.sendMessage();
+i1.cameraClick();
+
+
+
+Object.setPrototypeOf(iPhone2.prototype, iPhone1.prototype);
+
+iPhone2.prototype.unlockWithFaceID = function () {
+    console.log("Phone Unlocked...");
+}
+iPhone2.prototype.connectWithBluetoothDevice = function () {
+    console.log("Connecting with Bluetooth Device...");
+}
+iPhone2.prototype.connectWithInternet = function () {
+    console.log("Connecting with 3G Internet...");
+}
+iPhone2.prototype.cameraClick = function () {
+    console.log("Clicking High Resolution Pic...");
+}
+
+function iPhone2(generation, ASIN, weight, OS, RAM, color, display, camera, bluetooth, internetType) {
+    let obj = {};
+    
+    iPhone1(obj,generation, ASIN, weight, OS, RAM, color, display, camera);
+    
+    Object.setPrototypeOf(obj, iPhone2.prototype);
+    
+    obj.bluetooth = bluetooth;
+    obj.internetType = internetType;
+
+
+    return obj;
+}
+
+let i2 = iPhone2(2, "B09dfgsgQV", 9.8, "IOS 2", "256 MB", "Gray", "99mm", "4.0 MP", "2.0", "3G");
+console.log(i2);
+i2.unlockWithFaceID();
+i2.connectWithBluetoothDevice();
+i2.connectWithInternet();
+i2.cameraClick();
+
+
+// This methods from sharedIphone1Functionalities
+i2.dial();
+i2.sendMessage();
+i2.cameraClick();
+console.log(i2.ram);
+
+</script>
+</html>
