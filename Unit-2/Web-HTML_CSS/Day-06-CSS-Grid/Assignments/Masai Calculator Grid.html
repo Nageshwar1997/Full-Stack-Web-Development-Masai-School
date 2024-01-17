@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Calculator Grid</title>
+    <style>
+        h1 {
+            color: rgb(62, 138, 138);
+            text-align: center;
+        }
+
+        #parent {
+            /* border: 2px solid red; */
+            width: 30%;
+            height: 500px;
+            margin: auto;
+            margin-top: 40px;
+            padding-top: 30px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+        }
+        #display{
+            width: 80%;
+            height: 60px;
+            /* border: 1px solid green; */
+            margin: auto;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+
+        #parent>#box {
+            display: grid;
+            /* border: 1px solid red; */
+            width: 80%;
+            height: 80%;
+            margin: auto;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 15px;
+
+        }
+
+        #box>div {
+            /* border: 1px solid green; */
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            border-radius: 10px;
+            text-align: center;
+            padding-top: 13px;
+        }
+        #box > .black{
+            background-color: black;
+            color: white;
+        }
+        #box > #red {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Masai Calculator</h1>
+    <div id="parent">
+        <div id="display"> <!-- Display --> </div></h1>
+        <div id="box">
+            <div><h2>1</h2></div>
+            <div><h2>2</h2></div>
+            <div><h2>3</h2></div>
+            <div class="black"><h2>+</h2></div>
+            <div><h2>4</h2></div>
+            <div><h2>5</h2></div>
+            <div><h2>6</h2></div>
+            <div class="black"><h2>-</h2></div>
+            <div><h2>7</h2></div>
+            <div><h2>8</h2></div>
+            <div><h2>9</h2></div>
+            <div class="black"><h2>x</h2></div>
+            <div id="red"><h2>C</h2></div>
+            <div><h2>0</h2></div>
+            <div class="black"><h2>=</h2></div>
+            <div class="black"><h2>/</h2></div>
+        </div>
+    </div>
+</body>
+
+</html>

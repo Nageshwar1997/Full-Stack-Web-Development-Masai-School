@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Line Based Placement</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* Width:- columns  */
+        grid-template-rows: repeat(4, 100px);
+        /* height:- rows  */
+
+        /* row-gap: 10px; */
+        /* top & bottom margin -> row-gap */
+        /* column-gap: 20px; */
+        /* left & right margin col gap  */
+        /* gap: 10px; */
+      }
+      .container > div {
+        color: white;
+        font-size: 25px;
+        border: 5px solid black;
+      }
+      .container > div:nth-child(1) {
+        background-color: red;
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+      .container > div:nth-child(2) {
+        background-color: green;
+      }
+      .container > div:nth-child(3) {
+        background-color: blue;
+      }
+      .container > div:nth-child(4) {
+        background-color: teal;
+        grid-row-start: 2;
+        grid-row-end: 4;
+        grid-column-start: 2;
+        grid-column-end: 3;
+      }
+      .container > div:nth-child(5) {
+        background-color: brown;
+      }
+      .container > div:nth-child(6) {
+        background-color: purple;
+      }
+      .container > div:nth-child(7) {
+        background-color: coral;
+      }
+      .container > div:nth-child(8) {
+        background-color: cyan;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+    </div>
+  </body>
+</html>

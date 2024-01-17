@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid</title>
+    <style>
+      .container {
+        display: grid;
+        /* Row(Height) , Column(Width)  */
+        /* 2 rows(100px) & 2 cols(100px)  */
+        grid-template-columns: repeat(3, 100px);
+        /* grid-template-columns: 100px 100px 200px; */
+        /* The no of cols == the no of values put in grid-template-columns */
+        /* Width  */
+        grid-template-rows: repeat(2, 100px);
+        grid-auto-rows: 100px;
+        /* Height  */
+      }
+      .container > div {
+        color: white;
+        font-size: 25px;
+      }
+      .container > div:nth-child(1) {
+        background-color: red;
+      }
+      .container > div:nth-child(2) {
+        background-color: green;
+      }
+      .container > div:nth-child(3) {
+        background-color: blue;
+      }
+      .container > div:nth-child(4) {
+        background-color: teal;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+  </body>
+</html>
