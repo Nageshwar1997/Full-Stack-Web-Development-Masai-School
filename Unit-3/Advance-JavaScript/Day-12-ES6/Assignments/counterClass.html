@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+</head>
+<body>
+
+<div>
+  <h1 id="counter">0</h1>
+  <button id="toggleButton">Start</button>
+  <button id="incrementButton">Increment</button>
+  <button id="decrementButton">Decrement</button>
+</div>
+
+<script>
+class Counter {
+  constructor() {
+    this.count = 0;
+    this.intervalId = null;
+    this.isAuto = false;
+
+    this.counterElement = document.getElementById('counter');
+    this.toggleButton = document.getElementById('toggleButton');
+    this.incrementButton = document.getElementById('incrementButton');
+    this.decrementButton = document.getElementById('decrementButton');
+
+    this.toggleButton.addEventListener('click', this.toggle.bind(this));
+    this.incrementButton.addEventListener('click', this.increment.bind(this));
+    this.decrementButton.addEventListener('click', this.decrement.bind(this));
+  }
+
+  startAutoIncrement() {
+    this.intervalId = setInterval(() => {
+      this.count++;
+      this.updateCounter();
+    }, 1000);
+  }
+
+  stopAutoIncrement() {
+    clearInterval(this.intervalId);
+  }
+
+  toggle() {
+    if (this.isAuto) {
+      this.stopAutoIncrement();
+      this.toggleButton.textContent = 'Start';
+    } else {
+      this.startAutoIncrement();
+      this.toggleButton.textContent = 'Stop';
+    }
+
+    this.isAuto = !this.isAuto;
+  }
+
+  increment() {
+    this.stopAutoIncrement();
+    this.count++;
+    this.updateCounter();
+  }
+
+  decrement() {
+    this.stopAutoIncrement();
+    this.count--;
+    this.updateCounter();
+  }
+
+  updateCounter() {
+    this.counterElement.textContent = this.count;
+  }
+}
+
+const counter = new Counter();
+</script>
+
+</body>
+</html>
