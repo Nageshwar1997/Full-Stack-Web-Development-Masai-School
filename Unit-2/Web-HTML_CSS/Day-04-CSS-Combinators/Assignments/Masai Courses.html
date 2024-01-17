@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai Courses</title>
+
+    <style>
+        #parent {
+            width: 80%;
+            margin: auto;
+        }
+
+        #top_heading {
+            text-align: center;
+            margin-bottom: 40px;
+
+        }
+
+        #semi_parent {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin: auto;
+            border-radius: 5px;
+        }
+
+        .child {
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+            border-radius: 25px;
+            width: 45%;
+        }
+
+        .mini{
+            margin-left: 30px;
+            margin-right: 30px;
+        }
+        button{
+            margin-bottom: 30px;
+            width: 100%;
+            border-radius: 5px;
+            color: white;
+            background-color: red;
+            font-size: 20px;
+
+        }
+        img{
+            width: auto;
+            height: 230;
+        }
+        h2{
+            font-size: 60px;
+        }
+        h3{
+            font-size: 50px;
+        }
+        h4{
+            font-size: 40px;
+        }
+        h5{
+            font-size: 20px;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div id="top_heading">
+            <h2>Our Courses</h2>
+            <h3>Practice-Based Learning Tracks, <span style="color: red;">Supercharged By A.I.</span></h3>
+        </div>
+        <div id="semi_parent">
+            <div class="child">
+                <img src="https://www.masaischool.com/images/new-homepage/software-course-card.svg"
+                        alt="Software Development" style="width: 100%;">
+                <div class="mini">
+                    <h4>Software Development</h4>
+                    <p>Become job-ready in 30-35 weeks.</p>
+                    <hr>
+                    <h5>✅ Opportunities : Full Stack Developer, Backend Developer, Software Engineer & much more. </h5>
+                    <h5>✅ 100% live learning with expert instructors.</h5>
+                    <h5>✅ Pay After Placement</h5>
+                    <button>VIEW DETAILS</button>
+                </div>
+            </div>
+            <div class="child">
+                <img src="https://www.masaischool.com/images/new-homepage/data-analytics-card.svg"
+                        alt="Data Analytics" style="width: 100%;">
+                <div class="mini">
+                    <h4>Data Analytics</h4>
+                    <p>Become job-ready in 30 weeks.</p>
+                    <hr>
+                    <h5>✅ Opportunities : Data Engineer, Data Analyst, Machine Learning Engineer & much more.</h5>
+                    <h5>✅ Learn from expert instructors and hands-on assignments</h5>
+                    <h5>✅ Pay After Placement</h5>
+                    <button>VIEW DETAILS</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

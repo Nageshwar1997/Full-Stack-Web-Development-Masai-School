@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            border: 3px solid red;
+        }
+
+        #parent {
+            height: 100px;
+            width: 100px;
+            border: 3px solid rgb(0, 0, 0);
+            display: flex;
+        }
+        .child{
+            width: 50%;
+            height: 100%;
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <hr>
+    <div id="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+
+</html>

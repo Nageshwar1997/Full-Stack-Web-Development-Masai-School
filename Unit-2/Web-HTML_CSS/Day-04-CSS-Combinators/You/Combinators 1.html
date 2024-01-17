@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D & C</title>
+    <style>
+    /* Descendant Selector (Space) */
+        .container1 h1{
+            color: red;
+        }
+        #parent h1,p{
+            background-color: yellow;
+        }
+
+        /* Child Selector (>) */
+        #container2 > h2{
+            color: green;
+            text-decoration: underline;
+        }
+        #container2 > p,h2{
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- Descendant Selector (Space) -->
+    <div class="container1" id="parent">
+        <h1>I am Heading - 1</h1>
+        <h1>I am Heading - 1</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo architecto est pariatur culpa doloribus quos excepturi ipsa molestias dignissimos voluptas rem nihil, nemo hic vero facere perspiciatis quisquam deleniti reiciendis.</p>
+        <div>
+            <h1>I am Heading - 1 <span>I am Heading - 2</span></h1>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Child Selector (>) -->
+    <div id="container2">
+        <h2>I am Heading - 2</h2>
+        <h2>I am Heading - 2</h2>
+        <h2>I am Heading - 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quae ea officiis ipsa consequatur nam, quisquam tenetur minima labore qui adipisci aliquam deleniti facere beatae! Fugit, sequi? Beatae, dolorem quibusdam.</p>
+    </div>
+</body>
+</html>

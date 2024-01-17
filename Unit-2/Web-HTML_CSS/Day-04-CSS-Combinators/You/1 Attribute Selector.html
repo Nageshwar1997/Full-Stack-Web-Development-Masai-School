@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribute Selector</title>
+    <style>
+        /* .red{
+            background-color: red;
+        } */
+
+        input[type="email"]{
+            background-color: red;
+        }
+        a[href="https://www.linkedin.com/feed/"]{
+            background-color: green;
+        }
+        a[href="https://leetcode.com/"]{
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <input type="text">
+    <input type="text">
+    <input class="red" type="email">
+    <input type="text">
+    <input class="red" type="email">
+    <input type="text">
+    
+    <hr>
+
+    <a href="https://leetcode.com/">leetcode</a>
+    <a href="https://www.linkedin.com/feed/">linkedin</a>
+    <a href="https://leetcode.com/">leetcode</a>
+    <a href="https://www.linkedin.com/feed/">linkedin</a>
+    <a href="https://leetcode.com/">leetcode</a>
+    <a href="https://www.linkedin.com/feed/">linkedin</a>
+</body>
+</html>
