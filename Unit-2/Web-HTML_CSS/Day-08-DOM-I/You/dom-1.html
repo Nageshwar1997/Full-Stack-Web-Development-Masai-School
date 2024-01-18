@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom-1</title>
+</head>
+<body>
+    <h1 id="heading">I'm Heading - 1</h1>
+    <button>Click</button>
+</body>
+<script>
+    let heading = document.getElementById("heading");
+    let btn = document.querySelector("button");
+
+    btn.addEventListener("click", ()=>{
+        heading.innerText="I'm Script heading";
+    });
+    
+    console.log(document.URL); // it will give us the url of this page
+    console.log(document.title);
+    console.log(document.body);
+</script>
+</html>

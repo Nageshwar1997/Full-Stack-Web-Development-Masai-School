@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="name">Nageshwar</h1>
+    <input type="text" name="" id="inpName" />
+    <button onclick="submit()" id="btn">Change</button>
+  </body>
+  <script>
+    let name = document.getElementById("name");
+    let btn = document.getElementById("btn");
+    let inpName = document.getElementById("inpName");
+
+    function submit() {
+    //   name.innerText = "Manjusha";
+    name.innerText = "Entered Value is : " + inpName.value;
+    }
+
+    // btn.addEventListener("click", ()=>{
+    //     name.innerText = "Manjusha";
+    // });
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alert</title>
+</head>
+<body>
+    <button id="btn">I'm a Button</button>
+</body>
+<script>
+    let myButton = document.getElementById("btn");
+
+    myButton.addEventListener("click",task);
+    // alert("I'm outer alert");
+
+    function task(){
+        alert("Are you sure to click the Button");
+
+        console.log("I'm Clicked");
+
+        alert("You clicked the button");
+    }
+</script>
+</html>

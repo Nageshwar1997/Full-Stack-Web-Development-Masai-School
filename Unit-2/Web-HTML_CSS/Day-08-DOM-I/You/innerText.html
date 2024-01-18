@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing Text</title>
+</head>
+<body>
+    <h1 id="heading">Heading Before Click</h1>
+    <button id="btn">Button</button>
+</body>
+<script>
+    let myButton = document.getElementById("btn");
+    let myHeading = document.getElementById("heading");
+
+    console.log(myHeading.innerText); // it will print heading before click
+
+    myButton.addEventListener("click", () => {
+        headingText("Heading After Click");
+    });
+
+    // Another Way
+
+    /* myButton.addEventListener("click", newText);
+
+    function newText(){
+        headingText("Heading After Click");
+    } */
+
+    function headingText(newText){
+        myHeading.innerText = newText;
+    }
+</script>
+</html>

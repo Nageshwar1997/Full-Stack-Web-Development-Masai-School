@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>onclick</title>
+  </head>
+  <body>
+    <button onclick="clicked()" id="btn">I'm a Button</button>
+    <!-- Using attribute inline and calling a function -->
+    <button id="submit">Submit</button>
+  </body>
+  <script>
+    // Function fod to do task
+    function clicked(){
+        console.log("I'm Clicked");
+    }
+
+
+
+    // Add Event Listener 
+    let submit = document.getElementById("submit");
+
+    submit.addEventListener("click", log)
+
+    function log(){
+        console.log("I'm Submit & I'm Clicked");
+    }
+  </script>
+</html>
