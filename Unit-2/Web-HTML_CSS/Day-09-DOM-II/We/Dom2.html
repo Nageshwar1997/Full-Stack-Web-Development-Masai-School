@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2B</title>
+    <style>
+        #cont > h1{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="cont">
+        <h1>Heading -1</h1>
+        <h1>Heading - 2</h1>
+    </div>
+    <h1 class="head3">Heading - 3</h1>
+    <h1 class="head3">heading4</h1>
+<div id="para">
+   <button>1</button>
+   <button>2</button>
+   <button>3</button>
+   <button>4</button>
+
+
+</div>
+</body>
+</html>
+<script>
+// comninator
+let heading = document.querySelectorAll('#cont > h1'); // multiple -->indexing
+console.log(heading[1].innerText);
+let head = document.querySelector('#cont > h1') // one element 
+console.log(head.innerText)
+
+let head3 = document.querySelector('#head3');
+console.log(head3.innerText)
+let head4 = document.getElementsByClassName('head3')
+
+
+// document.getElementById --- id (unique) --->element
+// document.getElementsByTagName ---> multiple element (h1,h2,p etc) --> multiple 
+// document.getElementsByClassName ---> class--->multiple
+// document.querySelectorAll -->id,class,tag ---> multiple element 
+// document.querySelector --> id,class,tag  --> single element
+
+let paragraph = document.querySelector('#para > button')
+
+</script>
