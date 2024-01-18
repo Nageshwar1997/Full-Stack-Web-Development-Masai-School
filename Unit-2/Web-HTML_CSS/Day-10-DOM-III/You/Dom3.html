@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom2c</title>
+</head>
+<body>
+    <button id="btn">Play</button>
+<div id="cont">
+<button>0</button>
+<button>1</button>
+<button>2</button>
+<button>3</button>
+<button>4</button>
+<button>5</button>
+<button>6</button>
+<button>7</button>
+<button>8</button>
+<button>9</button>
+    </div>
+
+<h1 id="head"></h1>
+
+ 
+</body>
+</html>
+<script>
+    let arr = [1,2,3,4,5,6]
+
+  let play = document.getElementById("btn");
+  let heading = document.getElementById('head');
+  play.addEventListener('click',function()
+  {
+    console.log("I am played");
+  })
+
+
+
+  let Allbutton = document.querySelectorAll('#cont > button') 
+for(let i = 0; i < Allbutton.length; i++)
+{
+   Allbutton[i].addEventListener('click',function()
+   {
+//   console.log(i)
+    head.innerText = Allbutton[i].innerText
+   })
+}
+
+// first number  operator  second Number
+
+
+
+</script>
