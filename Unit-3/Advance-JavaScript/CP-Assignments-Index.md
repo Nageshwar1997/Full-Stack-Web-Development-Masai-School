@@ -24,9 +24,11 @@
 
     1. JS-Model-Artists ---> masai-ops-506-14-inJdLu-a0a76a864f9362750c7f4fdc28f3238d4d7b42c9
 
-    2. JS-Car-Prototype-And-Inheritance ---> masai-ops-506-165-DUQJdH-bf7a7873ec8b1b02e636a64592c2faccca31c8c9
+    2. JS-Car-Prototype-And-Inheritance-1 ---> masai-ops-506-165-DUQJdH-bf7a7873ec8b1b02e636a64592c2faccca31c8c9
 
     3. JS-Object-Creation ---> masai-ops-802-1349-FiWcxv-addccbba7aa339918fdf0df230db8043ff27e804
+
+    4. JS-Car-Prototype-And-Inheritance-2 ---> masai-cp-problems-2567-165-eZWVDJ-d4817c0c2d424fbaacbb5be8e99d738c4a36e126
 
 ## Day 07 --> Prototypical-Inheritance-II
 
@@ -48,18 +50,18 @@
 
     09. JS-Prototype-Inheritance-Artists ---> masai-ops-796-14-fJLnky-0c932b3e4a4cf9f5e8560270aacbf43ab29016ab
 
-    10. JS-Swiggy-Constructor ---> masai-ops-796-12-hrJSWl-7d5cd08c9cd30f48a6164f448b7546464823fa75
+    10. JS-Swiggy-Constructor-I ---> masai-ops-796-12-hrJSWl-7d5cd08c9cd30f48a6164f448b7546464823fa75
 
 ## Day 08 --> Mastering-the_this_Keyword
 
 ## Day 09 --> Asynchronous-Javascript
 
     1. DOM-Pagination ---> masai-ops-863-1372-IFpIno-7943cc5fba84247a7e03ab26a6dede40e95b4e1b
-    
+
     2. Fetch APIs ---> masai-ops-575-718-pKhAmZ-6edec1dc4caef8253bcf4f58e7fffe41e918ded1
-    
+
     3. JS-Promises-Odd-Even ---> masai-ops-564-16-EcKyqw-eee4040f276cb02a744419e802bd8e74f9e82a70
-    
+
     4. Js-Promises-Job-App ---> masai-ops-564-232-ByfKXY-100f92fc9dab6129762447cb186494bc5563102c
 
 ## Day 10 --> Must-Know-Javascript-Concepts
@@ -75,8 +77,13 @@
 ## Day 14 --> Revision-Class-I
 
 ## Day 15 --> Revision-Class-II
+        
+    1. JS-Swiggy-Constructor-II ---> masai-cp-problems-2572-12-trBJyX-ab8867090850df118ccea8f2ee4bfe1a855eb6c8
+
+    2. JS-Constructor-E-Commerce-III ---> masai-cp-problems-2572-167-zeKaMN-cf5bf62e8d9b9fc3ae4bdae5afd8504370238f41
 
 ## Day 16 --> Revision-Class-III
+    1. JS-PT-WEB14-S2-A3-Classes ---> masai-cp-problems-2642-1977-FAIfpd-759dd85d662f5bcbebdf916e913be39aeaca7d68
 
 ## Day 17 --> Evaluation
 

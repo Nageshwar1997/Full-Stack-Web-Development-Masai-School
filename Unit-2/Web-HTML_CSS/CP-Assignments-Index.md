@@ -41,8 +41,8 @@
 ## Day 14 --> Promises
 
     1. DOM-Promises-Odd-Even ---> masai-ops-382-16-QdblnL-569deac679c9f4f220a22d8e48efec0759153574
-    2. JS-Promises-Odd-Even-1 ---> masai-cp-problems-2492-164-cUVWDN-985ac10a9951bfcc0a59eaae980fc9930d95fc42
-    3. JS-Promises-Odd-Even-2 ---> masai-cp-problems-2567-16-bjqlCX-8db2cbc622bb45a29f4da2db044efae2f51b12f4
+    2. JS-Basic-Odd-Even ---> masai-cp-problems-2492-164-cUVWDN-985ac10a9951bfcc0a59eaae980fc9930d95fc42
+    3. JS-Promises-Odd-Even ---> masai-cp-problems-2567-16-bjqlCX-8db2cbc622bb45a29f4da2db044efae2f51b12f4
 
 ## Day 15 --> Fetch-I
 

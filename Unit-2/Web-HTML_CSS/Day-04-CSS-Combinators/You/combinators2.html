@@ -1,31 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>General Sibling & Adjacent Sibling</title>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GS & AS</title>
     <style>
-      .heading ~ h1 {
-        color: red;
-      }
-      .heading + h1 {
-        background-color: yellow;
-      }
-      /* Adjacent -> Just next to  */
+        /* General Sibling Selector (~) */
+        .h-1 ~ h1{
+            color: red;
+        }
+        .h-1 ~ h1, #para1{
+            background-color: gray;
+        }
+
+        /* Adjacent Sibling Selector (+) */
+        .heading + div > h2{
+            color: green;
+            background-color: pink;
+        }
+        .heading + div + h2{
+            color: rgb(252, 0, 105);
+            text-decoration: underline;
+        }
+        #head + p{
+            background-color: blue;
+        }
+
     </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>I am Heading 2</h1>
-      <h1 class="heading">I am Heading 1</h1>
-      <h1>I am Heading 3</h1>
-      <div id="cont">
-        <h1>I am Heading Inner</h1>
-      </div>
-      <p>I am Para</p>
-      <h1>I am Heading 4</h1>
+</head>
+<body>
+    <!-- General Sibling Selector (~) -->
+    <div class="container1" id="parent">
+        <h1 class="h-1">I am Heading - 1</h1>
+        <h1>I am Heading - 1</h1>
+        <div>
+            <h1>I am Heading - 1</h1>
+        </div>
+        <h1>I am Heading - 1</h1>
+        <p id="para1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo architecto est pariatur culpa doloribus quos excepturi ipsa molestias dignissimos voluptas rem nihil, nemo hic vero facere perspiciatis quisquam deleniti reiciendis.</p>
+        <h1>I am Heading - 1</h1>
     </div>
-  </body>
+    <hr>
+
+    <!-- Adjacent Sibling Selector (+) -->
+    <div id="container2">
+        <h2 class="heading">I am Heading - 2</h2>
+        <div>
+            <h2>I am Inner Heading 1</h2>
+            <h2>I am Inner Heading 2</h2>
+        </div>
+        <h2>I am Heading - 2</h2>
+        <h2 id="head">I am Heading - 2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto quae ea officiis ipsa consequatur nam, quisquam tenetur minima labore qui adipisci aliquam deleniti facere beatae! Fugit, sequi? Beatae, dolorem quibusdam.</p>
+    </div>
+</body>
 </html>

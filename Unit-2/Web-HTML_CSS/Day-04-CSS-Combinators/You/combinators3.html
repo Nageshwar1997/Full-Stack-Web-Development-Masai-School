@@ -4,45 +4,28 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>General Sibling & Adjacent Sibling</title>
+
     <style>
-      /* .red {
-        background-color: red;
-      } */
-      input[type="email"] {
-        background-color: red;
-      }
-      a[href="https://www.linkedin.com/feed/"]
-      {
+      .heading ~ h1 {
         color: red;
       }
+      .heading + h1 {
+        background-color: yellow;
+      }
+      /* Adjacent -> Just next to  */
     </style>
   </head>
   <body>
-    <input type="text" />
-    <input type="email" />
-    <input type="text" />
-    <input type="text" />
-    <input type="email" />
-
-    <a href="https://www.linkedin.com/feed/" target="_blank">Linkedin</a>
-    <a href="https://www.linkedin.com/feed/">Linkedin</a>
-    <a href="https://leetcode.com/">Leetcode</a>
-    <a href="https://www.linkedin.com/feed/">Linkedin</a>
-    <a href="https://leetcode.com/">Leetcode</a>
+    <div class="container">
+      <h1>I am Heading 2</h1>
+      <h1 class="heading">I am Heading 1</h1>
+      <h1>I am Heading 3</h1>
+      <div id="cont">
+        <h1>I am Heading Inner</h1>
+      </div>
+      <p>I am Para</p>
+      <h1>I am Heading 4</h1>
+    </div>
   </body>
 </html>
-
-<!--
-        Old Fashioned:- 
-      id -> #
-      class -> .
-      tag -> 
-      Universal -> *
-      Grouping -> , -->
-
-<!-- 
-        1. Attribute Selector 
-        2. Psudo Classes
-        3. Psudo Elements
-    -->
