@@ -13,16 +13,45 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     // Step 1: Create the App Component using React.createElement
-    const App = () =>
-      React.createElement(
-        "div",
-        { id: "container", className: "main" },
-        React.createElement("h3", null, "Learning React"),
-        React.createElement("p", null, "Day 2"),
-        React.createElement("button", null, "Click Me!")
-      );
+
+    function clicked(){
+      console.log("I'm Clicked");
+    }
+    const element = React.createElement(
+      "div",
+      { id: "container", className: "main" },
+      [
+        React.createElement("img", {
+          src: "https://tse1.mm.bing.net/th?id=OIP.hqgXmy-r13g-63xcvlz6AwHaE7&pid=Api&rs=1&c=1&qlt=95&w=154&h=102",
+          alt: "Image",
+        }),
+        React.createElement("h3", {key:"heading"}, "Learning React"),
+        React.createElement("p", {key:"para"}, "Day 2"),
+        React.createElement("button", {
+          onClick:clicked,
+          key:"button",
+        }, "Click Me!"),
+      ]
+    );
 
     // Step 2: Render the Component
-    ReactDOM.render(React.createElement(App), document.getElementById("root"));
+    // ReactDOM.render(React.createElement(App), document.getElementById("root")); // OR
+    let rootElement = ReactDOM.createRoot(document.getElementById("root"));
+    rootElement.render(element);
   </script>
 </html>
+
+<!-- 
+Task 1 :
+  * div#root ( it'll be your root element )
+
+  I want you to create a
+  * div element ( using React.createElement )
+  * it should have id "container"
+  * it should have class "main"
+  * it should have 3 children
+      * child1 - img - Add image
+      * child2 - h3 - Learning React
+      * child3 - p - Day 2
+      * child4 - button - Click Me!
+ -->
