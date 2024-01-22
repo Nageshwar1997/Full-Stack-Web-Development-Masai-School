@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSX</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React Library -->
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <!-- React-DOM Library -->
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <!-- Babel Library -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const message = "I'm a Nageshwar";
+      let name = "Nageshwar";
+      function greet() {
+        alert(`Hello ${name}`);
+      }
+
+      let element = (
+        // JSX Territory
+        // this is called interpolation {variable name}
+        <>
+          <h1>{message}</h1>
+          <button onClick={greet}>Click me</button>
+        </>
+      );
+
+      let rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(element);
+    </script>
+  </body>
+</html>

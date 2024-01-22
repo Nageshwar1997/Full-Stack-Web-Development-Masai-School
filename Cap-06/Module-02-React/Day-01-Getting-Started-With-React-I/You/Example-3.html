@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create UI with React API</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React Library -->
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <!-- React-DOM Library -->
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script>
+      // console.log(React);
+      // console.log(ReactDOM);
+
+      // React.createElement("tagName", properties);
+      // React Library --> Created element using React library
+      let element = React.createElement("h1", {
+        className: "quote", // class of this element
+        children: "Carpe Diem", // Content of this element
+        id: "heading", // id of this element
+      });
+
+      console.log(element);
+      let element2 = React.createElement("div",{
+        className:"container",
+        id:"element-2",
+        children:"Seize the Day"
+      });
+      // ReactDOM Library ---> render the element in the DOM using ReactDOM Library
+      let reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+      reactRoot.render(element2); // We can't render multiple elements
+    </script>
+  </body>
+</html>

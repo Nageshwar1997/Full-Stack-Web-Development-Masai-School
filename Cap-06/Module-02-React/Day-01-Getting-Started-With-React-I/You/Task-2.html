@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create UI with React API</title>
+    <style>
+      .red-color-text {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script>
+    // My Code goes here;
+    // Step 1: Create the App Component
+    let element = React.createElement("div", {
+      className: "container",
+      children: [
+        React.createElement("h1", {
+          className: "name",
+          children: "Nageshwar", // it will be the content of the element
+        }),
+        React.createElement(
+          "p",
+          {
+            className: "para",
+          },
+          "I'm from Nanded, Maharashtra" // it will be the content of the element
+        ),
+        React.createElement(
+          "div",
+          {},
+          React.createElement("p", {
+            children: [
+              "I'm a ",
+              React.createElement(
+                "span",
+                { className: "red-color-text" },
+                "Full-Stack Web Developer"
+              ),
+            ],
+          })
+        ),
+      ],
+    });
+    // Step 2: Render the Component
+    let reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+    reactRoot.render(element);
+  </script>
+</html>
