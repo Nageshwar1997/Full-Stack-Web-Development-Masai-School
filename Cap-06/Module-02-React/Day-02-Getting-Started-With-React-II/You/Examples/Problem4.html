@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Superhero(props) {
+      //   console.log(props.randomFunc());
+      return (
+        <>
+          <h1>
+            Happy Birthday {props.name}! You are now {props.age} years old.
+          </h1>
+          <h3>Is Bachelor {props.isBachelor.toString()}</h3>
+          <p>{props.hobbies.join(" ")}</p>
+          <p>
+            Address: <br /> City: {props.address.city} <br /> Country:{" "}
+            {props.address.country}
+          </p>
+          <h4>{props.randomFunc()}</h4>
+        </>
+      );
+    }
+
+    function App() {
+      let foo = function () {
+        return "Hello World!";
+      };
+      return (
+        <>
+          <Superhero
+            name="Bruce"
+            age={26}
+            isBachelor={false}
+            hobbies={["Flying", "Collecting Coins"]}
+            address={{ city: "New York", country: "USA" }}
+            randomFunc={function () {
+              return (`City: ${this.address.city}, Country: ${this.address.country}`);
+            }}
+          />
+        </>
+      );
+    }
+
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+
+    reactRoot.render(<App />);
+  </script>
+</html>

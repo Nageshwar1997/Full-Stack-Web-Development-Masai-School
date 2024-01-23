@@ -12,25 +12,36 @@
   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    // Step 1: Create the App Component
-    const App = () => {
-      // Step 2: Event handler function for button click
-      const handleClick = () => {
-        console.log("Button clicked...");
-      };
+    // Step 1: Create the element using JSX
+    let element = (
+      <div id="container" className="main">
+        <h3>Learning React</h3>
+        <p>Day 2</p>
+        <button onClick={handleClick}>Click Me</button>
+      </div>
+    );
 
-      // Step 3: Return JSX structure
-      return (
-        <div id="container" className="main">
-          <h3>Learning React</h3>
-          <p>Day 2</p>
-          {/* Step 4: Add a button with an onClick event */}
-          <button onClick={handleClick}>Click Me!</button>
-        </div>
-      );
-    };
+    // Step 2: Event handler function for button click
+    function handleClick() {
+      console.log("Button clicked...");
+    }
 
-    // Step 5: Render the Component
-    ReactDOM.render(<App />, document.getElementById("root"));
+    // Step 3: Render the Component
+    let root = document.getElementById("root");
+    let rootElement = ReactDOM.createRoot(root);
+    rootElement.render(element);
   </script>
 </html>
+
+<!-- 
+  Task 2 :
+div#root ( it'll be your root element )
+  I want you to create a
+  div element ( using JSX )
+  it should have id "container"
+  it should have class "main"
+  it should have 3 children
+    child1 - h3 - Learning React
+    child2 - p - Day 2
+    child3 - button - Click Me! - Clicking on this button should print "button clicked..." to console
+ -->
