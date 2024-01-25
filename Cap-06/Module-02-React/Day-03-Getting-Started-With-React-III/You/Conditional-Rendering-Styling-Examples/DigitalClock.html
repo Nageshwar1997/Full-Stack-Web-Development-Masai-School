@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Clock</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Include React, ReactDOM, and Babel -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React code goes here -->
+    <script type="text/babel">
+      // Define a DigitalClock component
+      class DigitalClock extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = { time: new Date() };
+        }
+
+        // Update time every second
+        componentDidMount() {
+          this.timerID = setInterval(() => this.tick(), 1000);
+        }
+
+        // Cleanup timer
+        componentWillUnmount() {
+          clearInterval(this.timerID);
+        }
+
+        // Update time in the state
+        tick() {
+          this.setState({ time: new Date() });
+        }
+
+        render() {
+          // Get hours, minutes, and seconds
+          const hours = this.state.time.getHours();
+          const minutes = this.state.time.getMinutes();
+          const seconds = this.state.time.getSeconds();
+
+          return (
+            <div>
+              <h1>Digital Clock :{" "}
+                {hours < 10 ? "0" + hours : hours}:
+                {minutes < 10 ? "0" + minutes : minutes}:
+                {seconds < 10 ? "0" + seconds : seconds}
+              </h1>
+            </div>
+          );
+        }
+      }
+
+      // Get the root element to render the React app
+      const rootElement = document.getElementById('root');
+
+      // Render the DigitalClock component into the root element
+      ReactDOM.render(<DigitalClock />, rootElement);
+    </script>
+  </body>
+</html>

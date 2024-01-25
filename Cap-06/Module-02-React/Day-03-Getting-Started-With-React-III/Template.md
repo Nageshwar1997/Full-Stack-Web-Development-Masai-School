@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Set the document's character set and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the title of the HTML document -->
+    <title>React Template</title>
+  </head>
+  <body>
+    <!-- Container for the React application -->
+    <div id="root"></div>
+  </body>
+  <!-- Include React, ReactDOM, and Babel libraries -->
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Get the root element to render the React app
+    let rootElement = document.getElementById("root");
+
+    // Create a React root
+    let reactRoot = ReactDOM.createRoot(rootElement);
+
+    // Define the main App component
+    function App() {
+      return (
+        <>
+          <h1>Hello World</h1>
+        </>
+      );
+    }
+
+    // Function to render the React app
+    function renderApp() {
+      reactRoot.render(<App />);
+    }
+
+    // Initial rendering of the React app
+    renderApp();
+  </script>
+</html>

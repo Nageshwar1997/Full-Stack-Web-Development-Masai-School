@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Define the document's character set and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the title of the HTML document -->
+    <title>React Template</title>
+  </head>
+  <body>
+    <!-- Container for the React application -->
+    <div id="root"></div>
+  </body>
+  <!-- Include React, ReactDOM, and Babel for development -->
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Define initial state for the React component
+    const state = { count: 0, text:"" };
+
+    // Function to update the state and trigger a re-render
+    const setState = (newState) => {
+      Object.assign(state, newState);
+      renderApp();
+    };
+
+    // Define the main React component
+    function App() {
+      // Event handler for button click, updates the count in the state
+      const handleClick = () => {
+        setState({ count: state.count + 1 });
+        console.log(state.count);
+      };
+      // Event handler for input change, updates the text in the state
+      const handleChange = () => {
+        setState({ text: event.target.value });
+        console.log(state.text);
+      };
+
+      // Render the component JSX
+      return (
+        <>
+          <input onChange={handleChange} type="text" />
+          <h1>Count: {state.count}</h1>
+          <button onClick={handleClick}>Click Me</button>
+        </>
+      );
+    }
+
+    // Get the root element to render the React app
+    let rootElement = document.getElementById("root");
+    // Create a React root and render the initial state of the app
+    let reactRoot = ReactDOM.createRoot(rootElement);
+
+    // Function to render the React app
+    function renderApp() {
+      reactRoot.render(<App />);
+    }
+
+    // Initial rendering of the React app
+    renderApp();
+  </script>
+</html>

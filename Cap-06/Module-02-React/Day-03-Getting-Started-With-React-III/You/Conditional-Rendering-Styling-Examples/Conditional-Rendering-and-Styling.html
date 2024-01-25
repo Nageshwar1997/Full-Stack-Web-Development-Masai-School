@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Set the document's character set and viewport settings -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the title of the HTML document -->
+    <title>React Template</title>
+  </head>
+  <body>
+    <!-- Container for the React application -->
+    <div id="root"></div>
+  </body>
+  <!-- Include React, ReactDOM, and Babel for development -->
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Define a functional component for displaying superhero details
+    const SuperheroDetails = (props) => {
+      return (
+        <div
+          className="card"
+          style={{ border: "1px solid black", width: "40%", padding: "10px" }}
+        >
+          <p>Name : {props.name}</p>
+          {/* Display hobbies only if they exist */}
+          {props.hobbies.length > 0 ? (
+            <p>Hobbies : {props.hobbies.join(", ")}</p>
+          ) : (
+            <p>No hobbies</p>
+          )}
+          {/* Display superpowers with conditional styling */}
+          <p>
+            Has Super Powers :{" "}
+            <span style={{ color: props.hasSuperPowers ? "green" : "red" }}>
+              {props.hasSuperPowers ? "Yes" : "No"}
+            </span>
+          </p>
+          <div>
+            {/* Display address details */}
+            <p>Street : {props.address.street}</p>
+            <p>City : {props.address.city}</p>
+            <p>Country : {props.address.country}</p>
+          </div>
+          {/* Display age with conditional styling */}
+          <p>
+            Age :{" "}
+            <span style={{ color: props.age > 18 ? "green" : "red" }}>
+              {props.age > 18 ? "Yes" : "No"}
+            </span>
+          </p>
+        </div>
+      );
+    };
+
+    // Define the main App component
+    const App = () => {
+      return (
+        <div
+          className="container"
+          style={{ display: "flex", justifyContent: "space-around" }}
+        >
+          {/* Render SuperheroDetails component with Batman's details */}
+          <SuperheroDetails
+            name="Batman"
+            hobbies={["Driving fancy cars", "Fighting crime"]}
+            hasSuperPowers={false}
+            address={{ street: "3rd Main", city: "Gotham", country: "USA" }}
+            age={25}
+          />
+          {/* Render SuperheroDetails component with Superman's details */}
+          <SuperheroDetails
+            name="Superman"
+            hobbies={["Flying", "Collecting coins"]}
+            hasSuperPowers={true}
+            address={{
+              street: "4th Cross",
+              city: "Central city",
+              country: "USA",
+            }}
+            age={30}
+          />
+        </div>
+      );
+    };
+
+    // Create a React root and render the App component into the root element
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+    reactRoot.render(<App />);
+  </script>
+</html>
