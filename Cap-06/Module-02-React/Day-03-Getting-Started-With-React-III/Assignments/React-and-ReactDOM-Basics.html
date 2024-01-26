@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>React Template</title>
+    <title>React Aand ReactDOM Basics</title>
   </head>
   <body>
     <div id="root"></div>
@@ -13,5 +13,8 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     // Your task starts here
+    const reactElement = React.createElement("p", {}, "Seize the day");
+
+    ReactDOM.render(reactElement, document.getElementById("root"));
   </script>
 </html>

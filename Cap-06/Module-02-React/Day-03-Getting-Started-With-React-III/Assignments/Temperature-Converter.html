@@ -3,16 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Code</title>
+    <title>Temperature Converter</title>
   </head>
   <body>
     <div id="root"></div>
-  </body>
-  <script src="<https://www.unpkg.com/react@18.2.0/umd/react.development.js>"></script>
-  <script src="<https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js>"></script>
-  <script src="<https://unpkg.com/@babel/standalone/babel.min.js>"></script>
-  <script type="text/babel">
-    // Code goes here
-  </script>
-</html>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Code goes here
 
+      const { useState } = React;
+
+      function TemperatureConverter() {
+        const [celsius, setCelsius] = useState("");
+        const [fahrenheit, setFahrenheit] = useState("");
+
+        const handleCelsiusChange = (e) => {
+          const celsiusValue = e.target.value;
+          const fahrenheitValue = (celsiusValue * 9) / 5 + 32;
+          setCelsius(celsiusValue);
+          setFahrenheit(fahrenheitValue.toFixed(2));
+        };
+
+        const handleFahrenheitChange = (e) => {
+          const fahrenheitValue = e.target.value;
+          const celsiusValue = ((fahrenheitValue - 32) * 5) / 9;
+          setFahrenheit(fahrenheitValue);
+          setCelsius(celsiusValue.toFixed(2));
+        };
+
+        return (
+          <div>
+            <label>Celsius:</label>
+            <input
+              type="number"
+              value={celsius}
+              onChange={handleCelsiusChange}
+            />
+
+            <label>Fahrenheit:</label>
+            <input
+              type="number"
+              value={fahrenheit}
+              onChange={handleFahrenheitChange}
+            />
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <TemperatureConverter />,
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>

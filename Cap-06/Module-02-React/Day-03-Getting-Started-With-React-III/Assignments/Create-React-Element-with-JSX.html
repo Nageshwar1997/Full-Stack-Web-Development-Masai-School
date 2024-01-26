@@ -1,16 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>JSX and Babel</title>
-</head>
-<body>
-  <div id="root"></div>
-  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-  <script type="text/babel">
-    // Your JSX code here
-  </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <style>
+      label {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+
+      // Declaring a constant variable 'text' with the value "Seize the day"
+      const text = "Seize the day";
+
+      // Declaring a constant variable 'isOk' with the value false
+      const isOk = false;
+
+      // Functional component 'App' definition
+      function App() {
+        return (
+          <>
+            {/* Basic Level: Simple JSX Element */}
+            <label>Basic Level: Simple JSX Element</label>
+            <p>Seize the day</p>
+            <hr />
+
+            {/* Intermediate Level: Dynamic Content in JSX */}
+            <label>Intermediate Level: Dynamic Content in JSX</label>
+            <p>{text}</p>
+            <hr />
+
+            {/* Advanced Level: Conditional Rendering in JSX */}
+            <label>Advanced Level: Conditional Rendering in JSX</label>
+            {/* Rendering content based on the value of 'isOk' */}
+            <p>{isOk ? text : "Make the most of it"}</p>
+            <p></p>
+            <hr />
+          </>
+        );
+      }
+
+      // Rendering the 'App' component to the HTML element with the id "root"
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
 </html>

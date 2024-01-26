@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Code</title>
+    <title>Basic Greeting Component</title>
   </head>
   <body>
     <div id="root"></div>
@@ -13,5 +13,26 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     // Code goes here
+     function Greeting(props) {
+      return (
+        <>
+          <p>{`${props.children} ${props.name}!`}</p>
+        </>
+      );
+    };
+
+    // Get the root element to render the React Greeting
+    let rootElement = document.getElementById("root");
+
+    // Create a React root
+    let reactRoot = ReactDOM.createRoot(rootElement);
+
+    // Function to render the React Greeting
+    function renderGreeting() {
+      reactRoot.render(<Greeting name={"Nageshwar"}>Hello</Greeting>);
+    }
+
+    // Initial rendering of the React Greeting
+    renderGreeting();
   </script>
 </html>

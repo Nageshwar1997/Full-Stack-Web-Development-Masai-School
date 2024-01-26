@@ -3,15 +3,85 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Code</title>
+    <title>Todo List App</title>
   </head>
   <body>
     <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Code goes here
+
+      const { useState } = React;
+
+      function TodoApp() {
+        const [tasks, setTasks] = useState([]);
+
+        const addTask = (newTask) => {
+          setTasks([...tasks, newTask]);
+        };
+
+        const deleteTask = (index) => {
+          const updatedTasks = [...tasks];
+          updatedTasks.splice(index, 1);
+          setTasks(updatedTasks);
+        };
+
+        const markAsCompleted = (index) => {
+          const updatedTasks = [...tasks];
+          updatedTasks[index] = { ...updatedTasks[index], completed: true };
+          setTasks(updatedTasks);
+        };
+
+        return (
+          <div>
+            <h1>Todo List App</h1>
+            <AddTodo addTask={addTask} />
+            <TodoList tasks={tasks} deleteTask={deleteTask} markAsCompleted={markAsCompleted} />
+          </div>
+        );
+      }
+
+      function AddTodo({ addTask }) {
+        const [newTask, setNewTask] = useState("");
+
+        const handleInputChange = (e) => {
+          setNewTask(e.target.value);
+        };
+
+        const handleAddTask = () => {
+          if (newTask.trim() !== "") {
+            addTask({ text: newTask, completed: false });
+            setNewTask("");
+          }
+        };
+
+        return (
+          <div>
+            <input type="text" value={newTask} onChange={handleInputChange} />
+            <button onClick={handleAddTask}>Add Task</button>
+          </div>
+        );
+      }
+
+      function TodoList({ tasks, deleteTask, markAsCompleted }) {
+        return (
+          <ul>
+            {tasks.map((task, index) => (
+              <li key={index}>
+                <span style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+                  {task.text}
+                </span>
+                <button onClick={() => deleteTask(index)}>Delete</button>
+                <button onClick={() => markAsCompleted(index)}>Mark as Completed</button>
+              </li>
+            ))}
+          </ul>
+        );
+      }
+
+      ReactDOM.render(<TodoApp />, document.getElementById("root"));
+    </script>
   </body>
-  <script src="<https://www.unpkg.com/react@18.2.0/umd/react.development.js>"></script>
-  <script src="<https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js>"></script>
-  <script src="<https://unpkg.com/@babel/standalone/babel.min.js>"></script>
-  <script type="text/babel">
-    // Code goes here
-  </script>
 </html>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Code</title>
+    <title>DYNAMIC LIST RENDERING</title>
   </head>
   <body>
     <div id="root"></div>
@@ -12,6 +12,36 @@
   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    // Code goes here
+    const { useState } = React;
+
+    function ItemList(props) {
+      const { items } = props;
+
+      if (items.length === 0) {
+        return <ul>No items found</ul>;
+      }
+      return (
+        <ul>
+          {items.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      );
+    }
+
+    let itemsArray1 = ["Apple", "Banana", "Cherry"];
+    let itemsArray2 = [];
+
+    function App() {
+      return (
+        <>
+          <h2>ItemList Component with Items</h2>
+          <ItemList items={itemsArray1} />
+          <h2>ItemList Component without Items</h2>
+          <ItemList items={itemsArray2} />
+        </>
+      );
+    }
+    ReactDOM.render(<App />, document.getElementById("root"));
   </script>
 </html>

@@ -3,7 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate Code</title>
+    <title>Birthday Card</title>
+    <style>
+      .card {
+        width: 300px;
+        padding: 20px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin: 20px;
+        text-align: center;
+        margin: auto;
+      }
+
+      .card.long-name {
+        background-color: lightblue;
+      }
+
+      .card.short-name {
+        background-color: lightgreen;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
@@ -12,6 +31,56 @@
   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    // Code goes here
+    const { useState } = React;
+
+    function BirthdayCard() {
+      const [recipientName, setRecipientName] = useState("");
+      const [customMessage, setCustomMessage] = useState("");
+
+      const handleNameChange = (event) => {
+        setRecipientName(event.target.value);
+      };
+
+      const handleMessageChange = (event) => {
+        setCustomMessage(event.target.value);
+      };
+
+      function ClearGreet() {
+        setCustomMessage("");
+        setRecipientName("");
+      }
+
+      const cardClass =
+        recipientName.length == 0
+          ? "card"
+          : recipientName.length > 5
+          ? "long-name card"
+          : "short-name card";
+
+      return (
+        <div className={cardClass}>
+          <h2>Happy Birthday!</h2>
+          <label htmlFor="name">Recipient's Name:</label>
+          <input
+            type="text"
+            id="message"
+            value={recipientName}
+            onChange={handleNameChange}
+          />
+          <br />
+          <label htmlFor="message">Custom Message:</label>
+          <textarea
+            id="message"
+            value={customMessage}
+            onChange={handleMessageChange}
+          />
+          <br />
+          <p>{`Happy Birthday, ${recipientName}! ${customMessage}`}</p>
+          <button onClick={ClearGreet}>Clear Greeting Message</button>
+        </div>
+      );
+    }
+
+    ReactDOM.render(<BirthdayCard />, document.getElementById("root"));
   </script>
 </html>
