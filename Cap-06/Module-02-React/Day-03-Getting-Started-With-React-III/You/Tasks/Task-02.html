@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Set the title of the HTML document -->
-    <title>React Template</title>
+    <title>Event Handle</title>
   </head>
   <body>
     <!-- Container for the React application -->
@@ -17,13 +17,29 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     // Define the main App component
-    function App() {
+    function App(props) {
+      const [balance, setBalance] = React.useState(0);
+
+      //   Function for Deposit
+      function handleBalance() {
+        setBalance(balance * 2);
+      }
       return (
         <>
-          <h1>Hello World</h1>
+          <h1>Laxmi Chit Fund</h1>
+          <h1>
+            {`${props.children}'s Bank Balance : `}{" "}
+            <span style={{ color: "green" }}>{balance}</span>{" "}
+          </h1>
+          <button onClick={handleBalance}>Double The Amount In 25 Days</button>
         </>
       );
-    };
+    }
+
+    // Function to render the React app
+    function renderApp() {
+      reactRoot.render(<App>Baburao</App>);
+    }
 
     // Get the root element to render the React app
     let rootElement = document.getElementById("root");
@@ -31,13 +47,7 @@
     // Create a React root
     let reactRoot = ReactDOM.createRoot(rootElement);
 
-    // Function to render the React app
-    function renderApp() {
-      reactRoot.render(<App />);
-    }
-
     // Initial rendering of the React app
     renderApp();
-
   </script>
 </html>

@@ -18,12 +18,33 @@
   <script type="text/babel">
     // Define the main App component
     function App() {
+      const [balance, setBalance] = React.useState(0);
+
+    //   Function for Deposit
+    function Deposit() {
+        setBalance(balance + 1000);
+    }
+    //   Function for Withdraw
+      function Withdraw() {
+        if (balance >= 1000) {
+          setBalance(balance - 1000);
+        } else {
+          alert(`Insufficient Balance : Your Balance is ${balance}`);
+        }
+      }
       return (
         <>
-          <h1>Hello World</h1>
+          <h1>Balance :{` ${balance}`}</h1>
+          <button onClick={Deposit}>Deposit 1000</button>
+          <button onClick={Withdraw}>Withdraw 1000</button>
         </>
       );
-    };
+    }
+
+    // Function to render the React app
+    function renderApp() {
+      reactRoot.render(<App />);
+    }
 
     // Get the root element to render the React app
     let rootElement = document.getElementById("root");
@@ -31,13 +52,7 @@
     // Create a React root
     let reactRoot = ReactDOM.createRoot(rootElement);
 
-    // Function to render the React app
-    function renderApp() {
-      reactRoot.render(<App />);
-    }
-
     // Initial rendering of the React app
     renderApp();
-
   </script>
 </html>

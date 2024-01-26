@@ -16,11 +16,19 @@
   <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+
+    function MyButton() {
+        const [count, setCount] = React.useState(1);
+
+        return <button onClick={()=>setCount(count + 1)}>Count : {count}</button>
+    }
     // Define the main App component
     function App() {
       return (
         <>
-          <h1>Hello World</h1>
+        <MyButton />
+        <MyButton />
+        <MyButton />
         </>
       );
     };

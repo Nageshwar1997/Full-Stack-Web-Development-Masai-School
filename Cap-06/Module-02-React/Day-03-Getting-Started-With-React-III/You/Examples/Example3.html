@@ -18,12 +18,24 @@
   <script type="text/babel">
     // Define the main App component
     function App() {
+        const [inputValue, setInputValue] = React.useState("");
+
+        function handleChange(event) {
+            setInputValue(event.target.value);
+            // console.log(event.target.value);
+        }
+        function clearSearchBar() {
+            setInputValue("");
+        }
       return (
         <>
-          <h1>Hello World</h1>
-        </>
+          <input onChange={handleChange} value={inputValue} type="text" placeholder="Search Here" />
+          <hr />
+          <h3>User is Searching.... <span style={{color:"red"}}>{inputValue}</span></h3>
+          <button onClick={clearSearchBar}>Clear Searchbar</button>
+          </>
       );
-    };
+    }
 
     // Get the root element to render the React app
     let rootElement = document.getElementById("root");
@@ -38,6 +50,5 @@
 
     // Initial rendering of the React app
     renderApp();
-
   </script>
 </html>
