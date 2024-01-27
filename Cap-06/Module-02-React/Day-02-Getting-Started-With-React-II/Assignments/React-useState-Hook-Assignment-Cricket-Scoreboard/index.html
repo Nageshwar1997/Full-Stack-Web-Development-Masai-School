@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boilerplate Code</title>
+    <style>
+      #root {
+        border: 1px solid black;
+        width: 30%;
+        margin: auto;
+        border-radius: 10px;
+        background-color: lightgray;
+      }
+
+      #main > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      #main > div button {
+        margin: 5px;
+        background-color: lightgreen;
+        border-radius: 6px;
+      }
+      #main > div button:nth-child(4) {
+        background-color: lightcoral;
+      }
+      #main {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Code goes here
+    const { useState } = React;
+
+    function CricketScoreboard() {
+      const [score, setScore] = useState(0);
+      const [wicket, setWicket] = useState(0);
+      const handleWicket = () => {
+        if (wicket == 9) {
+          setWicket(wicket + 1);
+          alert("All out and Inning Ended");
+        }
+        setWicket(wicket + 1);
+      };
+
+      return (
+        <>
+          <div id="main">
+            <h3>
+              Score :{" "}
+              <span
+                style={{ color: score != 0 ? "green" : "black" }}
+              >{` ${score}`}</span>{" "}
+            </h3>
+            <h3>
+              Wickets :{" "}
+              <span
+                style={{ color: wicket != 0 ? "red" : "black" }}
+              >{` ${wicket}`}</span>
+            </h3>
+            <div>
+              <button onClick={() => setScore(score + 3)}>
+                Increase runs by 3
+              </button>
+              <button onClick={() => setScore(score + 4)}>
+                Increase runs by 4
+              </button>
+              <button onClick={() => setScore(score + 8)}>
+                Increase runs by 8
+              </button>
+              <button onClick={handleWicket}>Update Wicket</button>
+            </div>
+          </div>
+        </>
+      );
+    }
+
+    ReactDOM.render(<CricketScoreboard />, document.getElementById("root"));
+  </script>
+</html>
