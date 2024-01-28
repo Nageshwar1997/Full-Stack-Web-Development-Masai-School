@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Superhero Card</title>
+    <style>
+        #root{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Superhero(props) {
+      //   console.log(props.randomFunc());
+      return (
+        <div id="card" style={{ border: "1px solid black", padding: "10px", margin: "10px", width: "300px", backgroundColor: "lightblue"}}>
+          <h1>
+            Happy Birthday {props.name}! You are now {props.age} years old.
+          </h1>
+          <h3>Is Bachelor {props.isBachelor ? "Yes" : "No"}</h3>
+          <ul><strong>Hobbies{" => "}</strong>{props.hobbies.map((el)=>{
+            return <li>{el}</li>
+          })}</ul>
+          <p>
+            Address: <br /> City: {props.address.city} <br /> Country:{" "}
+            {props.address.country}
+          </p>
+          <h4>{props.randomFunc()}</h4>
+        </div>
+      );
+    }
+
+    function App() {
+      let foo = function () {
+        return "Hello World!";
+      };
+      return (
+        <>
+          <Superhero
+            name="Bruce"
+            age={26}
+            isBachelor={false}
+            hobbies={["Flying", "Collecting Coins"]}
+            address={{ city: "New York", country: "USA" }}
+            randomFunc={function () {
+              return (`City: ${this.address.city}, Country: ${this.address.country}`);
+            }}
+          />
+          <Superhero
+            name="Krishna"
+            age={30}
+            isBachelor={true}
+            hobbies={["Flying", "Dancing"]}
+            address={{ city: "Mumbai", country: "India" }}
+            randomFunc={function () {
+              return (`City: ${this.address.city}, Country: ${this.address.country}`);
+            }}
+          />
+        </>
+      );
+    }
+
+    const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+
+    reactRoot.render(<App />);
+  </script>
+</html>

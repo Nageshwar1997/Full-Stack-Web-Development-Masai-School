@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #f2f2f2;
+        color: #444;
+      }
+      #root {
+        margin: auto;
+        border: 1px solid rgb(9, 12, 12);
+        width: 90%;
+      }
+      #navbar {
+        border: 1px solid rgb(62, 86, 168);
+        background-color: #333;
+        color: #fff;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+      }
+      #main {
+        border: 1px solid lightcoral;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        height: 50vh;
+        background-color: lightcyan;
+      }
+      #sidebar {
+        border: 1px solid rgb(175, 99, 99);
+        width: 30%;
+        height: 90%;
+        text-align: center;
+        background-color: rgb(91, 138, 138);
+      }
+      #product-section {
+        border: 1px solid rgb(175, 99, 99);
+        height: 90%;
+        width: 60%;
+        text-align: center;
+        background-color: rgb(9, 212, 162);
+      }
+
+      #footer {
+        border: 1px solid rgb(175, 99, 99);
+        text-align: center;
+        background-color: rgb(91, 138, 50);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Navbar(props) {
+      return (
+        <div id="navbar">
+          <img src={props.logo} alt="Logo" />
+          <h1>Navbar</h1>
+        </div>
+      );
+    }
+
+    function Main() {
+      return (
+        <div id="main">
+          <Sidebar URL="https://docs.linn.co.uk/wiki/images/thumb/b/be/Retired-100px.png/180px-Retired-100px.png" />
+          <ProductSection URL="https://w7.pngwing.com/pngs/85/114/png-transparent-avatar-user-profile-male-logo-profile-icon-hand-monochrome-head-thumbnail.png" />
+        </div>
+      );
+    }
+
+    function Sidebar(props) {
+      return (
+        <div id="sidebar">
+          <h1>Sidebar</h1>
+          <img
+            style={{ with: "100%", height: "200px" }}
+            src={props.URL}
+            alt=""
+          />
+        </div>
+      );
+    }
+    function ProductSection(props) {
+      return (
+        <div id="product-section">
+          <h1>Product Section</h1>
+          <img
+            style={{ with: "100%", height: "200px" }}
+            src={props.URL}
+            alt=""
+          />
+        </div>
+      );
+    }
+
+    function Footer(props) {
+      return (
+        <div id="footer">
+          <h1>Footer</h1>
+          <p>{props.func()}</p>
+        </div>
+      );
+    }
+    function App() {
+      function foo() {
+        return "Hello World";
+      }
+      return (
+        <>
+          <Navbar
+            logo={
+              "https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg"
+            }
+          />
+          <Main />
+          <Footer func={foo} />
+        </>
+      );
+    }
+    function renderApp() {
+      ReactDOM.render(<App />, document.getElementById("root"));
+    }
+    renderApp();
+  </script>
+</html>
