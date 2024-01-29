@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parent To Children</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Child(props) {
+      const numberType =
+        props.count == 0
+          ? "Natural Zero"
+          : props.count % 2 == 0
+          ? "Even"
+          : "Odd";
+
+      function increaseByThree() {
+        props.increaseByValue(3);
+      }
+      function increaseByFour() {
+        props.increaseByValue(4);
+      }
+      return (
+        <div>
+          <p>
+            Count is{" "}
+            <span
+              style={{
+                color:
+                  props.count == 0
+                    ? "black"
+                    : props.count % 2 == 0
+                    ? "green"
+                    : "red",
+              }}
+            >
+              {numberType}
+            </span>{" "}
+            Number
+          </p>
+          <button onClick={increaseByThree}> Increase By 3</button>
+          <button onClick={increaseByFour}> Increase By 4</button>
+          <button
+            onClick={() => {
+              props.increaseByValue(5);
+            }}
+          >
+            {" "}
+            Increase By 5
+          </button>
+          <button
+            onClick={() => {
+              props.increaseByValue(6);
+            }}
+          >
+            {" "}
+            Increase By 6
+          </button>
+        </div>
+      );
+    }
+    function App(props) {
+      const [count, setCount] = React.useState(0);
+
+      function increaseByValue(val) {
+        setCount(count + val);
+      }
+      return (
+        <>
+          <h1>
+            Count :{" "}
+            <span
+              style={{
+                color: count == 0 ? "black" : count % 2 == 0 ? "green" : "red",
+              }}
+            >
+              {count}
+            </span>
+          </h1>
+          <Child count={count} increaseByValue={increaseByValue} />
+        </>
+      );
+    }
+    function renderApp() {
+      ReactDOM.render(<App />, document.getElementById("root"));
+    }
+    renderApp();
+  </script>
+</html>

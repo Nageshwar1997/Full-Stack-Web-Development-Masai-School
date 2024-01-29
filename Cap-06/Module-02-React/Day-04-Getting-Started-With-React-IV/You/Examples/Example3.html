@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Children Props</title>
     <style>
-        .blue-border{
-            border: 1px solid blue;
-        }
+      #root {
+        display: flex;
+        justify-content: space-around;
+      }
+      .blue-border {
+        border: 1px solid blue;
+      }
     </style>
   </head>
   <body>
@@ -22,24 +26,32 @@
     }
 
     function Component1() {
-      return <div>Component1</div>;
+      return <div>Component - 01</div>;
     }
-
     function Component2() {
-      return <div>Component2</div>;
+      return <div>Component - 02</div>;
     }
-
     function Component3() {
-      return <div>Component3</div>;
+      return <div>Component - 03</div>;
+    }
+    function Component4() {
+      return <div>Component - 04</div>;
+    }
+    function Component5() {
+      return <div>Component - 05</div>;
     }
     function App() {
       return (
         <>
-          <Component1 />
+          <ComponentWithBlueBorder children={<Component1 />} />
           <ComponentWithBlueBorder>
             <Component2 />
           </ComponentWithBlueBorder>
           <Component3 />
+          <ComponentWithBlueBorder>
+            <Component4 />
+            <Component5 />
+          </ComponentWithBlueBorder>
         </>
       );
     }
