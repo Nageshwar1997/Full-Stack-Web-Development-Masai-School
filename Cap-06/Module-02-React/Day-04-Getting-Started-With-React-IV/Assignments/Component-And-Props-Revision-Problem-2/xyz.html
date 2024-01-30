@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Boilerplate Code</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // User Component
+      const User = (props) => (
+        <div>
+          <h2>User Information</h2>
+          <p>Name: {props.name}</p>
+          <p>Age: {props.age}</p>
+          <p>Email: {props.email}</p>
+        </div>
+      );
+
+      // ScoreCard Component
+      const ScoreCard = () => (
+        <div>
+          <h2>Score Card</h2>
+          <p>Score: 95</p>
+        </div>
+      );
+
+      // ContainerWithBlueBorder Component
+      const ContainerWithBlueBorder = ({ children }) => (
+        <div style={{ border: '2px solid blue', padding: '10px', margin: '10px' }}>
+          {children}
+        </div>
+      );
+
+      // Dynamic Container Component
+      const Container = ({ children, borderColor }) => (
+        <div style={{ border: `1px solid ${borderColor}`, padding: '25px', margin: '25px' }}>
+          {children}
+        </div>
+      );
+
+      // App Component
+      const App = () => (
+        <div>
+          <ContainerWithBlueBorder>
+            <User name="John Doe" age={25} email="john@example.com" />
+          </ContainerWithBlueBorder>
+
+          <ContainerWithBlueBorder>
+            <ScoreCard />
+          </ContainerWithBlueBorder>
+        </div>
+      );
+
+      // App Component with Bonus
+      const AppWithBonus = () => (
+        <div>
+          <Container borderColor="red">
+            <User name="Alice" age={30} email="alice@example.com" />
+          </Container>
+
+          <Container borderColor="green">
+            <ScoreCard />
+          </Container>
+
+          <Container borderColor="blue">
+            <p>Some text content</p>
+          </Container>
+
+          <Container borderColor="purple">
+            <h3>Another Component</h3>
+          </Container>
+        </div>
+      );
+
+      // Render the App component
+    //   ReactDOM.render(<App />, document.getElementById('root'));
+      // Uncomment the line below to render the AppWithBonus component
+      ReactDOM.render(<AppWithBonus />, document.getElementById('root'));
+    </script>
+</body>
+</html>
