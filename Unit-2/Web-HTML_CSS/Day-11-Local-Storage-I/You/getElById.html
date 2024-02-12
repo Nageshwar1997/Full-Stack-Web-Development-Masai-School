@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Define character encoding -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport for responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Title of the document -->
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Input field for entering a name -->
+    <input type="text" name="name" id="name" placeholder="Enter Name" />
+    <!-- Button to add the entered name -->
+    <button onclick="addName()" id="btn">Add Name</button>
+    <!-- Element to display messages -->
+    <h1 id="message"></h1>
+  </body>
+  <script>
+    // JavaScript code for handling the functionality
+    // Retrieving elements by their IDs
+    let btn = document.getElementById("btn");
+    let name = document.getElementById("name");
+    let message = document.getElementById("message");
+
+    // Array to store names
+    let namesArr = [];
+
+    // Function to add a name
+    function addName() {
+      // Checking if the input field is not empty
+      if (name.value) {
+        // Adding the entered name to the array
+        namesArr.push(name.value);
+        // Clearing the input field
+        name.value = "";
+        // Storing the array in localStorage
+        localStorage.setItem("names", JSON.stringify(namesArr));
+        // Clearing any previous message
+        message.innerText = "";
+        // Displaying the names
+        showNames();
+      } else {
+        // Displaying an error message if the input field is empty
+        message.style = "color: red";
+        message.innerText = "Enter Name";
+      }
+    }
+
+    // Creating a div to display the list of names
+    const listDiv = document.createElement("div");
+
+    // Function to display the names
+    function showNames() {
+      // Clearing the previous list
+      listDiv.innerHTML = "";
+      // Creating an element to hold each name
+      const listData = document.createElement("h1");
+      listData.className = "listName";
+
+      // Iterating through the array of names
+      namesArr.forEach((value) => {
+        // Displaying each name
+        listData.innerText = value;
+        listDiv.append(listData);
+      });
+    }
+
+    // Appending the list div to the body of the document
+    document.body.append(listDiv);
+  </script>
+</html>
