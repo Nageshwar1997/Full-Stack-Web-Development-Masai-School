@@ -29,7 +29,7 @@ function App() {
     fetchAndUpdateData(page);
   }, [page]);
 
-  const fetchAndUpdateData = async () => {
+  const fetchAndUpdateData = async (page) => {
     setLoading(true);
     try {
       let response = await getData(
