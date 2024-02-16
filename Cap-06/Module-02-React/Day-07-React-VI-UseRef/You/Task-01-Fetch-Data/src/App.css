@@ -1,0 +1,22 @@
+#root {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+#product-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-area: auto;
+  gap: 15px;
+}
+
+button {
+  width: 20%;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+}
