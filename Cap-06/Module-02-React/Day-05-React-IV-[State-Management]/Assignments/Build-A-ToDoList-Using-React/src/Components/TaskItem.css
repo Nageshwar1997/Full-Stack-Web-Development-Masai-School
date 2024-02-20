@@ -1,0 +1,20 @@
+.completed {
+  color: green;
+}
+.inCompleted {
+  color: red;
+}
+table {
+  text-align: center;
+}
+tr {
+  height: 30px;
+}
+td, th {
+  height: 30px;
+  padding: 10px;
+}
+button {
+  border: gray 1px solid;
+  height: 30px;
+}
