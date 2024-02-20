@@ -31,4 +31,6 @@ export default App;
 ### We can use a special trick called `useEffect` to make sure we see the correct score. It's like a helper that tells React to do something after it updates the score.
 
 ## Multiple State Updates
-``sdasddasddad``
+``
+Multiple State Updates
+``
