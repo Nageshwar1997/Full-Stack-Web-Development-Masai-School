@@ -27,14 +27,10 @@ function App() {
   );
 }
 
-export default App;```
+export default App;````
 
 ### When I click the button, the score increases by 1, but the `console.log(count)` shows the old score. That's because React takes a little time to update the score.
 
 ### We can use a special trick called `useEffect` to make sure we see the correct score. It's like a helper that tells React to do something after it updates the score.
 
 ## Multiple State Updates
-``
-Multiple State Updates
-``
-````
