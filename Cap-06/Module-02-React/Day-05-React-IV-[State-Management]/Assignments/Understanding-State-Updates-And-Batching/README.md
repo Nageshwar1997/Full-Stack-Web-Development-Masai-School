@@ -27,7 +27,7 @@ function App() {
   );
 }
 
-export default App;````
+export default App;```
 
 ### When I click the button, the score increases by 1, but the `console.log(count)` shows the old score. That's because React takes a little time to update the score.
 
