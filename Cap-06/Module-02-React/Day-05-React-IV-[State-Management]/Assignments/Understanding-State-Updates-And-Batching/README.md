@@ -9,7 +9,7 @@ That is called `state`. It is like remembering something Important in my game.
 
 ## Delayed State Update
 
-````import React from 'react';
+```import React from 'react';
 
 function App() {
   const [count, setCount] = React.useState(0);
