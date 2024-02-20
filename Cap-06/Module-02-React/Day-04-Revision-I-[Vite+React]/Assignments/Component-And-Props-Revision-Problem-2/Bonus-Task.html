@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonus Task</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your React code will go here
+      function User(props) {
+        const { name, age, email } = props;
+
+        return (
+          <div>
+            <h2>User Information</h2>
+            <p>Name : {name}</p>
+            <p>Age : {age}</p>
+            <p>
+              Email : <a href="#">{email}</a>
+            </p>
+          </div>
+        );
+      }
+
+      function ScoreCard({ score }) {
+        return (
+          <div>
+            <h2>Score Card</h2>
+            <p>Score : {score}</p>
+          </div>
+        );
+      }
+
+      function UserData() {
+        return (
+          <>
+            <User name="Nageshwar" age="25" email="nageshwar@masai.com" />
+            <ScoreCard score="95" />
+          </>
+        );
+      }
+
+      function Container({ children, borderColor }) {
+        return (
+          <div
+            style={{
+              border: `1px solid ${borderColor}`,
+              padding: "25px",
+              margin: "25px",
+            }}
+          >
+            <h4 style={{ color: borderColor }}>
+              This is {borderColor} container
+            </h4>
+            {children}
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <Container borderColor="red">
+              <UserData />
+            </Container>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

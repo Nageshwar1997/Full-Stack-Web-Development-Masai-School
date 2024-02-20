@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Task</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your React code will go here
+
+      function User(props) {
+        const { name, age, email } = props;
+
+        return (
+          <div>
+            <h2>User Information</h2>
+            <p>Name : {name}</p>
+            <p>Age : {age}</p>
+            <p>
+              Email : <a href="#">{email}</a>
+            </p>
+          </div>
+        );
+      }
+
+      function ScoreCard({ score }) {
+        return (
+          <div>
+            <h2>Score Card</h2>
+            <p>Score : {score}</p>
+          </div>
+        );
+      }
+
+      function ContainerWithBlueBorder({ children }) {
+        return (
+          <div
+            style={{
+              border: "2px solid blue",
+              padding: "10px",
+              margin: "10px",
+            }}
+          >
+            {children}
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <ContainerWithBlueBorder>
+              <User name="Nageshwar" age="25" email="nageshwar@masai.com" />
+            </ContainerWithBlueBorder>
+            <ContainerWithBlueBorder>
+              <ScoreCard score={95} />
+            </ContainerWithBlueBorder>
+          </>
+        );
+      }
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
