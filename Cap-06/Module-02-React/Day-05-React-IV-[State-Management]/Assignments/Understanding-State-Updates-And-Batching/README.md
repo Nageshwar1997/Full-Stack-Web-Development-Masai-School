@@ -1,12 +1,15 @@
 # State Management?
+
 Let suppose I have a game where you need to keep track of the score.
 That is called `state`. It is like remembering something Important in my game.
 
 # `useState` Hook
+
 `useState` is like a magic tool in React that helps you manage state easily. It's like a box where I can keep my important information, like the score in my game.
 
 ## Delayed State Update
-{`import React from 'react';
+
+````import React from 'react';
 
 function App() {
   const [count, setCount] = React.useState(0);
@@ -24,7 +27,7 @@ function App() {
   );
 }
 
-export default App;`}
+export default App;```
 
 ### When I click the button, the score increases by 1, but the `console.log(count)` shows the old score. That's because React takes a little time to update the score.
 
@@ -34,3 +37,4 @@ export default App;`}
 ``
 Multiple State Updates
 ``
+````
