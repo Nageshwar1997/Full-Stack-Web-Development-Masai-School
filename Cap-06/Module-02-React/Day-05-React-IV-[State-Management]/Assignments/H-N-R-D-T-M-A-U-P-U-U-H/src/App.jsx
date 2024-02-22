@@ -30,7 +30,7 @@ function App() {
   async function fetchAndUpdateData() {
     try {
       let { data, totalPages } = await getData(
-        `https://jsonplaceholder.typicode.com/todos?_limit=10&_page=${page}`
+        `https://jsonplaceholder.typicode.com/posts?_limit=10&_page=${page}`
       );
 
       setData(data);
@@ -39,30 +39,22 @@ function App() {
       console.log(error);
     }
   }
-  // console.log(totalPages);
+
+  function handlePreviousBtn() {
+    setPage((prev) => prev - 1);
+  }
+  function handleNextBtn() {
+    setPage((prev) => prev + 1);
+  }
+  console.log(totalPages);
   return (
     <>
-      <div>
-        <h1>ToDo_s</h1>
-        <div id="buttons">
-          <button disabled={page === 1} onClick={() => setPage(page - 1)}>
-            {" << "}
-          </button>
-          {new Array(totalPages).fill(0).map((_, index) => {
-            return (
-              <button key={index} onClick={() => setPage(index + 1)} className={page === index + 1 ? "activeButton" : ""}>
-                {index + 1}
-              </button>
-            );
-          })}
-          <button
-            disabled={page === totalPages}
-            onClick={() => setPage(page + 1)}
-          >
-            {" >> "}
-          </button>
-        </div>
-      </div>
+      <button onClick={handlePreviousBtn} disabled={page === 1}>
+        Previous
+      </button>
+      <button onClick={handleNextBtn} disabled={page === totalPages}>
+        Next
+      </button>
       <div id="table">
         <table border={1}>
           <thead>
@@ -74,10 +66,8 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {data.map((todo) => (
-              <tr key={todo.id}>
-                <PostItem {...todo} />
-              </tr>
+            {data.map((post) => (
+              <PostItem key={post.id} {...post} />
             ))}
           </tbody>
         </table>
