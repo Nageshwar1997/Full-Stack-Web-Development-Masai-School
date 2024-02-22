@@ -13,6 +13,12 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     // Your task starts here
-   
+    let rootElement = document.getElementById("root");
+
+    let reactElement = React.createElement("p", {
+      children: "Seize the day",
+    });
+
+    ReactDOM.render(reactElement, rootElement);
   </script>
 </html>
