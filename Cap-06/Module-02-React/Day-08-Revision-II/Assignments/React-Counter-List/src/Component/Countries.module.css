@@ -1,0 +1,29 @@
+table{
+    border: none;
+    text-align: center;
+    width: 100%;
+}
+th{
+    background-color: yellow;
+}
+th, td{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 10px;
+}
+#pagination{
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 10px;
+}
+#container{
+    width: 100%;
+    text-align: center;
+}
+button{
+    padding: 5px 10px;
+    margin: 0 10px;
+}

@@ -1,7 +1,9 @@
 function LoadingIndicator() {
   return (
     <div>
-      <h1 data-testid="loading-indicator">...Loading</h1>
+      <h1 className="loading-indicator" data-testid="loading-indicator">
+        ...Loading
+      </h1>
     </div>
   );
 }
