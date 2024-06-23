@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      #navbar {
+        border: 1px solid;
+        background-color: aqua;
+        margin: auto;
+        display: flex;
+        justify-content: flex-start;
+        gap: 20px;
+        & p {
+          color: red;
+        }
+      }
+      #main {
+        border: 1px solid;
+        background-color: rgb(79, 185, 95);
+        & p {
+          color: red;
+        }
+      }
+      #footer {
+        border: 1px solid;
+        background-color: rgb(216, 239, 114);
+        & p {
+          color: red;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    function Navbar() {
+      return (
+        <div id="navbar">
+          <p id="child1">Navbar</p>
+          <p id="child2">Links Will Be Displayed Here</p>
+        </div>
+      );
+    }
+    function Main() {
+      return (
+        <>
+          <div id="main">
+            <p>Main Content</p>
+          </div>
+        </>
+      );
+    }
+    function Footer() {
+      return (
+        <div id="footer">
+          <p>Footer</p>
+        </div>
+      );
+    }
+
+    function App() {
+      return (
+        <>
+          <Navbar />
+          <Main />
+          <Footer />
+        </>
+      );
+    }
+    let rootElement = ReactDOM.createRoot(document.getElementById("root"));
+    rootElement.render(<App />);
+  </script>
+</html>
