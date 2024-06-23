@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Superhero Card</title>
     <style>
-        #root{
-            display: flex;
-            justify-content: center;
-        }
+      #root {
+        display: flex;
+        justify-content: center;
+      }
     </style>
   </head>
   <body>
@@ -21,14 +21,26 @@
     function Superhero(props) {
       //   console.log(props.randomFunc());
       return (
-        <div id="card" style={{ border: "1px solid black", padding: "10px", margin: "10px", width: "300px", backgroundColor: "lightblue"}}>
+        <div
+          id="card"
+          style={{
+            border: "1px solid black",
+            padding: "10px",
+            margin: "10px",
+            width: "300px",
+            backgroundColor: "lightblue",
+          }}
+        >
           <h1>
             Happy Birthday {props.name}! You are now {props.age} years old.
           </h1>
           <h3>Is Bachelor {props.isBachelor ? "Yes" : "No"}</h3>
-          <ul><strong>Hobbies{" => "}</strong>{props.hobbies.map((el)=>{
-            return <li>{el}</li>
-          })}</ul>
+          <ul>
+            <strong>Hobbies{" => "}</strong>
+            {props.hobbies.map((el) => {
+              return <li>{el}</li>;
+            })}
+          </ul>
           <p>
             Address: <br /> City: {props.address.city} <br /> Country:{" "}
             {props.address.country}
@@ -51,7 +63,7 @@
             hobbies={["Flying", "Collecting Coins"]}
             address={{ city: "New York", country: "USA" }}
             randomFunc={function () {
-              return (`City: ${this.address.city}, Country: ${this.address.country}`);
+              return `City: ${this.address.city}, Country: ${this.address.country}`;
             }}
           />
           <Superhero
@@ -61,7 +73,7 @@
             hobbies={["Flying", "Dancing"]}
             address={{ city: "Mumbai", country: "India" }}
             randomFunc={function () {
-              return (`City: ${this.address.city}, Country: ${this.address.country}`);
+              return `City: ${this.address.city}, Country: ${this.address.country}`;
             }}
           />
         </>

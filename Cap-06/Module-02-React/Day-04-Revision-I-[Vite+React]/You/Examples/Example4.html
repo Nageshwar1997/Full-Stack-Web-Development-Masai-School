@@ -13,22 +13,25 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function App() {
-        function handleClick() {
-            // return alert("Button Clicked");
-            alert("Button Clicked");
-        }
+      function handleClick() {
+        // return alert("Button Clicked");
+        alert("Button Clicked");
+      }
       return (
         <>
-        {/* Don't need to invoke function */}
+          {/* Don't need to invoke function */}
           <button onClick={handleClick}>Click Me</button>
-          <button onClick={()=> alert("Button Clicked through anonymous function")}>Click Me</button>
+          <button
+            onClick={() => alert("Button Clicked through anonymous function")}
+          >
+            Click Me
+          </button>
         </>
       );
-    };
+    }
     function renderApp() {
       ReactDOM.render(<App />, document.getElementById("root"));
     }
     renderApp();
-
   </script>
 </html>

@@ -1,6 +1,4 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+/* eslint-disable react/prop-types */
 import "./App.css";
 const superheroes = [
   {
@@ -42,7 +40,7 @@ function SuperheroCard({ superhero }) {
   let bachelorStatus = isBachelor ? "Yes" : "No";
 
   function ShowPowers() {
-    let powersArr = powers.map((power) => <li>{power}</li>);
+    let powersArr = powers.map((power, i) => <li key={i}>{power}</li>);
     return powersArr;
   }
   return (
@@ -77,13 +75,13 @@ function SuperheroCard({ superhero }) {
         Address :
         <ul>
           <li>
-            Street : <strong>{address.street}</strong>
+            Street : <strong>{street}</strong>
           </li>
           <li>
-            City : <strong>{address.city}</strong>
+            City : <strong>{city}</strong>
           </li>
           <li>
-            Country : <strong>{address.country}</strong>
+            Country : <strong>{country}</strong>
           </li>
         </ul>
       </p>
