@@ -17,9 +17,7 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
     function MyButton(props) {
-      return (
-        <button onClick={props.handleCount}>Count : {props.count}</button>
-      );
+      return <button onClick={props.handleCount}>Count : {props.count}</button>;
     }
     // Define the main App component
     function App() {
