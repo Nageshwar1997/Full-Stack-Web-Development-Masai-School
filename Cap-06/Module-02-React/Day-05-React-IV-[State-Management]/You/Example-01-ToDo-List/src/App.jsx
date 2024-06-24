@@ -1,19 +1,16 @@
-import { useState } from 'react'
-import './App.css'
-import Navbar from './Components/Navbar'
-import Footer from './Components/Footer'
-import ProductSection from './Components/ProductSection'
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import ProductSection from "./components/ProductSection";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Navbar />
       <ProductSection />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
