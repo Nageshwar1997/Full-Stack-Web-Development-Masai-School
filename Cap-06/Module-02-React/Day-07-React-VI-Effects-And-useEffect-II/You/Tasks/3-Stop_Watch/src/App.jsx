@@ -11,7 +11,7 @@ function App() {
       </button>
       {/* {(showComponent && <Stopwatch />)} */}
       {/* OR */}
-      {showComponent ? <Stopwatch /> : null}
+      {showComponent && <Stopwatch />}
     </>
   );
 }
