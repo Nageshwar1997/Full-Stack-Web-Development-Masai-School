@@ -25,7 +25,7 @@ function App() {
         <button onClick={fetchData}>GET POST</button>
       </div>
       <div className="data">
-        <table border={1}>
+        <table border={1} className="table">
           <thead>
             <tr>
               <th>Id</th>
@@ -35,8 +35,8 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {data.map((todo, index) => (
-              <tr key={index+1}>
+            {data.map((todo) => (
+              <tr key={todo.id}>
                 <td>{todo.id}</td>
                 <td>{firstCapitalLetter(todo.title)}</td>
                 <td>{todo.userId}</td>
