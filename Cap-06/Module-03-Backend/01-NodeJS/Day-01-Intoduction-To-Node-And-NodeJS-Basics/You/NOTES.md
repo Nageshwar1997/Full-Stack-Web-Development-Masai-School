@@ -10,7 +10,7 @@
 
 -Node is a Runtime environment, that allows JS to run outside of browsers in local machines as well.
 
-## CJS
+## CJS (Common JavaScript)
 
 ```
 //for importing

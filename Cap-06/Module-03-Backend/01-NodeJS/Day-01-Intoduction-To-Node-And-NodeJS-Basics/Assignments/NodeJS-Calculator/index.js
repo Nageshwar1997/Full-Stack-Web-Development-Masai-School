@@ -32,7 +32,7 @@ switch (operation) {
     );
     break;
   }
-  case "divide": {
+  case "div": {
     const division = numbers
       .slice(1)
       .reduce((acc, curr) => acc / curr, numbers[0]);
