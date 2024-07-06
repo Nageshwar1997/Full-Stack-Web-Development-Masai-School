@@ -1,0 +1,14 @@
+{
+  "name": "example-05-first-project",
+  "version": "1.0.0",
+  "description": "This is my first node project with npm init -y or npm init",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nageshwar Pawar",
+  "license": "ISC",
+  "dependencies": {
+    "is-even": "^1.0.0"
+  }
+}
