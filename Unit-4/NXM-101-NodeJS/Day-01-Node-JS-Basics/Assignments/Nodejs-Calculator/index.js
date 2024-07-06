@@ -21,102 +21,64 @@ const numbers = args.slice(1).map(Number);
 
 switch (operation) {
   case "add": {
-    if (numbers.length <= 0) {
-      console.log("Pass arguments correctly");
+    if (numbers.length > 0) {
+      console.log(addition(numbers));
       break;
     }
-    console.log(`Addition of ${numbers.join(" + ")} = ${addition(numbers)}`);
-    break;
   }
 
   case "sub": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
+    if (numbers.length > 0) {
+      console.log(subtraction(numbers));
       break;
     }
-    console.log(
-      `Subtraction of ${numbers.join(" - ")} = ${subtraction(numbers)}`
-    );
-    break;
   }
 
   case "mult": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
+    if (numbers.length > 0) {
+      console.log(multiplication(numbers));
       break;
     }
-    console.log(
-      `Multiplication of ${numbers.join(" * ")} = ${multiplication(numbers)}`
-    );
-    break;
   }
-  case "div": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
+  case "divide": {
+    if (numbers.length === 2) {
+      console.log(division(numbers[0], numbers[1]));
       break;
     }
-    console.log(`Division of ${numbers.join(" / ")} = ${division(numbers)}`);
-    break;
   }
   case "sin": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
-      break;
-    }
     if (numbers.length === 1) {
-      console.log(`Sine of ${numbers[0]} = ${sin(numbers)}`);
+      console.log(sin(numbers[0]));
       break;
     }
-    console.log(
-      `Sine of [ ${numbers.join(", ")} ] = [ ${sin(numbers).join(", ")} ]`
-    );
-    break;
   }
   case "cos": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
-      break;
-    }
     if (numbers.length === 1) {
-      console.log(`Cosec of ${numbers[0]} = ${cos(numbers)}`);
+      console.log(cos(numbers[0]));
       break;
     }
-    console.log(
-      `Cosec of [ ${numbers.join(", ")} ] = [ ${cos(numbers).join(", ")} ]`
-    );
-    break;
   }
   case "tan": {
-    if (numbers.length < 1) {
-      console.log("Pass arguments correctly");
-      break;
-    }
     if (numbers.length === 1) {
-      console.log(`Tangent of ${numbers[0]} = ${tan(numbers)}`);
+      console.log(tan(numbers[0]));
       break;
     }
-    console.log(
-      `Tangent of [ ${numbers.join(", ")} ] = [ ${tan(numbers).join(", ")} ]`
-    );
-    break;
   }
-  case "random":
-    {
-      if (numbers.length < 1) {
-        console.log("Pass arguments correctly");
-        break;
-      }
-      if (numbers.length === 1) {
-        const randomByte = crypto.randomBytes(numbers[0]).toString("binary");
-        console.log(`Random bytes of length ${numbers[0]} = ${randomByte}`); // ë♥êÞ
-        break;
-      } else {
-        console.log(
-          `Invalid number of arguments for random operation it requires only one argument`
-        );
-      }
+  case "random": {
+    if (numbers.length === 1) {
+      crypto.randomBytes(numbers[0], (err, buf) => {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log(buf.toString("binary"));
+        }
+      });
+      break;
+    } else if (numbers.length < 1) {
+      console.log("Provide length for random number generation.");
+      break;
     }
-    break;
+  }
   default: {
     console.log("Invalid operation");
     break;
