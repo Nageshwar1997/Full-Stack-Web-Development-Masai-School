@@ -1,28 +1,48 @@
-const fs = require("fs");
 const path = require("path");
 
-const arguments = process.argv.slice(2);
-const operation = arguments[0];
-const file = arguments[1];
-const content = [...arguments.slice(2)];
+const {
+  createFile,
+  appendToFile,
+  readFile,
+  renameFile,
+  deleteFile,
+  listDirectory,
+} = require("./functions.js");
 
-const currentDirectory = process.cwd();
-
-// complete the following function.
+const args = process.argv.slice(2);
+const operation = args[0];
+const file = args[1];
+const newFileName = args[2];
+const content = args.slice(2).join(" ");
+const filePath = path.resolve(__dirname, file);
 
 switch (operation) {
+  // complete the following function.
   case "create": {
-    if (!file) {
-      console.log("Please provide a file name");
-      break;
-    }
-    const filePath = path.join(currentDirectory, file);
-    fs.writeFileSync(filePath, content.join(" "), "utf-8");
-    console.log("File created successfully");
+    createFile(filePath);
+    break;
+  }
+  case "append": {
+    appendToFile(filePath, content);
+    break;
+  }
+  case "read": {
+    readFile(filePath);
+    break;
+  }
+  case "rename": {
+    renameFile(filePath, newFileName);
+    break;
+  }
+  case "delete": {
+    deleteFile(filePath);
+    break;
+  }
+  case "list": {
+    listDirectory(filePath);
     break;
   }
 
   default:
-    console.log("Invalid operation");
-    break;
+    console.log(`Invalid operation '${operation}'`);
 }
