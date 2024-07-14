@@ -62,6 +62,19 @@ const server = http.createServer((req, res) => {
       }
       break;
     }
+    case "/new": {
+      if (req.method === "POST") {
+        let data = [];
+        req.on("data", (chunk) => {
+          data.push(JSON.parse(chunk));
+        });
+        req.on("end", () => {
+          console.log("Data", data);
+        });
+        res.end("New Data Sent");
+        break;
+      }
+    }
     default: {
       res.end("404 Page Not Found");
     }
