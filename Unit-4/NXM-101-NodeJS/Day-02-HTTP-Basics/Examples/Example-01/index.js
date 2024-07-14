@@ -64,7 +64,7 @@ const server = http.createServer((req, res) => {
     }
     case "/new": {
       if (req.method === "POST") {
-        let data = [];
+        let data = []; // here we can use according to our requirement
         req.on("data", (chunk) => {
           data.push(JSON.parse(chunk));
         });
