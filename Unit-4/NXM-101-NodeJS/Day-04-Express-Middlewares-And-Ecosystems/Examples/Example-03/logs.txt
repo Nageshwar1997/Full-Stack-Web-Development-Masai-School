@@ -1,0 +1,9 @@
+Client visited / and the method was GET
+Client visited /about and the method was GET
+Client visited /contacts and the method was GET
+Client visited /data and the method was GET
+Client visited / and the method was GET at 1721224855016
+Client visited / and the method was GET at Wed Jul 17 2024 19:31:46 GMT+0530 (India Standard Time)
+Client visited /about and the method was GET at Wed Jul 17 2024 19:31:58 GMT+0530 (India Standard Time)
+Client visited / and the method was GET at Wed Jul 17 2024 19:33:06 GMT+0530 (India Standard Time)
+Client visited /add and the method was POST at Wed Jul 17 2024 19:40:25 GMT+0530 (India Standard Time)
