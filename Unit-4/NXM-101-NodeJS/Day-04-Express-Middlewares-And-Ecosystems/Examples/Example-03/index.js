@@ -17,9 +17,9 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   res.send("HOME PAGE");
-// });
+app.get("/", (req, res) => {
+  res.send("HOME PAGE");
+});
 
 app.get("/about", (req, res) => {
   res.send("ABOUT PAGE");
@@ -33,15 +33,16 @@ app.get("/data", (req, res) => {
   res.send("DATA PAGE");
 });
 
-// app.use((req, res, next) => {
-//   req.body.location = "Nanded";
-//   next()
-// })
+app.use((req, res, next) => {
+  req.body.location = "Nanded";
+  req.body.stamp = Date();
+  next();
+});
 
-// app.post("/add", (req, res) => {
-//   console.log(req.body)
-//   res.send("Data that has to be posted in terminal")
-// })
+app.post("/add", (req, res) => {
+  console.log(req.body);
+  res.send("Data that has to be posted in terminal");
+});
 
 app.listen(8080, () => {
   console.log("App is running on port 8080");
