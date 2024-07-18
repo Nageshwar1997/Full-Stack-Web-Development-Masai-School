@@ -1,0 +1,49 @@
+# Mongo-Aggregations-1-Level-I
+
+## Que. 01 : Write Mongo query to retrieve documents from the products where supplier_id is 2.
+
+### Answer : `db.suppliers.aggregate([{$match: {_id: 2}}])`
+
+## Que. 02 : Write Mongo query to retrieve the documents from the orders collection with "status": "shipped" .
+
+### Answer : `db.orders.aggregate([{$match: {status: "shipped"}}])`
+
+## Que. 03 : Write Mongo query to find buyers who from state CA ?
+
+### Answer : `db.buyers.aggregate([{$match: {"address.state": "CA"}}])`
+
+## Que. 04 : Write Mongo query to retrieve the amount, paymentstatus and paymentMethod from payments.
+
+### Answer : `db.payments.aggregate([{$project: {amount: 1, paymentstatus: 1, paymentMethod: 1, _id: 0}}])`
+
+## Que. 05 : Write Mongo query to retrieve documents from the orders without \_id.
+
+### Answer : `db.orders.aggregate([{$project: {_id: 0}}])`
+
+## Que. 06 : Write Mongo query to retrieve name,price from the products .
+
+### Answer : `db.products.aggregate([{$project: {name: 1, price: 1, _id: 0}}])`
+
+## Que. 07 : Write Mongo query to find buyers city and zip code ?
+
+### Answer : `db.buyers.aggregate([{$project: {"address.city": 1, "address.zip": 1, _id: 0}}])`
+
+## Que. 08 : Write Mongo query to find buyers name,email, city and zip code ?
+
+### Answer : `db.buyers.aggregate([{$project: {name: 1, email: 1, "address.city": 1, "address.zip": 1, _id: 0}}])`
+
+## Que. 09 : Write Mongo query to find suppliers name and phone ?
+
+### Answer : `db.suppliers.aggregate([{$project: {name: 1, phone: 1, _id: 0}}])`
+
+## Que. 10 : Write Mongo query to find buyers name,email, city and zip code ?
+
+### Answer : `db.buyers.aggregate([{$project: {name: 1, email: 1, "address.city": 1, "address.zip": 1, _id: 0}}])`
+
+## Que. 11 : Write Mongo query to find buyers city and zip code ?
+
+### Answer : `db.buyers.aggregate([{$project: {"address.city": 1, "address.zip": 1, _id: 0}}])`
+
+## Que. 12 : Write Mongo query to retrieve name,price from the products .
+
+### Answer : `db.products.aggregate([{$project: {name: 1, price: 1, _id: 0}}])`
