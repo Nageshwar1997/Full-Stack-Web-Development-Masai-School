@@ -1,0 +1,53 @@
+# Implementation-of-CRUD-II
+
+## Que- 1 : Retrieve all the documents.
+
+### Answer : `db.employees.find()`
+
+## Que- 2 : Retrieve the first document.
+
+### Answer : `db.employees.findOne()`
+
+## Que- 3 : Update the age of the employee to 35 where the first_name is "Sidnee".
+
+### Answer : `db.employees.updateOne({first_name: "Sidnee"}, {$set: {age: 35}})`
+
+## Que- 4 : Change the salary of "Meredeth Groveham" to 55000.
+
+### Answer : `db.employees.updateOne({first_name: "Meredeth", last_name: "Groveham"}, {$set: {salary: 55000}})`
+
+## Que- 5 : Update the last name of "Nikolaus" to "Park".
+
+### Answer : `db.employees.updateOne({first_name: "Nikolaus"}, {$set: {last_name: "Park"}})`
+
+## Que- 6 : Update the salary of all employees to 35000 where the age is 37.
+
+### Answer : `db.employees.updateMany({age: 37},{$set: {salary: 35000}})`
+
+## Que- 7 : Update the last name of all the employees to "Jamme" where the age is 28.
+
+### Answer : `db.employees.updateMany({age: 28}, {$set: {last_name: "Jamme"}})`
+
+## Que- 8 : For all employees named "Kimbra", add a new field middle_name with the value "Marie".
+
+### Answer : `db.employees.updateMany({first_name: "Kimbra"}, {$set: {middle_name: "Marie"}})`
+
+## Que- 9 : Find all users who are 33 years old.
+
+### Answer : `db.employees.find({age: 33})`
+
+## Que- 10 : Retrieve documents for users with a salary greater than 50000.
+
+### Answer : `db.employees.find({salary: {$gt: 50000}})`
+
+## Que- 11 : Find all the users where the gender is Female and age is 79.
+
+### Answer : `db.employees.find({gender: "Female", age: 79})`
+
+## Que- 12 : Find all the employees where the first_name is "George" and gender is Male.
+
+### Answer : `db.employees.find({first_name: "George", gender: "Male"})`
+
+## Que- 13 : Find all users whose salary is less than or equal to 50000.
+
+### Answer : `db.employees.find({salary: {$lte: 50000}})`
