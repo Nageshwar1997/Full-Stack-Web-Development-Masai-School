@@ -112,6 +112,44 @@
 
 # Unit - 02
 
+## HTML CSS & WEB :
+
+### Day - 01. [Introduction To HTML](./Unit-2/Web-HTML_CSS/Day-01-Introduction-To-HTML/)
+
+### Day - 02. [Introduction To CSS](./Unit-2/Web-HTML_CSS/Day-02-Introduction-To-CSS/)
+
+### Day - 03. [CSS Selectors](./Unit-2/Web-HTML_CSS/Day-03-CSS-Selectors/)
+
+### Day - 04. [CSS Combinators](./Unit-2/Web-HTML_CSS/Day-04-CSS-Combinators/)
+
+### Day - 05. [CSS Flex](./Unit-2/Web-HTML_CSS/Day-05-CSS-Flex/)
+
+### Day - 06. [CSS Grid](./Unit-2/Web-HTML_CSS/Day-06-CSS-Grid/)
+
+### Day - 07. [CSS Media Queries](./Unit-2/Web-HTML_CSS/Day-07-CSS-Media-Queries/)
+
+### Day - 08. [DOM - I](./Unit-2/Web-HTML_CSS/Day-08-DOM-I/)
+
+### Day - 09. [DOM - II](./Unit-2/Web-HTML_CSS/Day-09-DOM-II/)
+
+### Day - 10. [DOM - III](./Unit-2/Web-HTML_CSS/Day-10-DOM-III/)
+
+### Day - 11. [Local Storage - I](./Unit-2/Web-HTML_CSS/Day-11-Local-Storage-I/)
+
+### Day - 12. [Local Storage - II & JS Inbuilt Sorting](./Unit-2/Web-HTML_CSS/Day-12-Local-Storage-II_JS-Inbuilt-Sorting/)
+
+### Day - 13. [Asynchronous Programming](./Unit-2/Web-HTML_CSS/Day-13-Asynchronous-Programming/)
+
+### Day - 14. [Promises](./Unit-2/Web-HTML_CSS/Day-14-Promises/)
+
+### Day - 15. [Fetch - I](./Unit-2/Web-HTML_CSS/Day-15-Fetch-I/)
+
+### Day - 16. [Fetch - II](./Unit-2/Web-HTML_CSS/Day-16-Fetch-II/)
+
+### Day - 17. [Evaluation](./Unit-2/Web-HTML_CSS/Evaluation/)
+
+<!-- ## DSA 201 : -->
+
 # Unit - 03
 
 # Unit - 04
