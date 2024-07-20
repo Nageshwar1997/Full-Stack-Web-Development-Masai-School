@@ -152,6 +152,46 @@
 
 # Unit - 03
 
+## Advance JavaScript :
+
+### Day - 01. [Essential JavaScript Concepts I](./Unit-3/Advance-JavaScript/Day-01-Essential-JavaScript-Concepts-I/)
+
+### Day - 02. [Essential JavaScript Concepts II](./Unit-3/Advance-JavaScript/Day-02-Essential-JavaScript-Concepts-II/)
+
+### Day - 03. [Array Methods In Depth I](./Unit-3/Advance-JavaScript/Day-03-Array-Methods-In-Depth-I/)
+
+### Day - 04. [Array Methods In Depth II](./Unit-3/Advance-JavaScript/Day-04-Array-methods-In-Depth-II/)
+
+### Day - 05. [Functions And Objects](./Unit-3/Advance-JavaScript/Day-05-Functions-And-Objects/)
+
+### Day - 06. [Prototypical Inheritance I](./Unit-3/Advance-JavaScript/Day-06-Prototypical-Inheritance-I/)
+
+### Day - 07. [Prototypical Inheritance II](./Unit-3/Advance-JavaScript/Day-07-Prototypical-Inheritance-II/)
+
+### Day - 08. [Mastering The `this` Keyword](./Unit-3/Advance-JavaScript/Day-08-Mastering-the_this_Keyword/)
+
+### Day - 09. [Asynchronous Javascript](./Unit-3/Advance-JavaScript/Day-09-Asynchronous-Javascript/)
+
+### Day - 10. [Must Know Javascript Concepts](./Unit-3/Advance-JavaScript/Day-10-Must-Know-Javascript-Concepts/)
+
+### Day - 11. [Testing Javascript And Road To React](./Unit-3/Advance-JavaScript/Day-11-Testing-Javascript-And-Road-To-React/)
+
+### Day - 12. [ES6](./Unit-3/Advance-JavaScript/Day-12-ES6/)
+
+### Day - 13. [Closures in JavaScript](./Unit-3/Advance-JavaScript/Day-13-Closures-in-JavaScript/)
+
+### Day - 14. [Revision Class I](./Unit-3/Advance-JavaScript/Day-14-Revision-Class-I/)
+
+### Day - 15. [Revision Class II](./Unit-3/Advance-JavaScript/Day-15-Revision-Class-II/)
+
+### Day - 16. [Revision Class III](./Unit-3/Advance-JavaScript/Day-16-Revision-Class-III/)
+
+### Day - 17. [Constructor Function](./Unit-3/Advance-JavaScript/Day-17-Constructor-Function/)
+
+### Day - 18. [Evaluation](./Unit-3/Advance-JavaScript/Evaluation/)
+
+<!-- ## DSA 301 : -->
+
 # Unit - 04
 
 # Unit - 05
