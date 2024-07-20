@@ -44,11 +44,13 @@
 
 ### Day - 12. [React - XII (Revision - III)](./Cap-06/React/Day-12-Revision-III/)
 
-### Day - 13. [React - XIII (React X)](./Cap-06/React/Day-13-React-X/)
+### Day - 13. [React - XIII (Axios)](./Cap-06/React/Day-13-React-X-Axios/)
 
-### Day - 14. [React - XIV (Final Revision - I)](./Cap-06/React/Day-14-Final-Revision-I/)
+### Day - 14. [React - XIII (Redux)](./Cap-06/React/Day-14-React-XI-Redux/)
 
-### Day - 15. [React - XV (Final Revision - II)](./Cap-06/React/Day-15-Final-Revision-II/)
+### Day - 15. [React - XIV (Final Revision - I)](./Cap-06/React/Day-15-Final-Revision-I/)
+
+### Day - 16. [React - XV (Final Revision - II)](./Cap-06/React/Day-16-Final-Revision-II/)
 
 ## 4. Node.js
 
