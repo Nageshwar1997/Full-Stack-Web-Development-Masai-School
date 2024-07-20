@@ -52,7 +52,63 @@
 
 ## 4. Node.js
 
+### Day - 01. [Introduction To Node And NodeJS Basics](./Cap-06/Backend/01-NodeJS/Day-01-Introduction-To-Node-And-NodeJS-Basics/)
+
+### Day - 02. [HTTP Basics And Express](./Cap-06/Backend/01-NodeJS/Day-02-HTTP-Basics-And-Express/)
+
+### Day - 03. [Express Middleware And Ecosystem](./Cap-06/Backend/01-NodeJS/Day-03-Express-Middleware-And-Ecosystem/)
+
+### Day - 04. [Introduction To Databases And MongoDB](./Cap-06/Backend/01-NodeJS/Day-04-Introduction-to-Databases-And-MongoDB/)
+
+### Day - 05. [Problem Solving Class - I](./Cap-06/Backend/01-NodeJS/Day-05-Problem-Solving-Class-I/)
+
+### Day - 06. [MongoDB Aggregations - I](./Cap-06/Backend/01-NodeJS/Day-06-MongoDB-Aggregations-I/)
+
+### Day - 07. [MongoDB Aggregations - II](./Cap-06/Backend/01-NodeJS/Day-07-MongoDB-Aggregations-II/)
+
+### Day - 08. [](./Cap-06/Backend/01-NodeJS)
+
+### Day - 09. [](./Cap-06/Backend/01-NodeJS)
+
+### Day - 10. [](./Cap-06/Backend/01-NodeJS)
+
 # Unit - 01
+
+## Basic JavaScript :
+
+### Day - 01. [Introduction To JavaScript Variables](./Unit-1/Basic-JavaScript/Day-01-Introduction-To-JavaScript-Variables/)
+
+### Day - 02. [Mathematical Operators](./Unit-1/Basic-JavaScript/Day-02-Mathematical-Operators/)
+
+### Day - 03. [Relational And Comparison Operators](./Unit-1/Basic-JavaScript/Day-03-Relational-And-Comparison-Operators/)
+
+### Day - 04. [Conditional Statements](./Unit-1/Basic-JavaScript/Day-04-Conditional-Statements/)
+
+### Day - 05. [Logical Operators And Ternary Operators](./Unit-1/Basic-JavaScript/Day-05-Logical-Operators-And-Ternary-Operators/)
+
+### Day - 06. [While Loop](./Unit-1/Basic-JavaScript/Day-06-While-Loop/)
+
+### Day - 07. [For Loop](./Unit-1/Basic-JavaScript/Day-07-For-Loop/)
+
+### Day - 08. [Arrays](./Unit-1/Basic-JavaScript/Day-08-Arrays/)
+
+### Day - 09. [Strings](./Unit-1/Basic-JavaScript/Day-09-Strings/)
+
+### Day - 10. [Nested Loop](./Unit-1/Basic-JavaScript/Day-10-Nested-Loop/)
+
+### Day - 11. [Objects - I](./Unit-1/Basic-JavaScript/Day-11-Objects-I/)
+
+### Day - 12. [Objects - II](./Unit-1/Basic-JavaScript/Day-12-Objects-II/)
+
+### Day - 13. [Functions - I](./Unit-1/Basic-JavaScript/Day-13-Functions-I/)
+
+### Day - 14. [Functions - II](./Unit-1/Basic-JavaScript/Day-14-Functions-II/)
+
+### Day - 15. [Object Methods](./Unit-1/Basic-JavaScript/Day-15-Object-Methods/)
+
+### Day - 16. [Higher Order Functions (HOF)](./Unit-1/Basic-JavaScript/Day-16-Higher-Order-Functions-HOF/)
+
+<!-- ## DSA 101 -->
 
 # Unit - 02
 
