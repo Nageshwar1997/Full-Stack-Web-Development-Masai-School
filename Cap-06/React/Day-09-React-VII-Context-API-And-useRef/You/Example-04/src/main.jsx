@@ -15,7 +15,7 @@ export const ThemeContext = createContext();
 // <ThemeContext.Provider></ThemeContext.Provider>
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ThemeContext.Provider value={{ theme: "dark" }}>
+  <ThemeContext.Provider value={{ theme: "red" }}>
     <App />
   </ThemeContext.Provider>
 );

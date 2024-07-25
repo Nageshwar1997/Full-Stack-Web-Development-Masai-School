@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from "react";
 import { ThemeContext } from "../main";
 
 const Footer = () => {
@@ -7,8 +7,16 @@ const Footer = () => {
   value.theme = "pink";
   console.log(value);
   return (
-    <div>Footer</div>
-  )
-}
+    <div
+      style={{
+        backgroundColor: `${value.theme}`,
+        padding: "10px 0",
+        border: "1px solid black",
+      }}
+    >
+      Footer
+    </div>
+  );
+};
 
-export default Footer
+export default Footer;
