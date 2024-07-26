@@ -1,14 +1,32 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const connection = require("./src/config/db.config");
+const glassRouter = require("./src/routes/glass.route");
 
-const mongoURI = "mongodb://127.0.0.1:27017/dbName";
-/**
- * mongodb://127.0.0.1:27017/dbName
- * mongodb --> http
- * 127.0.0.1 --> ip address
- * 27017 --> port number
- * dbName --> name of database
- */
 
+const app = express();
+const PORT = 8080;
+app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.send("Welcome to Glass Store");
+});
+
+app.use("/glass", glassRouter)
+
+
+
+app.listen(PORT, async () => {
+  try {
+    await connection;
+    console.log(`App is running on port ${PORT} and connected to MongoDB`);
+  } catch (error) {
+    console.log("Error connecting to MongoDB or app is not running ", error);
+  }
+});
+
+// JUST FOR TESTING SCRIPT
+
+/*
 // Schema for Glass
 const glassSchema = mongoose.Schema(
   {
@@ -27,14 +45,21 @@ const GlassModel = mongoose.model("Glass", glassSchema);
 
 const main = async () => {
   try {
-      const connection = await mongoose.connect(mongoURI);
-      const newGlass =  new GlassModel({
-        color: "red",
-        material: "plastic",
-        size: 4,
-        brand: "puma",
-      })
+    console.log("Connected to MongoDB");
 
+    // If I want to add a single data
+    const newGlass = new GlassModel({
+      color: "red",
+      material: "plastic",
+      size: 4,
+      brand: "puma",
+    });
+
+    await newGlass.save();
+    console.log("Glass added successfully");
+    connection.disconnect();
+
+    // If I want to add multiple data
     // await GlassModel.insertMany([
     //   {
     //     color: "red",
@@ -49,10 +74,11 @@ const main = async () => {
     //     brand: "raymond",
     //   },
     // ]);
-    console.log("Connected to MongoDB");
+    // console.log("Connected to MongoDB");
   } catch (error) {
-    console.log("Error connecting to MongoDB", error);
+    console.log("Error connecting to MongoDB ", error);
   }
 };
 
 main();
+*/
