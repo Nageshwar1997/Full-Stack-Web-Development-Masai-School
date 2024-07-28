@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "email": "nag@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag1@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag2@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag3@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag4@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag5@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag6@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag7@gmail.com",
+      "password": "Nageshwar"
+    },
+    {
+      "email": "nag8@gmail.com",
+      "password": "Nageshwar"
+    }
+  ]
+}
