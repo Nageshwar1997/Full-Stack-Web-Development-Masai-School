@@ -1,16 +1,22 @@
 const express = require("express");
+const usersRouter = require("./routes/users.route");
+const todosRouter = require("./routes/todos.route");
+const blogsRouter = require("./routes/blogs.route");
+const loggerMiddleware = require("./middlewares/logger.middleware");
+const validationMiddleware = require("./middlewares/validation.middleware");
+
 const app = express();
 
-app.post("/signup", (req, res) => {
-  res.send("Signup success");
-});
-app.post("/login", (req, res) => {
-  res.send("Login success");
-});
+app.use(express.json());
 
-app.get("/todos", (req, res) => {
-    
-})
+// Users
+app.use("/users", [loggerMiddleware, validationMiddleware], usersRouter);
+
+// Todos
+app.use("/todos", todosRouter);
+
+// Blogs
+app.use("/blogs", blogsRouter);
 
 app.listen(8080, () => {
   console.log("App is running on port 8080");
