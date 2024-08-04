@@ -12,6 +12,6 @@ userRouter.post(
   authMiddleware,
   cancelEnrollmentController
 );
-userRouter.post("/my-courses", authMiddleware, getMyCoursesController);
+userRouter.get("/my-courses", authMiddleware, getMyCoursesController);
 
 module.exports = userRouter;
