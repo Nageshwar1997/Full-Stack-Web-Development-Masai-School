@@ -1,7 +1,0 @@
-{
-  "users": [
-    { "id": 1, "name": "Nageshwar", "age": 26 },
-    { "id": 2, "name": "Santosh", "age": 21 },
-    { "id": 705, "name": "Madhav", "age": 26 }
-  ]
-}
