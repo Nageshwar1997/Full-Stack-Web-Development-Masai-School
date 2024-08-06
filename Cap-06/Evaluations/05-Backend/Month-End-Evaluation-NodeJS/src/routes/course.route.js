@@ -1,5 +1,4 @@
 const express = require("express");
-const CourseModel = require("../models/course.model");
 const getCoursesController = require("../controllers/getCourses.controller");
 const addCourseController = require("../controllers/addCourse.controller");
 

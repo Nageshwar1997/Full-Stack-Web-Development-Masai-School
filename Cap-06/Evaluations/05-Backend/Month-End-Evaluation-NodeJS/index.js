@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongodb");
 const cors = require("cors");
 const connection = require("./src/configs/db.config");
 const loggingMiddleware = require("./src/middlewares/logging.middleware");
@@ -17,6 +16,7 @@ app.use(express.json());
 // Logging Middleware
 app.use(loggingMiddleware);
 
+// Routes
 app.use(courseRouter);
 app.use(userRouter);
 
