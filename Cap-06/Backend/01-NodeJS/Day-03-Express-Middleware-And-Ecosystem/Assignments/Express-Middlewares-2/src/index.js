@@ -3,15 +3,13 @@ const express = require("express");
 const multer = require("multer");
 const cloudinary = require("cloudinary");
 const fs = require("fs");
-const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const uploadDir = path.join(__dirname, "uploads");
 
 // Ensure the uploads directory exists
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
+if (!fs.existsSync("./uploads")) {
+  fs.mkdirSync("./uploads");
 }
 
 cloudinary.config({
@@ -23,7 +21,7 @@ cloudinary.config({
 // Configure Multer for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, uploadDir);
+    cb(null, "./uploads");
   },
   filename: function (req, file, cb) {
     const uniqueSuffix = Date.now();
